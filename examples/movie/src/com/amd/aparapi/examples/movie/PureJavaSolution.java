@@ -1,4 +1,4 @@
-package com.amd.aparapi.examples.movie;
+package com.syncleus.aparapi.examples.movie;
 
 import java.awt.Graphics2D;
 import java.awt.image.ConvolveOp;

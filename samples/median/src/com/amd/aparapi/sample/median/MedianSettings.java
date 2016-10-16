@@ -1,4 +1,4 @@
-package com.amd.aparapi.sample.median;
+package com.syncleus.aparapi.sample.median;
 
 public class MedianSettings {
    public final int windowWidth;

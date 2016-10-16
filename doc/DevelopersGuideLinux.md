@@ -88,7 +88,7 @@ Download JUnit from http://www.junit.org/ and note the location of your JUnit in
 
 ##Eclipse
 
-Eclipse is not required to build Aparapi; however, the developers of Aparapi do use Eclipse and have made the Eclipse artifacts (.classpath and .project files) available so that projects can be imported into Eclipse. The com.amd.aparapi.jni subproject (containing C++ JNI source) should be imported as a resource project. We do not recommend importing com.amd.aparapi.jni as a CDT project, and we do not recommend trying to configure a CDT build, the existing build.xml files has been customized for multiplatform C++ compilations.
+Eclipse is not required to build Aparapi; however, the developers of Aparapi do use Eclipse and have made the Eclipse artifacts (.classpath and .project files) available so that projects can be imported into Eclipse. The com.syncleus.aparapi.jni subproject (containing C++ JNI source) should be imported as a resource project. We do not recommend importing com.syncleus.aparapi.jni as a CDT project, and we do not recommend trying to configure a CDT build, the existing build.xml files has been customized for multiplatform C++ compilations.
 
 ##Building
 
@@ -99,43 +99,43 @@ Check out the Aparapi SVN trunk:
 Checkout provides the following:
 
     aparapi/
-       com.amd.aparapi/
-          src/java/com.amd.aparapi/*.java
+       com.syncleus.aparapi/
+          src/java/com.syncleus.aparapi/*.java
           build.xml
-       com.amd.aparapi.jni/
+       com.syncleus.aparapi.jni/
           src/cpp/*.cpp
           src/cpp/*.h
           build.xml
        test/
           codegen/
              src/java/
-                com.amd.aparapi/
-                com.amd.aparapi.test/
+                com.syncleus.aparapi/
+                com.syncleus.aparapi.test/
              build.xml
           runtime/
              src/java/
-                com.amd.aparapi/
-                com.amd.aparapi.test/
+                com.syncleus.aparapi/
+                com.syncleus.aparapi.test/
              build.xml
        samples/
           mandel
-             src/java/com.amd.aparapi.samples.mandel/*.java
+             src/java/com.syncleus.aparapi.samples.mandel/*.java
              build.xml
              mandel.sh
              mandel.bat
           squares/
-             src/java/com.amd.aparapi.samples.squares/*.java
+             src/java/com.syncleus.aparapi.samples.squares/*.java
              build.xml
              squares.sh
              squares.bat
           convolution/
-             src/java/com.amd.aparapi.samples.convolution/*.java
+             src/java/com.syncleus.aparapi.samples.convolution/*.java
              build.xml
              conv.sh
              conv.bat
        examples/
           nbody/
-             src/java/com.amd.aparapi.nbody/
+             src/java/com.syncleus.aparapi.nbody/
              build.xml
              nbody.sh
              nbody.bat
@@ -146,16 +146,16 @@ Checkout provides the following:
 
 ##Sub Directories
 
-The com.amd.aparapi and com.amd.aparapi.jni subdirectories contain the source for building and using Aparapi.
+The com.syncleus.aparapi and com.syncleus.aparapi.jni subdirectories contain the source for building and using Aparapi.
 
 The ant build.xml file, in each folder accept common 'clean' and 'build' targets. You can use the build.xml file at the root of the tree for two purposes:
 
-    To initiate a build com.amd.aparapi of com.amd.aparapi.jni.
+    To initiate a build com.syncleus.aparapi of com.syncleus.aparapi.jni.
     To create a binary ‘distribution’ directory and zip file. This zip file is same as those available from the download section of the code.google.com/p/aparapi site.
 
 ##Preparing for your first build
 
-Edit com.amd.aparapi.jni\build.properties and ensure that the properties are valid for your platform.
+Edit com.syncleus.aparapi.jni\build.properties and ensure that the properties are valid for your platform.
 
 View the comments in the properties file for assistance. The build.xml ant file contains some simple checks to help diagnose simple configuration errors in case something gets messed up.
 

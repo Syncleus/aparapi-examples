@@ -1,7 +1,7 @@
-package com.amd.aparapi.test.runtime;
+package com.syncleus.aparapi.test.runtime;
 
-import com.amd.aparapi.Kernel;
-import com.amd.aparapi.Range;
+import com.syncleus.aparapi.Kernel;
+import com.syncleus.aparapi.Range;
 
 public class Issue69{
 

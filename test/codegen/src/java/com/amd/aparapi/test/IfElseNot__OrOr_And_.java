@@ -1,4 +1,4 @@
-package com.amd.aparapi.test;
+package com.syncleus.aparapi.test;
 
 public class IfElseNot__OrOr_And_{
    public void run() {

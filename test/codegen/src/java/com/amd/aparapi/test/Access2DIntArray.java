@@ -1,4 +1,4 @@
-package com.amd.aparapi.test;
+package com.syncleus.aparapi.test;
 
 public class Access2DIntArray{
    int[][] ints = new int[1024][];

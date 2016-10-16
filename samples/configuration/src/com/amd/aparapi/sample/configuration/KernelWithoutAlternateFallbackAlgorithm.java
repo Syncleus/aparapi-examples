@@ -1,6 +1,6 @@
-package com.amd.aparapi.sample.configuration;
+package com.syncleus.aparapi.sample.configuration;
 
-import com.amd.aparapi.*;
+import com.syncleus.aparapi.*;
 
 /**
  * Kernel which will always fail to run on an OpenCLDevice but has an alternative fallback algorithm.

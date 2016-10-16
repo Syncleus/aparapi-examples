@@ -1,6 +1,6 @@
-package com.amd.aparapi.sample.median;
+package com.syncleus.aparapi.sample.median;
 
-import com.amd.aparapi.*;
+import com.syncleus.aparapi.*;
 
 /**
  * Provides support for pixel windows of size no greater than 49 (e.g. 7x7).

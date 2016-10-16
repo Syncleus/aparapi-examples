@@ -1,4 +1,4 @@
-package com.amd.aparapi.sample.extension;
+package com.syncleus.aparapi.sample.extension;
 
 public class StopWatch{
    long start = 0L;

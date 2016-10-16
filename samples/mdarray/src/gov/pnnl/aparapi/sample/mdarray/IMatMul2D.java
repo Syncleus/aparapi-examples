@@ -1,5 +1,5 @@
 package gov.pnnl.aparapi.sample.mdarray;
-import com.amd.aparapi.Kernel;
+import com.syncleus.aparapi.Kernel;
 
 class IMatMul2D extends Kernel{
    int[][] A;

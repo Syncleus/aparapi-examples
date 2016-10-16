@@ -1,6 +1,6 @@
-package com.amd.aparapi.test.runtime;
+package com.syncleus.aparapi.test.runtime;
 
-import com.amd.aparapi.Kernel;
+import com.syncleus.aparapi.Kernel;
 
 abstract class ArrayAccess{
    protected ArrayAccess(int offset, int length) {

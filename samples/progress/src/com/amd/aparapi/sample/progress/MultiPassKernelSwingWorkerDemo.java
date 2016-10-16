@@ -1,8 +1,8 @@
-package com.amd.aparapi.sample.progress;
+package com.syncleus.aparapi.sample.progress;
 
-import com.amd.aparapi.*;
-import com.amd.aparapi.internal.kernel.*;
-import com.amd.aparapi.util.swing.MultiPassKernelSwingWorker;
+import com.syncleus.aparapi.*;
+import com.syncleus.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.util.swing.MultiPassKernelSwingWorker;
 
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;

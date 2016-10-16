@@ -1,7 +1,7 @@
-package com.amd.aparapi.sample.configuration;
+package com.syncleus.aparapi.sample.configuration;
 
-import com.amd.aparapi.device.*;
-import com.amd.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.device.*;
+import com.syncleus.aparapi.internal.kernel.*;
 
 import java.util.*;
 
@@ -11,7 +11,7 @@ import java.util.*;
 public class CustomConfigurationDemo {
 
    public static void main(String[] ignored) {
-      System.setProperty("com.amd.aparapi.dumpProfilesOnExit", "true");
+      System.setProperty("com.syncleus.aparapi.dumpProfilesOnExit", "true");
       KernelManager manager = new KernelManager() {
          @Override
          protected List<Device.TYPE> getPreferredDeviceTypes() {

@@ -1,4 +1,4 @@
-package com.amd.aparapi.test;
+package com.syncleus.aparapi.test;
 
 public class ClassHasStaticFieldAccess{
    int[] ints = new int[1024];

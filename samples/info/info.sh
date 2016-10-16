@@ -1,4 +1,4 @@
 java \
- -Djava.library.path=../../com.amd.aparapi.jni/dist \
- -classpath ../../com.amd.aparapi/dist/aparapi.jar:info.jar \
- com.amd.aparapi.sample.info.Main
+ -Djava.library.path=../../com.syncleus.aparapi.jni/dist \
+ -classpath ../../com.syncleus.aparapi/dist/aparapi.jar:info.jar \
+ com.syncleus.aparapi.sample.info.Main

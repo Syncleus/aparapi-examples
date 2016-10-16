@@ -1,4 +1,4 @@
-package com.amd.aparapi.test;
+package com.syncleus.aparapi.test;
 
 public class ArrayTortureIssue35{
    int[] a = new int[1];

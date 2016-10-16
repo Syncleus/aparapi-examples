@@ -36,13 +36,13 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.amd.aparapi.sample.convolution;
+package com.syncleus.aparapi.sample.convolution;
 
-import com.amd.aparapi.*;
-import com.amd.aparapi.device.*;
-import com.amd.aparapi.internal.kernel.*;
-import com.amd.aparapi.opencl.*;
-import com.amd.aparapi.opencl.OpenCL.*;
+import com.syncleus.aparapi.*;
+import com.syncleus.aparapi.device.*;
+import com.syncleus.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.opencl.*;
+import com.syncleus.aparapi.opencl.OpenCL.*;
 
 import java.io.*;
 

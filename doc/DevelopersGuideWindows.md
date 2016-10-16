@@ -60,7 +60,7 @@ Once you have a suitable driver, download a copy of AMD APP SDK v2.5 from http:/
 Download the installation guide for Microsoft® Windows® (and Linux®) from http://developer.amd.com/sdks/AMDAPPSDK/assets/AMD_APP_SDK_Installation_Notes.pdf. Note that if you updating from a previous version of AMD APP SDK (or its predecessor ATI STREAM SDK), first uninstall the previous version. The release notes are available here http://developer.amd.com/sdks/AMDAPPSDK/assets/AMD_APP_SDK_Release_Notes_Developer.pdf
 ##A C++ compiler
 
-For Microsoft® Windows® platforms the JNI build can support either Microsoft® Visual Studio® 2008, 2009 or 2010 compiler or MinGW (Minimal GNU for Windows) from GNU. Now that Visual Studio express is available for free, we would recommend using Visual studio. If you wish to use another compiler then you will have to tweak the com.amd.aparapi.jni/build.xml file to get your compiler to work.
+For Microsoft® Windows® platforms the JNI build can support either Microsoft® Visual Studio® 2008, 2009 or 2010 compiler or MinGW (Minimal GNU for Windows) from GNU. Now that Visual Studio express is available for free, we would recommend using Visual studio. If you wish to use another compiler then you will have to tweak the com.syncleus.aparapi.jni/build.xml file to get your compiler to work.
 Microsoft® Visual Studio® 2008/2010 for 32-bit or 64-bit platforms
 
 Aparapi has been tested with various versions of Microsoft® Visual Studio® 2008, 2009 and 2010 including Enterprise, Professional and Express editions, if you encounter any version specific issues please let us know so we can address it and/or update this documentation.
@@ -69,7 +69,7 @@ If you already have Microsoft® Visual Studio® installed you will need to know 
 
 And an SDK, such as. c:\Program Files\Microsoft SDKs\Windows\v6.0A
 
-Note the location of both of these as this information will be needed to configure the com.amd.aparapi.jni\build.property file (later).
+Note the location of both of these as this information will be needed to configure the com.syncleus.aparapi.jni\build.property file (later).
 For Visual Studio Express 64 bit users
 
 Visual studio express does not include the 64 bit compiler or libraries. You will need to also install the SDK from Microsoft. this link should help
@@ -99,7 +99,7 @@ Note the location of your JUnit installation; the location is needed to configur
 
 Eclipse is not required to build Aparapi, however the developers of Aparapi do use Eclipse and have made the Eclipse artifacts (.classpath and .project files) available so that projects can be imported into Eclipse.
 
-The com.amd.aparapi.jni subproject (containing C++ JNI source) should be imported as a resource project, we do not recommend importing com.amd.aparapi.jni as a CDT project, and we do not recommend trying to configure a CDT build, the existing build.xml files has been customized for multiplatform C++ compilations.
+The com.syncleus.aparapi.jni subproject (containing C++ JNI source) should be imported as a resource project, we do not recommend importing com.syncleus.aparapi.jni as a CDT project, and we do not recommend trying to configure a CDT build, the existing build.xml files has been customized for multiplatform C++ compilations.
 ##Building
 
 Check out the Aparapi SVN trunk:
@@ -109,43 +109,43 @@ svn checkout http://aparapi.googlecode.com/svn/trunk
 You will end up with the following files/directories
 
     aparapi/
-       com.amd.aparapi/
-          src/java/com.amd.aparapi/*.java
+       com.syncleus.aparapi/
+          src/java/com.syncleus.aparapi/*.java
           build.xml
-       com.amd.aparapi.jni/
+       com.syncleus.aparapi.jni/
           src/cpp/*.cpp
           src/cpp/*.h
           build.xml
        test/
           codegen/
              src/java/
-                com.amd.aparapi/
-                com.amd.aparapi.test/
+                com.syncleus.aparapi/
+                com.syncleus.aparapi.test/
              build.xml
           runtime/
              src/java/
-                com.amd.aparapi/
-                com.amd.aparapi.test/
+                com.syncleus.aparapi/
+                com.syncleus.aparapi.test/
              build.xml
        samples/
           mandel
-             src/java/com.amd.aparapi.samples.mandel/*.java
+             src/java/com.syncleus.aparapi.samples.mandel/*.java
              build.xml
              mandel.sh
              mandel.bat
           squares/
-             src/java/com.amd.aparapi.samples.squares/*.java
+             src/java/com.syncleus.aparapi.samples.squares/*.java
              build.xml
              squares.sh
              squares.bat
           convolution/
-             src/java/com.amd.aparapi.samples.convolution/*.java
+             src/java/com.syncleus.aparapi.samples.convolution/*.java
              build.xml
              conv.sh
              conv.bat
        examples/
           nbody/
-             src/java/com.amd.aparapi.nbody/
+             src/java/com.syncleus.aparapi.nbody/
              build.xml
              nbody.sh
              nbody.bat
@@ -156,18 +156,18 @@ You will end up with the following files/directories
 
 ##Sub Directories
 
-The com.amd.aparapi and com.amd.aparapi.jni subdirectories contain the source for building and using Aparapi.
+The com.syncleus.aparapi and com.syncleus.aparapi.jni subdirectories contain the source for building and using Aparapi.
 
 The ant build.xml file, in each folder accept 'clean' and 'build' targets.
 
 Use the build.xml file at the root of the tree for two purposes:
 
-    To initiate a build of com.amd.aparapi and com.amd.aparapi.jni.
+    To initiate a build of com.syncleus.aparapi and com.syncleus.aparapi.jni.
     To create a binary distribution directory and zip file. This zip file is same as those available from the download section of the code.google.com/p/aparapi site.
 
 ##Preparing for your first build
 
-You should only need to edit com.amd.aparapi.jni\build.xml file if you wish to use mingw or if you Visual Studio or gcc compiler is in an unusual place.
+You should only need to edit com.syncleus.aparapi.jni\build.xml file if you wish to use mingw or if you Visual Studio or gcc compiler is in an unusual place.
 
 Perform a build from the root directory using the following command:
 

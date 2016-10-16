@@ -20,7 +20,7 @@ The classfile format is well documented here and we will not go into too much de
 
 Lets start with a simple Kernel.
 
-    import com.amd.aparapi.Kernel;
+    import com.syncleus.aparapi.Kernel;
 
     public class Squarer extends Kernel{
        int[] in;
@@ -41,7 +41,7 @@ and then we can look at the bytecode using javap
 
 Compiled from "Squarer.java"
 
-    public class Squarer extends com.amd.aparapi.Kernel
+    public class Squarer extends com.syncleus.aparapi.Kernel
       SourceFile: "Squarer.java"
       minor version: 0
       major version: 50

@@ -1,6 +1,6 @@
 java ^
- -Djava.library.path=../../com.amd.aparapi.jni/dist ^
- -Dcom.amd.aparapi.executionMode=%1 ^
- -classpath ../../com.amd.aparapi/dist/aparapi.jar;squares.jar ^
- com.amd.aparapi.sample.squares.Main
+ -Djava.library.path=../../com.syncleus.aparapi.jni/dist ^
+ -Dcom.syncleus.aparapi.executionMode=%1 ^
+ -classpath ../../com.syncleus.aparapi/dist/aparapi.jar;squares.jar ^
+ com.syncleus.aparapi.sample.squares.Main
 

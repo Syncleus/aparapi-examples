@@ -36,10 +36,10 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.amd.aparapi.sample.life;
+package com.syncleus.aparapi.sample.life;
 
-import com.amd.aparapi.Kernel;
-import com.amd.aparapi.*;
+import com.syncleus.aparapi.Kernel;
+import com.syncleus.aparapi.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -103,7 +103,7 @@ public class Main{
          width = _width;
          height = _height;
 
-         final String executionMode = System.getProperty("com.amd.aparapi.executionMode");
+         final String executionMode = System.getProperty("com.syncleus.aparapi.executionMode");
          if ((executionMode != null) && executionMode.equals("JTP")) {
             range = Range.create(width * height, 4);
          } else {

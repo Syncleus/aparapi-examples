@@ -3,7 +3,7 @@
 <project name="javaonedemo" default="build" basedir=".">
 
    <path id="compiler.class.path">
-      <pathelement path="../../com.amd.aparapi/dist/aparapi.jar"/>
+      <pathelement path="../../com.syncleus.aparapi/dist/aparapi.jar"/>
       <pathelement path="../third-party/jogamp/jogl-all.jar"/>
       <pathelement path="../third-party/jogamp/gluegen-rt.jar"/>
    </path>

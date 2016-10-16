@@ -36,7 +36,7 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.amd.aparapi.examples.javaonedemo;
+package com.syncleus.aparapi.examples.javaonedemo;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -60,10 +60,10 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import com.amd.aparapi.annotation.*;
-import com.amd.aparapi.Kernel;
-import com.amd.aparapi.ProfileInfo;
-import com.amd.aparapi.Range;
+import com.syncleus.aparapi.annotation.*;
+import com.syncleus.aparapi.Kernel;
+import com.syncleus.aparapi.ProfileInfo;
+import com.syncleus.aparapi.Range;
 
 /**
  * An example Aparapi application which displays a view of the Mandelbrot set and lets the user zoom in to a particular point. 

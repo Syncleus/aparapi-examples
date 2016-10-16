@@ -1,6 +1,6 @@
-package com.amd.aparapi.sample.configuration;
+package com.syncleus.aparapi.sample.configuration;
 
-import com.amd.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.internal.kernel.*;
 
 /**
  * Created by Barney on 13/09/2015.

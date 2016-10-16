@@ -44,7 +44,7 @@
 	</target>
 
 	<path id="classpath">
-		<pathelement path="${basedir}/../../com.amd.aparapi/dist/aparapi.jar" />
+		<pathelement path="${basedir}/../../com.syncleus.aparapi/dist/aparapi.jar" />
 		<pathelement path="${junit.home}/${junit.jar.name}" />
 		<pathelement path="classes" />
 	</path>
@@ -56,7 +56,7 @@
 			<compilerarg value="-Xlint:-path" />
 		</javac>
 
-		<java classname="com.amd.aparapi.CreateJUnitTests" classpathref="classpath">
+		<java classname="com.syncleus.aparapi.CreateJUnitTests" classpathref="classpath">
 			<sysproperty key="root" value="${basedir}" />
 		</java>
 

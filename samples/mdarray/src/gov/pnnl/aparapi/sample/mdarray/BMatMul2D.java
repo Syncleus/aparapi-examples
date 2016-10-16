@@ -1,5 +1,5 @@
 package gov.pnnl.aparapi.sample.mdarray;
-import com.amd.aparapi.Kernel;
+import com.syncleus.aparapi.Kernel;
 
 class BMatMul2D extends Kernel{
    byte[][] A;

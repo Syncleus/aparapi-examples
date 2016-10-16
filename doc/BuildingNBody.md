@@ -8,7 +8,7 @@ The NBody example is located in the/ examples subdirectory under the Aparapi tru
        examples/
          ...
          nbody/
-            src/java/com.amd.aparapi.nbody/
+            src/java/com.syncleus.aparapi.nbody/
             build.xml
             nbody.sh
             nbody.bat

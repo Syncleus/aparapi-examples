@@ -1,6 +1,6 @@
-package com.amd.aparapi.sample.progress;
+package com.syncleus.aparapi.sample.progress;
 
-import com.amd.aparapi.Kernel;
+import com.syncleus.aparapi.Kernel;
 
 /**
  * Kernel which performs very many meaningless calculations, used to demonstrate progress tracking and cancellation of multi-pass Kernels.

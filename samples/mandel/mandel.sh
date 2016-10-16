@@ -1,5 +1,5 @@
 java\
- -Djava.library.path=../../com.amd.aparapi.jni/dist\
- -Dcom.amd.aparapi.executionMode=$1\
- -classpath ../../com.amd.aparapi/dist/aparapi.jar:mandel.jar\
- com.amd.aparapi.sample.mandel.Main
+ -Djava.library.path=../../com.syncleus.aparapi.jni/dist\
+ -Dcom.syncleus.aparapi.executionMode=$1\
+ -classpath ../../com.syncleus.aparapi/dist/aparapi.jar:mandel.jar\
+ com.syncleus.aparapi.sample.mandel.Main

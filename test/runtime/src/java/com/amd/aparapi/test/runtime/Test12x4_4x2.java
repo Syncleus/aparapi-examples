@@ -1,10 +1,10 @@
-package com.amd.aparapi.test.runtime;
+package com.syncleus.aparapi.test.runtime;
 
-import com.amd.aparapi.device.*;
+import com.syncleus.aparapi.device.*;
 import org.junit.Test;
 
-import com.amd.aparapi.Kernel;
-import com.amd.aparapi.Range;
+import com.syncleus.aparapi.Kernel;
+import com.syncleus.aparapi.Range;
 
 public class Test12x4_4x2{
       @SuppressWarnings("deprecation")

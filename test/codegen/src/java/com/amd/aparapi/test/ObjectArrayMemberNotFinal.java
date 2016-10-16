@@ -1,6 +1,6 @@
-package com.amd.aparapi.test;
+package com.syncleus.aparapi.test;
 
-import com.amd.aparapi.Kernel;
+import com.syncleus.aparapi.Kernel;
 
 class DummyOOANF{
    int mem;

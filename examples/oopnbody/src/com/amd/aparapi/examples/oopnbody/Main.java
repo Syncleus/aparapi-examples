@@ -35,7 +35,7 @@ of EAR).  For the most current Country Group listings, or for additional informa
 under those regulations, please refer to the U.S. Bureau of Industry and Security's website at http://www.bis.doc.gov/. 
 
  */
-package com.amd.aparapi.examples.oopnbody;
+package com.syncleus.aparapi.examples.oopnbody;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -65,9 +65,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-import com.amd.aparapi.Kernel;
-import com.amd.aparapi.ProfileInfo;
-import com.amd.aparapi.Range;
+import com.syncleus.aparapi.Kernel;
+import com.syncleus.aparapi.ProfileInfo;
+import com.syncleus.aparapi.Range;
 
 import com.jogamp.opengl.util.FPSAnimator;
 import com.jogamp.opengl.util.texture.Texture;

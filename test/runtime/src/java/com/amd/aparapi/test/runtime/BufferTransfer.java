@@ -1,8 +1,8 @@
-package com.amd.aparapi.test.runtime;
+package com.syncleus.aparapi.test.runtime;
 
-import com.amd.aparapi.*;
-import com.amd.aparapi.device.*;
-import com.amd.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.*;
+import com.syncleus.aparapi.device.*;
+import com.syncleus.aparapi.internal.kernel.*;
 import org.junit.*;
 
 import java.util.*;

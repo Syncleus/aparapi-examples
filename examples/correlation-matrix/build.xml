@@ -32,7 +32,7 @@
 	<property name="ant.build.javac.target" value="1.7" />
 
 	<path id="classpath">
-		<pathelement path="${basedir}/../../com.amd.aparapi/dist/aparapi.jar" />
+		<pathelement path="${basedir}/../../com.syncleus.aparapi/dist/aparapi.jar" />
 		<pathelement path="${libs.root}/${commons.lang.jar}" />
 		<pathelement path="${libs.root}/${log4j.jar}" />
 		<pathelement path="${libs.root}/${lucene.jar}" />
@@ -79,7 +79,7 @@
 
 		<!-- Even though fork is slower we need to set the library path and this requires fork -->
 		<junit printsummary="false" fork="true" haltonfailure="false" failureproperty="tests.failed" showoutput="true">
-			<sysproperty key="java.library.path" value="${basedir}/../../com.amd.aparapi.jni/dist" />
+			<sysproperty key="java.library.path" value="${basedir}/../../com.syncleus.aparapi.jni/dist" />
 
 			<!-- USER DEFINED PROPERTIES -->
 			<sysproperty key="numRows" value="1024" />

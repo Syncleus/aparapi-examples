@@ -1,4 +1,4 @@
 java\
- -Djava.library.path=../../com.amd.aparapi.jni/dist\
- -classpath ../../com.amd.aparapi/dist/aparapi.jar:extension.jar\
- com.amd.aparapi.sample.extension.Histogram
+ -Djava.library.path=../../com.syncleus.aparapi.jni/dist\
+ -classpath ../../com.syncleus.aparapi/dist/aparapi.jar:extension.jar\
+ com.syncleus.aparapi.sample.extension.Histogram

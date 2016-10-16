@@ -1,4 +1,4 @@
-package com.amd.aparapi.test;
+package com.syncleus.aparapi.test;
 
 public class AccessDoubleArray{
    double[] doubles = new double[1024];

@@ -1,14 +1,14 @@
-package com.amd.aparapi.sample.configuration;
+package com.syncleus.aparapi.sample.configuration;
 
-import com.amd.aparapi.sample.mandel.*;
+import com.syncleus.aparapi.sample.mandel.*;
 
 public class CleanUpArraysDemo {
    public static void main(String[] ignored) {
 
-      System.setProperty("com.amd.aparapi.enableVerboseJNI", "true");
-      System.setProperty("com.amd.aparapi.enableVerboseJNIOpenCLResourceTracking", "true");
-      System.setProperty("com.amd.aparapi.enableExecutionModeReporting", "true");
-      System.setProperty("com.amd.aparapi.dumpProfileOnExecution", "true");
+      System.setProperty("com.syncleus.aparapi.enableVerboseJNI", "true");
+      System.setProperty("com.syncleus.aparapi.enableVerboseJNIOpenCLResourceTracking", "true");
+      System.setProperty("com.syncleus.aparapi.enableExecutionModeReporting", "true");
+      System.setProperty("com.syncleus.aparapi.dumpProfileOnExecution", "true");
 
       int size = 1024;
       int[] rgbs = new int[size * size];

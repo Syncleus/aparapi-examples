@@ -1,10 +1,10 @@
-package com.amd.aparapi.test.runtime;
+package com.syncleus.aparapi.test.runtime;
 
-import com.amd.aparapi.*;
-import com.amd.aparapi.device.*;
-import com.amd.aparapi.internal.kernel.*;
-import com.amd.aparapi.opencl.*;
-import com.amd.aparapi.opencl.OpenCL.*;
+import com.syncleus.aparapi.*;
+import com.syncleus.aparapi.device.*;
+import com.syncleus.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.opencl.*;
+import com.syncleus.aparapi.opencl.OpenCL.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;

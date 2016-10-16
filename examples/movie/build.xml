@@ -110,7 +110,7 @@
       <mkdir dir="classes"/>
       <javac srcdir="src" destdir="classes" debug="on" includeantruntime="false" >
          <classpath>
-            <pathelement path="..\..\com.amd.aparapi\dist\aparapi.jar"/>
+            <pathelement path="..\..\com.syncleus.aparapi\dist\aparapi.jar"/>
             <pathelement path="jjmpeg\jjmpeg-0.0\dist\jjmpeg.jar/"/>
             <pathelement path="..\jviolajones\jviolajones.jar/"/>
          </classpath>

@@ -1,12 +1,12 @@
 
 java ^
- -Djava.library.path=../../com.amd.aparapi.jni/dist ^
+ -Djava.library.path=../../com.syncleus.aparapi.jni/dist ^
  -Dsequential=false^
- -Dcom.amd.aparapi.executionMode=GPU ^
- -Dcom.amd.aparapi.enableProfiling=false ^
- -Dcom.amd.aparapi.enableVerboseJNI=false ^
- -Dcom.amd.aparapi.enableShowGeneratedOpenCL=true ^
- -classpath ../../com.amd.aparapi/dist/aparapi.jar;life.jar ^
- com.amd.aparapi.sample.life.Main
+ -Dcom.syncleus.aparapi.executionMode=GPU ^
+ -Dcom.syncleus.aparapi.enableProfiling=false ^
+ -Dcom.syncleus.aparapi.enableVerboseJNI=false ^
+ -Dcom.syncleus.aparapi.enableShowGeneratedOpenCL=true ^
+ -classpath ../../com.syncleus.aparapi/dist/aparapi.jar;life.jar ^
+ com.syncleus.aparapi.sample.life.Main
 
 

@@ -1,6 +1,6 @@
-package com.amd.aparapi.sample.progress;
+package com.syncleus.aparapi.sample.progress;
 
-import com.amd.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.internal.kernel.*;
 
 import javax.swing.*;
 import javax.swing.plaf.nimbus.*;
@@ -26,11 +26,11 @@ public class ProgressAndCancelDemo {
 
    public static void main(String[] ignored) throws Exception {
 
-      System.setProperty("com.amd.aparapi.enableShowGeneratedOpenCL", "true");
-      System.setProperty("com.amd.aparapi.enableVerboseJNI", "true");
-      System.setProperty("com.amd.aparapi.dumpFlags", "true");
-      System.setProperty("com.amd.aparapi.enableVerboseJNIOpenCLResourceTracking", "true");
-      System.setProperty("com.amd.aparapi.enableExecutionModeReporting", "true");
+      System.setProperty("com.syncleus.aparapi.enableShowGeneratedOpenCL", "true");
+      System.setProperty("com.syncleus.aparapi.enableVerboseJNI", "true");
+      System.setProperty("com.syncleus.aparapi.dumpFlags", "true");
+      System.setProperty("com.syncleus.aparapi.enableVerboseJNIOpenCLResourceTracking", "true");
+      System.setProperty("com.syncleus.aparapi.enableExecutionModeReporting", "true");
 
       kernel = new LongRunningKernel();
       if (TEST_JTP) {

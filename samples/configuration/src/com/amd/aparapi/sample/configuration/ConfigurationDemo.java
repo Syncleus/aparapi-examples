@@ -1,12 +1,12 @@
-package com.amd.aparapi.sample.configuration;
+package com.syncleus.aparapi.sample.configuration;
 
-import com.amd.aparapi.*;
-import com.amd.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.*;
+import com.syncleus.aparapi.internal.kernel.*;
 
 import java.util.*;
 
 /**
- * Tests device selection via {@link com.amd.aparapi.internal.kernel.KernelManager}.
+ * Tests device selection via {@link com.syncleus.aparapi.internal.kernel.KernelManager}.
  */
 public class ConfigurationDemo {
    public static void main(String[] ignored) {

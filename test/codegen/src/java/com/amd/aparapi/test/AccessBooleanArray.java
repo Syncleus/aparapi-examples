@@ -1,4 +1,4 @@
-package com.amd.aparapi.test;
+package com.syncleus.aparapi.test;
 
 public class AccessBooleanArray{
    boolean[] ba = new boolean[1024];

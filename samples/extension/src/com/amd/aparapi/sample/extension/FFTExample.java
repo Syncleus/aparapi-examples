@@ -1,10 +1,10 @@
-package com.amd.aparapi.sample.extension;
+package com.syncleus.aparapi.sample.extension;
 
-import com.amd.aparapi.*;
-import com.amd.aparapi.device.*;
-import com.amd.aparapi.internal.kernel.*;
-import com.amd.aparapi.opencl.*;
-import com.amd.aparapi.opencl.OpenCL.*;
+import com.syncleus.aparapi.*;
+import com.syncleus.aparapi.device.*;
+import com.syncleus.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.opencl.*;
+import com.syncleus.aparapi.opencl.OpenCL.*;
 
 import java.util.*;
 

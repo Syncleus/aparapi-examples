@@ -1,9 +1,9 @@
-package com.amd.aparapi.sample.configuration;
+package com.syncleus.aparapi.sample.configuration;
 
-import com.amd.aparapi.*;
-import com.amd.aparapi.internal.kernel.*;
-import com.amd.aparapi.sample.blackscholes.Main.*;
-import com.amd.aparapi.sample.mandel.*;
+import com.syncleus.aparapi.*;
+import com.syncleus.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.sample.blackscholes.Main.*;
+import com.syncleus.aparapi.sample.mandel.*;
 
 /**
  * Demonstrate new enhanced profiling capability, profiling the kernel from the blackscholes sample.

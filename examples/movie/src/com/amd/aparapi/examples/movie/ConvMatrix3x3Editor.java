@@ -36,7 +36,7 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.amd.aparapi.examples.movie;
+package com.syncleus.aparapi.examples.movie;
 
 import java.awt.BorderLayout;
 import java.awt.Component;

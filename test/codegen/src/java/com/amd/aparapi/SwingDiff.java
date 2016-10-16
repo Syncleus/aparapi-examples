@@ -35,7 +35,7 @@ of EAR).  For the most current Country Group listings, or for additional informa
 under those regulations, please refer to the U.S. Bureau of Industry and Security's website at http://www.bis.doc.gov/. 
 
 */
-package com.amd.aparapi;
+package com.syncleus.aparapi;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -61,7 +61,7 @@ import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 
-import com.amd.aparapi.Diff.DiffResult;
+import com.syncleus.aparapi.Diff.DiffResult;
 
 public class SwingDiff{
    JFrame frame;

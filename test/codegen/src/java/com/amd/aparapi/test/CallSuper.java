@@ -1,6 +1,6 @@
-package com.amd.aparapi.test;
+package com.syncleus.aparapi.test;
 
-import com.amd.aparapi.Kernel;
+import com.syncleus.aparapi.Kernel;
 
 abstract class CallSuperBase extends Kernel{
    int foo(int n) {

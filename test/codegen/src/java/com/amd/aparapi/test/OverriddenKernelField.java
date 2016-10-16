@@ -1,6 +1,6 @@
-package com.amd.aparapi.test;
+package com.syncleus.aparapi.test;
 
-import com.amd.aparapi.Kernel;
+import com.syncleus.aparapi.Kernel;
 
 class OverriddenKernelFieldParent extends Kernel{
    int out[] = new int[1];

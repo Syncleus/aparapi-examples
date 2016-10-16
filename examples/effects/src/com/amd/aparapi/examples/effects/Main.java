@@ -36,7 +36,7 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.amd.aparapi.examples.effects;
+package com.syncleus.aparapi.examples.effects;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -52,8 +52,8 @@ import java.awt.image.DataBufferInt;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-import com.amd.aparapi.Kernel;
-import com.amd.aparapi.Range;
+import com.syncleus.aparapi.Kernel;
+import com.syncleus.aparapi.Range;
 
 /**
  * An example Aparapi application which tracks the mouse and updates the color pallete of the window based on the distance from the mouse pointer. 

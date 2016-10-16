@@ -1,7 +1,7 @@
 java \
- -Djava.library.path=../../com.amd.aparapi.jni/dist \
- -Dcom.amd.aparapi.executionMode=$1 \
- -Dcom.amd.aparapi.enableProfiling=false \
- -Dcom.amd.aparapi.enableShowGeneratedOpenCL=true \
- -classpath ../../com.amd.aparapi/dist/aparapi.jar:extension.jar \
- com.amd.aparapi.sample.extension.FFTExample
+ -Djava.library.path=../../com.syncleus.aparapi.jni/dist \
+ -Dcom.syncleus.aparapi.executionMode=$1 \
+ -Dcom.syncleus.aparapi.enableProfiling=false \
+ -Dcom.syncleus.aparapi.enableShowGeneratedOpenCL=true \
+ -classpath ../../com.syncleus.aparapi/dist/aparapi.jar:extension.jar \
+ com.syncleus.aparapi.sample.extension.FFTExample

@@ -1,7 +1,7 @@
 #UsingConstantMemory
 *How to make use of constant memory in a Kernel Updated Feb 28, 2012 by frost.g...@gmail.com*
 ##How to make use of new constant memory feature
-By default all primitive arrays accessed by an Aparapi Kernel is considered global. If we look at the generated code using `-Dcom.amd.aparapi.enableShowGeneratedOpenCL=true` we will see that primitive arrays (such as `int buf[]`) are mapped to `__global` pointers (such as `__global int *buf`) in OpenCL.
+By default all primitive arrays accessed by an Aparapi Kernel is considered global. If we look at the generated code using `-Dcom.syncleus.aparapi.enableShowGeneratedOpenCL=true` we will see that primitive arrays (such as `int buf[]`) are mapped to `__global` pointers (such as `__global int *buf`) in OpenCL.
 
 Although this makes Aparapi easy to use (especially to Java developers who are unfamiliar to tiered memory hierarchies), it does limit the ability of the 'power developer' wanting to extract more performance from Aparapi on the GPU.
 

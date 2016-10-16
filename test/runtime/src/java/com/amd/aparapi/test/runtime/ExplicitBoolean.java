@@ -1,6 +1,6 @@
-package com.amd.aparapi.test.runtime;
+package com.syncleus.aparapi.test.runtime;
 
-import com.amd.aparapi.*;
+import com.syncleus.aparapi.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;

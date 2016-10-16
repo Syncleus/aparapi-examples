@@ -1,10 +1,10 @@
-package com.amd.aparapi.sample.extension;
+package com.syncleus.aparapi.sample.extension;
 
-import com.amd.aparapi.Range;
-import com.amd.aparapi.device.Device;
-import com.amd.aparapi.device.OpenCLDevice;
-import com.amd.aparapi.internal.kernel.*;
-import com.amd.aparapi.opencl.OpenCL;
+import com.syncleus.aparapi.Range;
+import com.syncleus.aparapi.device.Device;
+import com.syncleus.aparapi.device.OpenCLDevice;
+import com.syncleus.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.opencl.OpenCL;
 
 public class SwapExample{
 

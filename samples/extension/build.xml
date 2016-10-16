@@ -12,7 +12,7 @@
 		<mkdir dir="classes" />
 		<javac srcdir="src" destdir="classes" debug="on" includeantruntime="false">
 			<classpath>
-				<pathelement path="../../com.amd.aparapi/dist/aparapi.jar" />
+				<pathelement path="../../com.syncleus.aparapi/dist/aparapi.jar" />
 			</classpath>
 		</javac>
 		<copy todir="classes/com\amd\aparapi\sample\extension" file="src\com\amd\aparapi\sample\extension\fft.cl" />
@@ -29,7 +29,7 @@
 	</target>
 
 	<path id="compiler.class.path">
-		<pathelement path="../../com.amd.aparapi/dist/aparapi.jar" />
+		<pathelement path="../../com.syncleus.aparapi/dist/aparapi.jar" />
 	</path>
 
 	<path id="runtime.class.path" cache="true">
@@ -39,85 +39,85 @@
 
 	<!-- FFT -->
 	<target name="run-fft-gpu">
-		<java classname="com.amd.aparapi.sample.extension.FFTExample" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.FFTExample" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="GPU" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="GPU" />
 		</java>
 	</target>
 
 	<target name="run-fft-jtp">
-		<java classname="com.amd.aparapi.sample.extension.FFTExample" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.FFTExample" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="JTP" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="JTP" />
 		</java>
 	</target>
 
 	<!-- Histogram -->
 	<target name="run-histogram-gpu">
-		<java classname="com.amd.aparapi.sample.extension.Histogram" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.Histogram" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="GPU" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="GPU" />
 		</java>
 	</target>
 
 	<target name="run-histogram-jtp">
-		<java classname="com.amd.aparapi.sample.extension.Histogram" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.Histogram" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="JTP" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="JTP" />
 		</java>
 	</target>
 
 	<target name="run-histogram-ideal-gpu">
-		<java classname="com.amd.aparapi.sample.extension.HistogramIdeal" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.HistogramIdeal" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="GPU" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="GPU" />
 		</java>
 	</target>
 
 	<target name="run-histogram-ideal-jtp">
-		<java classname="com.amd.aparapi.sample.extension.HistogramIdeal" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.HistogramIdeal" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="JTP" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="JTP" />
 		</java>
 	</target>
 
 	<!-- Mandel -->
 	<target name="run-mandel-gpu">
-		<java classname="com.amd.aparapi.sample.extension.MandelExample" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.MandelExample" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="GPU" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="GPU" />
 		</java>
 	</target>
 
 	<target name="run-mandel-jtp">
-		<java classname="com.amd.aparapi.sample.extension.MandelExample" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.MandelExample" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="JTP" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="JTP" />
 		</java>
 	</target>
 
 	<!-- Square -->
 	<target name="run-square-gpu">
-		<java classname="com.amd.aparapi.sample.extension.SquareExample" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.SquareExample" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="GPU" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="GPU" />
 		</java>
 	</target>
 
 	<target name="run-square-jtp">
-		<java classname="com.amd.aparapi.sample.extension.SquareExample" fork="true">
+		<java classname="com.syncleus.aparapi.sample.extension.SquareExample" fork="true">
 			<classpath refid="runtime.class.path" />
-			<sysproperty key="java.library.path" path="..\..\com.amd.aparapi.jni\dist" />
-			<sysproperty key="com.amd.aparapi.executionMode" value="JTP" />
+			<sysproperty key="java.library.path" path="..\..\com.syncleus.aparapi.jni\dist" />
+			<sysproperty key="com.syncleus.aparapi.executionMode" value="JTP" />
 		</java>
 	</target>
 

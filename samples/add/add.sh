@@ -1,5 +1,5 @@
 java \
- -Djava.library.path=../../com.amd.aparapi.jni/dist \
- -Dcom.amd.aparapi.executionMode=%1 \
- -classpath ../../com.amd.aparapi/dist/aparapi.jar:add.jar \
- com.amd.aparapi.sample.add.Main
+ -Djava.library.path=../../com.syncleus.aparapi.jni/dist \
+ -Dcom.syncleus.aparapi.executionMode=%1 \
+ -classpath ../../com.syncleus.aparapi/dist/aparapi.jar:add.jar \
+ com.syncleus.aparapi.sample.add.Main

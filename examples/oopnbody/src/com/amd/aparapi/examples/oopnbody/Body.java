@@ -1,4 +1,4 @@
-package com.amd.aparapi.examples.oopnbody;
+package com.syncleus.aparapi.examples.oopnbody;
 
 import java.util.List;
 

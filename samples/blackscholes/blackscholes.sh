@@ -1,7 +1,7 @@
 java \
-   -Djava.library.path=..\..\com.amd.aparapi.jni\dist \
-   -Dcom.amd.aparapi.executionMode=$1 \
+   -Djava.library.path=..\..\com.syncleus.aparapi.jni\dist \
+   -Dcom.syncleus.aparapi.executionMode=$1 \
    -Dsize=$2  \
    -Diterations=$3 \
-   -classpath blackscholes.jar:..\..\com.amd.aparapi\dist\aparapi.jar \
-   com.amd.aparapi.sample.blackscholes.Main 
+   -classpath blackscholes.jar:..\..\com.syncleus.aparapi\dist\aparapi.jar \
+   com.syncleus.aparapi.sample.blackscholes.Main

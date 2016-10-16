@@ -1,7 +1,7 @@
 @echo off 
 java ^
- -Djava.library.path=../../com.amd.aparapi.jni/dist ^
- -classpath ../../com.amd.aparapi/dist/aparapi.jar;javaonedemo.jar ^
- com.amd.aparapi.examples.javaonedemo.Mandel
+ -Djava.library.path=../../com.syncleus.aparapi.jni/dist ^
+ -classpath ../../com.syncleus.aparapi/dist/aparapi.jar;javaonedemo.jar ^
+ com.syncleus.aparapi.examples.javaonedemo.Mandel
 
 
