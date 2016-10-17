@@ -16,6 +16,8 @@ public class All {
     public static void main(String[] _args) {
         System.out.println("Select which example to run:");
         System.out.println("  1) Game of Life");
+        System.out.println("  2) Mandelbrot");
+        System.out.println("  3) Mandlebrot 2D");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -48,6 +50,12 @@ public class All {
         {
             case "1":
                 com.syncleus.aparapi.examples.life.Main.main(null);
+                break;
+            case "2":
+                com.syncleus.aparapi.examples.mandel.Main.main(null);
+                break;
+            case "3":
+                com.syncleus.aparapi.examples.mandel.Main2D.main(null);
                 break;
             default:
                 System.out.println("Invalid selection.");
