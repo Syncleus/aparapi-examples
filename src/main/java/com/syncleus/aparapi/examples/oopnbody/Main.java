@@ -1,3 +1,13 @@
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
 /*
 Copyright (c) 2010-2011, Advanced Micro Devices, Inc.
 All rights reserved.
@@ -48,16 +58,16 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GL2;
-import javax.media.opengl.GLAutoDrawable;
-import javax.media.opengl.GLCapabilities;
-import javax.media.opengl.GLEventListener;
-import javax.media.opengl.GLException;
-import javax.media.opengl.GLProfile;
-import javax.media.opengl.awt.GLCanvas;
-import javax.media.opengl.fixedfunc.GLLightingFunc;
-import javax.media.opengl.glu.GLU;
+import com.jogamp.opengl.GL;
+import com.jogamp.opengl.GL2;
+import com.jogamp.opengl.GLAutoDrawable;
+import com.jogamp.opengl.GLCapabilities;
+import com.jogamp.opengl.GLEventListener;
+import com.jogamp.opengl.GLException;
+import com.jogamp.opengl.GLProfile;
+import com.jogamp.opengl.awt.GLCanvas;
+import com.jogamp.opengl.fixedfunc.GLLightingFunc;
+import com.jogamp.opengl.glu.GLU;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;

@@ -48,6 +48,7 @@ public class All {
         System.out.println(" 31) NBody");
         System.out.println(" 32) NBody - Local");
         System.out.println(" 33) NBody - Sequential");
+        System.out.println(" 34) OOPN Body");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -176,6 +177,9 @@ public class All {
                 break;
             case "33":
                 com.syncleus.aparapi.examples.nbody.Seq.main(args);
+                break;
+            case "34":
+                com.syncleus.aparapi.examples.oopnbody.Main.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
