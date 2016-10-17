@@ -1,3 +1,13 @@
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
 /*
 Copyright (c) 2010-2011, Advanced Micro Devices, Inc.
 All rights reserved.
@@ -36,7 +46,7 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.sample.info;
+package com.syncleus.aparapi.examples.info;
 
 import com.syncleus.aparapi.device.*;
 import com.syncleus.aparapi.internal.kernel.*;
@@ -46,7 +56,7 @@ import java.util.*;
 
 public class Main{
    public static void main(String[] _args) {
-      System.out.println("com.syncleus.aparapi.sample.info.Main");
+      System.out.println("com.syncleus.aparapi.examples.info.Main");
       List<OpenCLPlatform> platforms = (new OpenCLPlatform()).getOpenCLPlatforms();
       System.out.println("Machine contains " + platforms.size() + " OpenCL platforms");
       int platformc = 0;
