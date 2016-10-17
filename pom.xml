@@ -76,6 +76,14 @@
             </snapshots>
         </repository>
     </repositories>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.syncleus.aparapi</groupId>
+            <artifactId>aparapi</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <defaultGoal>package</defaultGoal>
