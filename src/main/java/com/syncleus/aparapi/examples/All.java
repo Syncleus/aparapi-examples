@@ -23,6 +23,8 @@ public class All {
         System.out.println("  6) Convolution (pure Java)");
         System.out.println("  7) Blacksholes");
         System.out.println("  8) Squares");
+        System.out.println("  9) Multipass swing worker");
+        System.out.println("  10) Progress and cancel demo");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -76,6 +78,12 @@ public class All {
                 break;
             case "8":
                 com.syncleus.aparapi.examples.squares.Main.main(args);
+                break;
+            case "9":
+                com.syncleus.aparapi.examples.progress.MultiPassKernelSwingWorkerDemo.main(args);
+                break;
+            case "10":
+                com.syncleus.aparapi.examples.progress.ProgressAndCancelDemo.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
