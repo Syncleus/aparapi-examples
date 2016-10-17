@@ -1,4 +1,14 @@
-package com.syncleus.aparapi.sample.extension;
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
+package com.syncleus.aparapi.examples.extension;
 
 import com.syncleus.aparapi.*;
 import com.syncleus.aparapi.device.*;
@@ -10,7 +20,7 @@ import java.util.*;
 
 public class FFTExample{
 
-   @Resource("com/amd/aparapi/sample/extension/fft.cl") interface FFT extends OpenCL<FFT>{
+   @Resource("com/syncleus/aparapi/examples/extension/fft.cl") interface FFT extends OpenCL<FFT>{
 
       public FFT forward(//
             Range _range,//

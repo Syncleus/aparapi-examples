@@ -29,6 +29,11 @@ public class All {
         System.out.println("  12) Medians");
         System.out.println("  13) MDArray");
         System.out.println("  14) Add");
+        System.out.println("  15) Extension - FFT");
+        System.out.println("  16) Extension - Histogram");
+        System.out.println("  17) Extension - Histogram Ideal");
+        System.out.println("  18) Extension - Mandel");
+        System.out.println("  19) Extension - Square");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -100,6 +105,21 @@ public class All {
                 break;
             case "14":
                 com.syncleus.aparapi.examples.add.Main.main(args);
+                break;
+            case "15":
+                com.syncleus.aparapi.examples.extension.FFTExample.main(args);
+                break;
+            case "16":
+                com.syncleus.aparapi.examples.extension.Histogram.main(args);
+                break;
+            case "17":
+                com.syncleus.aparapi.examples.extension.HistogramIdeal.main(args);
+                break;
+            case "18":
+                com.syncleus.aparapi.examples.extension.MandelExample.main(args);
+                break;
+            case "19":
+                com.syncleus.aparapi.examples.extension.SquareExample.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");

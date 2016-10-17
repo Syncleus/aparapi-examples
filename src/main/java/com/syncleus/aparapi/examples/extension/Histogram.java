@@ -1,4 +1,14 @@
-package com.syncleus.aparapi.sample.extension;
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
+package com.syncleus.aparapi.examples.extension;
 
 import com.syncleus.aparapi.Kernel;
 import com.syncleus.aparapi.Range;
@@ -9,7 +19,7 @@ import com.syncleus.aparapi.opencl.OpenCL.Resource;
 
 public class Histogram{
 
-   @Resource("com/amd/aparapi/sample/extension/HistogramKernel.cl") interface HistogramKernel extends OpenCL<HistogramKernel>{
+   @Resource("com/syncleus/aparapi/examples/extension/HistogramKernel.cl") interface HistogramKernel extends OpenCL<HistogramKernel>{
 
       public HistogramKernel histogram256(//
             Range _range,//
