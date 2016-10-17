@@ -1,3 +1,13 @@
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
 /*
 Copyright (c) 2010-2011, Advanced Micro Devices, Inc.
 All rights reserved.
@@ -36,96 +46,82 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.sample.convolution;
+package com.syncleus.aparapi.examples.convolution;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
 import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.WindowConstants;
+import com.syncleus.aparapi.Kernel;
 
-@SuppressWarnings("serial") public abstract class ConvolutionViewer extends JFrame{
+public class PureJava{
 
-   private int height;
+   final static class ImageConvolution extends Kernel{
+      private float convMatrix3x3[];
 
-   private int width;
+      private int width, height;
 
-   private BufferedImage outputImage;
+      private byte imageIn[], imageOut[];
 
-   private BufferedImage inputImage;
+      public void processPixel(int x, int y, int w, int h) {
+         float accum = 0f;
+         int count = 0;
+         for (int dx = -3; dx < 6; dx += 3) {
+            for (int dy = -1; dy < 2; dy += 1) {
+               int rgb = 0xff & imageIn[((y + dy) * w) + (x + dx)];
 
-   private byte[] inBytes;
-
-   private byte[] outBytes;
-
-   private Graphics2D gc;
-
-   private float[] convMatrix3x3;
-
-   public ConvolutionViewer(File _file, float[] _convMatrix3x3) {
-
-      JFrame frame = new JFrame("Convolution Viewer");
-
-      convMatrix3x3 = _convMatrix3x3;
-      try {
-         inputImage = ImageIO.read(_file);
-
-         // System.out.println(inputImage);
-
-         height = inputImage.getHeight();
-
-         width = inputImage.getWidth();
-
-         outputImage = new BufferedImage(width, height, inputImage.getType());
-
-         gc = outputImage.createGraphics();
-
-         inBytes = ((DataBufferByte) inputImage.getRaster().getDataBuffer()).getData();
-         outBytes = ((DataBufferByte) outputImage.getRaster().getDataBuffer()).getData();
-
-         final JLabel imageLabel = new JLabel();
-         imageLabel.setIcon(new ImageIcon(outputImage));
-
-         ConvMatrix3x3Editor editor = new ConvMatrix3x3Editor(_convMatrix3x3){
-            @Override protected void updated(float[] _convMatrix3x3) {
-               convMatrix3x3 = _convMatrix3x3;
-               long start = System.currentTimeMillis();
-
-               applyConvolution(convMatrix3x3, inBytes, outBytes, width, height);
-               long end = System.currentTimeMillis();
-               gc.setColor(Color.BLACK);
-               gc.fillRect(0, 0, 50, 40);
-               gc.setColor(Color.YELLOW);
-               gc.drawString("" + (end - start) + "ms", 10, 20);
-
-               imageLabel.repaint();
+               accum += rgb * convMatrix3x3[count++];
             }
-         };
-         frame.getContentPane().add(editor.component, BorderLayout.WEST);
+         }
+         byte value = (byte) (max(0, min((int) accum, 255)));
+         imageOut[y * w + x] = value;
 
-         frame.getContentPane().add(imageLabel, BorderLayout.CENTER);
-         frame.pack();
-         frame.setVisible(true);
-         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+      }
 
-         applyConvolution(convMatrix3x3, inBytes, outBytes, width, height);
+      @Override public void run() {
+         int x = getGlobalId(0) % (width * 3);
+         int y = getGlobalId(0) / (width * 3);
 
-         imageLabel.repaint();
-      } catch (IOException e1) {
-         // TODO Auto-generated catch block
-         e1.printStackTrace();
+         if (x > 3 && x < (width * 3 - 3) && y > 1 && y < (height - 1)) {
+            processPixel(x, y, width * 3, height);
+         }
+
+      }
+
+      public void applyConvolution(float[] _convMatrix3x3, byte[] _imageIn, byte[] _imageOut, int _width, int _height) {
+         imageIn = _imageIn;
+         imageOut = _imageOut;
+         width = _width;
+         height = _height;
+         convMatrix3x3 = _convMatrix3x3;
+
+         execute(3 * width * height);
       }
 
    }
 
-   abstract protected void applyConvolution(float[] convMatrix3x3, byte[] _inBytes, byte[] _outBytes, int _width, int _height);
+   public static void main(final String[] _args) {
+      File file = new File(_args.length == 1 ? _args[0] : "./src/main/resources/testcard.jpg");
+
+      final ImageConvolution convolution = new ImageConvolution();
+
+      float convMatrix3x3[] = new float[] {
+            0f,
+            -10f,
+            0f,
+            -10f,
+            40f,
+            -10f,
+            0f,
+            -10f,
+            0f,
+      };
+
+      new ConvolutionViewer(file, convMatrix3x3){
+         @Override protected void applyConvolution(float[] _convMatrix3x3, byte[] _inBytes, byte[] _outBytes, int _width,
+               int _height) {
+            convolution.applyConvolution(_convMatrix3x3, _inBytes, _outBytes, _width, _height);
+         }
+      };
+
+   }
 
 }

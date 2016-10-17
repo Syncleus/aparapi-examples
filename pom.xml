@@ -95,6 +95,7 @@
                     <mainClass>com.syncleus.aparapi.examples.All</mainClass>
                     <arguments>
                         <argument>com.syncleus.aparapi.executionMode=GPU</argument>
+                        <argument>com.syncleus.aparapi.enableShowGeneratedOpenCL=true</argument>
                     </arguments>
                 </configuration>
             </plugin>

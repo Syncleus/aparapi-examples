@@ -1,3 +1,13 @@
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
 /*
 Copyright (c) 2010-2011, Advanced Micro Devices, Inc.
 All rights reserved.
@@ -36,64 +46,35 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.sample.convolution;
+package com.syncleus.aparapi.examples.convolution;
 
-import java.io.File;
+import com.syncleus.aparapi.*;
+import com.syncleus.aparapi.device.*;
+import com.syncleus.aparapi.internal.kernel.*;
+import com.syncleus.aparapi.opencl.*;
+import com.syncleus.aparapi.opencl.OpenCL.*;
 
-import com.syncleus.aparapi.Kernel;
+import java.io.*;
 
-public class PureJava{
+public class ConvolutionOpenCL{
 
-   final static class ImageConvolution extends Kernel{
-      private float convMatrix3x3[];
-
-      private int width, height;
-
-      private byte imageIn[], imageOut[];
-
-      public void processPixel(int x, int y, int w, int h) {
-         float accum = 0f;
-         int count = 0;
-         for (int dx = -3; dx < 6; dx += 3) {
-            for (int dy = -1; dy < 2; dy += 1) {
-               int rgb = 0xff & imageIn[((y + dy) * w) + (x + dx)];
-
-               accum += rgb * convMatrix3x3[count++];
-            }
-         }
-         byte value = (byte) (max(0, min((int) accum, 255)));
-         imageOut[y * w + x] = value;
-
-      }
-
-      @Override public void run() {
-         int x = getGlobalId(0) % (width * 3);
-         int y = getGlobalId(0) / (width * 3);
-
-         if (x > 3 && x < (width * 3 - 3) && y > 1 && y < (height - 1)) {
-            processPixel(x, y, width * 3, height);
-         }
-
-      }
-
-      public void applyConvolution(float[] _convMatrix3x3, byte[] _imageIn, byte[] _imageOut, int _width, int _height) {
-         imageIn = _imageIn;
-         imageOut = _imageOut;
-         width = _width;
-         height = _height;
-         convMatrix3x3 = _convMatrix3x3;
-
-         execute(3 * width * height);
-      }
-
+   @Resource("com/syncleus/aparapi/examples/convolution/convolution.cl") interface Convolution extends OpenCL<Convolution>{
+      Convolution applyConvolution(//
+            Range range, //
+            @GlobalReadOnly("_convMatrix3x3") float[] _convMatrix3x3,//// only read from kernel 
+            @GlobalReadOnly("_imagIn") byte[] _imageIn,// only read from kernel (actually char[])
+            @GlobalWriteOnly("_imagOut") byte[] _imageOut, // only written to (never read) from kernel (actually char[])
+            @Arg("_width") int _width,// 
+            @Arg("_height") int _height);
    }
 
    public static void main(final String[] _args) {
-      File file = new File(_args.length == 1 ? _args[0] : "testcard.jpg");
+      final File file = new File(_args.length == 1 ? _args[0] : "./src/main/resources/testcard.jpg");
 
-      final ImageConvolution convolution = new ImageConvolution();
+      final OpenCLDevice openclDevice = (OpenCLDevice) KernelManager.instance().bestDevice();
 
-      float convMatrix3x3[] = new float[] {
+      final Convolution convolution = openclDevice.bind(Convolution.class);
+      final float convMatrix3x3[] = new float[] {
             0f,
             -10f,
             0f,
@@ -106,12 +87,16 @@ public class PureJava{
       };
 
       new ConvolutionViewer(file, convMatrix3x3){
+         Range range = null;
+
          @Override protected void applyConvolution(float[] _convMatrix3x3, byte[] _inBytes, byte[] _outBytes, int _width,
                int _height) {
-            convolution.applyConvolution(_convMatrix3x3, _inBytes, _outBytes, _width, _height);
+            if (range == null) {
+               range = openclDevice.createRange(_width * _height * 3);
+            }
+
+            convolution.applyConvolution(range, _convMatrix3x3, _inBytes, _outBytes, _width, _height);
          }
       };
-
    }
-
 }

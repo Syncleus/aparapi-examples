@@ -13,11 +13,14 @@ package com.syncleus.aparapi.examples;
 import java.util.Scanner;
 
 public class All {
-    public static void main(String[] _args) {
+    public static void main(String[] _args) throws Exception {
         System.out.println("Select which example to run:");
         System.out.println("  1) Game of Life");
         System.out.println("  2) Mandelbrot");
         System.out.println("  3) Mandlebrot 2D");
+        System.out.println("  4) Convolution");
+        System.out.println("  5) Convolution (OpenCL)");
+        System.out.println("  6) Convolution (pure Java)");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -28,7 +31,7 @@ public class All {
             if( in.hasNextLine() )
             {
                 String line = in.nextLine();
-                running = selected(line);
+                running = selected(line, _args);
                 System.out.println();
             }
             else
@@ -41,7 +44,7 @@ public class All {
         }
     }
 
-    private static boolean selected(String line)
+    private static boolean selected(String line, String[] args) throws Exception
     {
         if( line.toUpperCase().equals("Q") )
            return false;
@@ -49,13 +52,22 @@ public class All {
         switch(line)
         {
             case "1":
-                com.syncleus.aparapi.examples.life.Main.main(null);
+                com.syncleus.aparapi.examples.life.Main.main(args);
                 break;
             case "2":
-                com.syncleus.aparapi.examples.mandel.Main.main(null);
+                com.syncleus.aparapi.examples.mandel.Main.main(args);
                 break;
             case "3":
-                com.syncleus.aparapi.examples.mandel.Main2D.main(null);
+                com.syncleus.aparapi.examples.mandel.Main2D.main(args);
+                break;
+            case "4":
+                com.syncleus.aparapi.examples.convolution.Convolution.main(args);
+                break;
+            case "5":
+                com.syncleus.aparapi.examples.convolution.ConvolutionOpenCL.main(args);
+                break;
+            case "6":
+                com.syncleus.aparapi.examples.convolution.PureJava.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
