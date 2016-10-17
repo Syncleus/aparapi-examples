@@ -29,6 +29,6 @@ Without modification, an Aparapi kernel which uses private buffers may fail to w
 
 The Kernel.NoCL annotation exists to allow specialised code to be executed when running in Java (or JTP) which is not invoked when running on the GPU. A NoCL method can be inserted at the begining of a Kernel's run() method which sets the private array to a value obtained from a static ThreadLocal<foo[]> where foo is the primitive type of the array in question. This will have no effect upon OpenCL execution, but will allow threadsafe execution when running in java.
 
-In the project samples, there is a package com.syncleus.aparapi.sample.median which gives an example of a median image filter which uses a private array of pixel data to apply a distructive median algorithm to a "window" of local pixels. This sample also demonstrates how to use the ThreadLocal trick to allow correct behaviour when running in JTP execution mode.
+In the project samples, there is a package com.syncleus.com.syncleus.aparapi.examples.median which gives an example of a median image filter which uses a private array of pixel data to apply a distructive median algorithm to a "window" of local pixels. This sample also demonstrates how to use the ThreadLocal trick to allow correct behaviour when running in JTP execution mode.
 
 [http://code.google.com/p/aparapi/source/browse/trunk/samples/median/src/com/amd/aparapi/sample/median/MedianDemo.java](http://code.google.com/p/aparapi/source/browse/trunk/samples/median/src/com/amd/aparapi/sample/median/MedianDemo.java)

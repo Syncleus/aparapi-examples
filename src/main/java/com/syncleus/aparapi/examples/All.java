@@ -25,7 +25,8 @@ public class All {
         System.out.println("  8) Squares");
         System.out.println("  9) Multipass swing worker");
         System.out.println("  10) Progress and cancel demo");
-        System.out.println("  11) info");
+        System.out.println("  11) Info");
+        System.out.println("  12) Medians");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -88,6 +89,9 @@ public class All {
                 break;
             case "11":
                 com.syncleus.aparapi.examples.info.Main.main(args);
+                break;
+            case "12":
+                com.syncleus.aparapi.examples.median.MedianDemo.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
