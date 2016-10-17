@@ -21,6 +21,7 @@ public class All {
         System.out.println("  4) Convolution");
         System.out.println("  5) Convolution (OpenCL)");
         System.out.println("  6) Convolution (pure Java)");
+        System.out.println("  7) Blacksholes");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -68,6 +69,9 @@ public class All {
                 break;
             case "6":
                 com.syncleus.aparapi.examples.convolution.PureJava.main(args);
+                break;
+            case "7":
+                com.syncleus.aparapi.examples.blackscholes.Main.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");

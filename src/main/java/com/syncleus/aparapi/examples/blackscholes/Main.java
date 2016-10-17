@@ -1,3 +1,13 @@
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
 /*
 Copyright (c) 2010-2011, Advanced Micro Devices, Inc.
 All rights reserved.
@@ -35,7 +45,7 @@ of EAR).  For the most current Country Group listings, or for additional informa
 under those regulations, please refer to the U.S. Bureau of Industry and Security's website at http://www.bis.doc.gov/. 
 
 */
-package com.syncleus.aparapi.sample.blackscholes;
+package com.syncleus.aparapi.examples.blackscholes;
 
 import com.syncleus.aparapi.Kernel;
 import com.syncleus.aparapi.Range;
@@ -180,9 +190,9 @@ public class Main{
 
    public static void main(String[] _args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-      int size = Integer.getInteger("size", 512);
+      int size = Integer.getInteger("size", 1024);
       Range range = Range.create(size);
-      int iterations = Integer.getInteger("iterations", 20);
+      int iterations = Integer.getInteger("iterations", 10000);
       System.out.println("size =" + size);
       System.out.println("iterations =" + iterations);
       BlackScholesKernel kernel = new BlackScholesKernel(size);
