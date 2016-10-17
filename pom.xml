@@ -86,7 +86,7 @@
     </dependencies>
 
     <build>
-        <defaultGoal>package</defaultGoal>
+        <defaultGoal>exec:java</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
