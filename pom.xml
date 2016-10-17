@@ -76,7 +76,7 @@
             </snapshots>
         </repository>
     </repositories>
-    
+
     <dependencies>
         <dependency>
             <groupId>com.syncleus.aparapi</groupId>
@@ -88,6 +88,16 @@
     <build>
         <defaultGoal>package</defaultGoal>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.syncleus.aparapi.examples.All</mainClass>
+                    <arguments>
+                        <argument>com.syncleus.aparapi.executionMode=GPU</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
