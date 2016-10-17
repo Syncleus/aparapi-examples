@@ -1,3 +1,13 @@
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
 /*
 Copyright (c) 2010-2011, Advanced Micro Devices, Inc.
 All rights reserved.
@@ -36,7 +46,7 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.sample.add;
+package com.syncleus.aparapi.examples.add;
 
 import com.syncleus.aparapi.Kernel;
 import com.syncleus.aparapi.Range;

@@ -28,6 +28,7 @@ public class All {
         System.out.println("  11) Info");
         System.out.println("  12) Medians");
         System.out.println("  13) MDArray");
+        System.out.println("  14) Add");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -96,6 +97,9 @@ public class All {
                 break;
             case "13":
                 com.syncleus.aparapi.examples.mdarray.MDArray.main(args);
+                break;
+            case "14":
+                com.syncleus.aparapi.examples.add.Main.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
