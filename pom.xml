@@ -83,6 +83,16 @@
             <artifactId>aparapi</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.jogamp.jogl</groupId>
+            <artifactId>jogl-all</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jogamp.gluegen</groupId>
+            <artifactId>gluegen</artifactId>
+            <version>2.3.2</version>
+        </dependency>
     </dependencies>
 
     <build>

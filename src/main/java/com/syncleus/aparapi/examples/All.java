@@ -24,24 +24,27 @@ public class All {
         System.out.println("  7) Blacksholes");
         System.out.println("  8) Squares");
         System.out.println("  9) Multipass swing worker");
-        System.out.println("  10) Progress and cancel demo");
-        System.out.println("  11) Info");
-        System.out.println("  12) Medians");
-        System.out.println("  13) MDArray");
-        System.out.println("  14) Add");
-        System.out.println("  15) Extension - FFT");
-        System.out.println("  16) Extension - Histogram");
-        System.out.println("  17) Extension - Histogram Ideal");
-        System.out.println("  18) Extension - Mandel");
-        System.out.println("  19) Extension - Square");
-        System.out.println("  20) Configuration - Auto cleanup arrays");
-        System.out.println("  21) Configuration - Cleanup arrays");
-        System.out.println("  22) Configuration - Configuration");
-        System.out.println("  23) Configuration - Custom Configuration");
-        System.out.println("  24) Configuration - Legacy Configuration");
-        System.out.println("  25) Configuration - Profiling");
-        System.out.println("  26) Configuration - Profiling (no binary)");
-        System.out.println("  27) Effects");
+        System.out.println(" 10) Progress and cancel demo");
+        System.out.println(" 11) Info");
+        System.out.println(" 12) Medians");
+        System.out.println(" 13) MDArray");
+        System.out.println(" 14) Add");
+        System.out.println(" 15) Extension - FFT");
+        System.out.println(" 16) Extension - Histogram");
+        System.out.println(" 17) Extension - Histogram Ideal");
+        System.out.println(" 18) Extension - Mandel");
+        System.out.println(" 19) Extension - Square");
+        System.out.println(" 20) Configuration - Auto cleanup arrays");
+        System.out.println(" 21) Configuration - Cleanup arrays");
+        System.out.println(" 22) Configuration - Configuration");
+        System.out.println(" 23) Configuration - Custom Configuration");
+        System.out.println(" 24) Configuration - Legacy Configuration");
+        System.out.println(" 25) Configuration - Profiling");
+        System.out.println(" 26) Configuration - Profiling (no binary)");
+        System.out.println(" 27) Effects");
+        System.out.println(" 28) Javaone - Game of Life");
+        System.out.println(" 29) Javaone - Mandlebrot");
+        System.out.println(" 30) Javaone - NBody");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -152,6 +155,15 @@ public class All {
                 break;
             case "27":
                 com.syncleus.aparapi.examples.effects.Main.main(args);
+                break;
+            case "28":
+                com.syncleus.aparapi.examples.javaonedemo.Life.main(args);
+                break;
+            case "29":
+                com.syncleus.aparapi.examples.javaonedemo.Mandel.main(args);
+                break;
+            case "30":
+                com.syncleus.aparapi.examples.javaonedemo.NBody.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
