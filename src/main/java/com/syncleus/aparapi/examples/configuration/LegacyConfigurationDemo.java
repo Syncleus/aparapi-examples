@@ -1,4 +1,14 @@
-package com.syncleus.aparapi.sample.configuration;
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
+package com.syncleus.aparapi.examples.configuration;
 
 import com.syncleus.aparapi.*;
 import com.syncleus.aparapi.internal.kernel.*;

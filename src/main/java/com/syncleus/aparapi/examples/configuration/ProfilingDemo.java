@@ -1,9 +1,19 @@
-package com.syncleus.aparapi.sample.configuration;
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
+package com.syncleus.aparapi.examples.configuration;
 
 import com.syncleus.aparapi.*;
 import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.sample.blackscholes.Main.*;
-import com.syncleus.aparapi.sample.mandel.*;
+import com.syncleus.aparapi.examples.blackscholes.Main.*;
+import com.syncleus.aparapi.examples.mandel.*;
 
 /**
  * Demonstrate new enhanced profiling capability, profiling the kernel from the blackscholes sample.

@@ -34,6 +34,13 @@ public class All {
         System.out.println("  17) Extension - Histogram Ideal");
         System.out.println("  18) Extension - Mandel");
         System.out.println("  19) Extension - Square");
+        System.out.println("  20) Configuration - Auto cleanup arrays");
+        System.out.println("  21) Configuration - Cleanup arrays");
+        System.out.println("  22) Configuration - Configuration");
+        System.out.println("  23) Configuration - Custom Configuration");
+        System.out.println("  24) Configuration - Legacy Configuration");
+        System.out.println("  25) Configuration - Profiling");
+        System.out.println("  26) Configuration - Profiling (no binary)");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -120,6 +127,27 @@ public class All {
                 break;
             case "19":
                 com.syncleus.aparapi.examples.extension.SquareExample.main(args);
+                break;
+            case "20":
+                com.syncleus.aparapi.examples.configuration.AutoCleanUpArraysDemo.main(args);
+                break;
+            case "21":
+                com.syncleus.aparapi.examples.configuration.CleanUpArraysDemo.main(args);
+                break;
+            case "22":
+                com.syncleus.aparapi.examples.configuration.ConfigurationDemo.main(args);
+                break;
+            case "23":
+                com.syncleus.aparapi.examples.configuration.CustomConfigurationDemo.main(args);
+                break;
+            case "24":
+                com.syncleus.aparapi.examples.configuration.LegacyConfigurationDemo.main(args);
+                break;
+            case "25":
+                com.syncleus.aparapi.examples.configuration.ProfilingDemo.main(args);
+                break;
+            case "26":
+                com.syncleus.aparapi.examples.configuration.ProfilingDemoNoBinaryCaching.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
