@@ -45,6 +45,9 @@ public class All {
         System.out.println(" 28) Javaone - Game of Life");
         System.out.println(" 29) Javaone - Mandlebrot");
         System.out.println(" 30) Javaone - NBody");
+        System.out.println(" 31) NBody");
+        System.out.println(" 32) NBody - Local");
+        System.out.println(" 33) NBody - Sequential");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -164,6 +167,15 @@ public class All {
                 break;
             case "30":
                 com.syncleus.aparapi.examples.javaonedemo.NBody.main(args);
+                break;
+            case "31":
+                com.syncleus.aparapi.examples.nbody.Main.main(args);
+                break;
+            case "32":
+                com.syncleus.aparapi.examples.nbody.Local.main(args);
+                break;
+            case "33":
+                com.syncleus.aparapi.examples.nbody.Seq.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");

@@ -1,3 +1,13 @@
+/**
+ * This product currently only contains code developed by authors
+ * of specific components, as identified by the source code files.
+ *
+ * Since product implements StAX API, it has dependencies to StAX API
+ * classes.
+ *
+ * For additional credits (generally to people who reported problems)
+ * see CREDITS file.
+ */
 /*
 Copyright (c) 2010-2011, Advanced Micro Devices, Inc.
 All rights reserved.
@@ -34,7 +44,7 @@ to national security controls as identified on the Commerce Control List (curren
 of EAR).  For the most current Country Group listings, or for additional information about the EAR or your obligations
 under those regulations, please refer to the U.S. Bureau of Industry and Security's website at http://www.bis.doc.gov/. 
 
-*/
+ */
 package com.syncleus.aparapi.examples.nbody;
 
 import java.awt.BorderLayout;
@@ -46,15 +56,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.GL2;
-import javax.media.opengl.GLAutoDrawable;
-import javax.media.opengl.GLCapabilities;
-import javax.media.opengl.GLEventListener;
-import javax.media.opengl.GLException;
-import javax.media.opengl.awt.GLCanvas;
-import javax.media.opengl.fixedfunc.GLLightingFunc;
-import javax.media.opengl.glu.GLU;
+import com.jogamp.opengl.GL;
+import com.jogamp.opengl.GL2;
+import com.jogamp.opengl.GLAutoDrawable;
+import com.jogamp.opengl.GLCapabilities;
+import com.jogamp.opengl.GLEventListener;
+import com.jogamp.opengl.GLException;
+import com.jogamp.opengl.GLProfile;
+import com.jogamp.opengl.awt.GLCanvas;
+import com.jogamp.opengl.fixedfunc.GLLightingFunc;
+import com.jogamp.opengl.glu.GLU;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -67,19 +78,23 @@ import com.syncleus.aparapi.ProfileInfo;
 import com.syncleus.aparapi.Range;
 import com.jogamp.opengl.util.FPSAnimator;
 import com.jogamp.opengl.util.texture.Texture;
+import com.jogamp.opengl.util.texture.TextureData;
 import com.jogamp.opengl.util.texture.TextureIO;
 
 /**
- * An NBody clone which uses local memory to cache NBody positions for execution.
+ * NBody implementing demonstrating Aparapi kernels.
  * 
- * http://www.browndeertechnology.com/docs/BDT_OpenCL_Tutorial_NBody-rev3.html
+ * For a description of the NBody problem.
  * 
- * @see com.syncleus.aparapi.examples.nbody.Main
+ * @see http://en.wikipedia.org/wiki/N-body_problem
+ * 
+ *      We use JOGL to render the bodies.
+ * @see http://jogamp.org/jogl/www/
  * 
  * @author gfrost
- *
+ * 
  */
-public class Local{
+public class Main{
 
    public static class NBodyKernel extends Kernel{
       protected final float delT = .005f;
@@ -92,22 +107,21 @@ public class Local{
 
       private final float[] xyz; // positions xy and z of bodies
 
-      private final float[] vxyz; // velocity component of x,y and z of bodies 
-
-      @Local private final float[] localStuff; // local memory
+      private final float[] vxyz; // velocity component of x,y and z of bodies
 
       /**
        * Constructor initializes xyz and vxyz arrays.
+       * 
        * @param _bodies
        */
       public NBodyKernel(Range _range) {
          range = _range;
-         localStuff = new float[range.getLocalSize(0) * 3];
-
+         // range = Range.create(bodies);
          xyz = new float[range.getGlobalSize(0) * 3];
          vxyz = new float[range.getGlobalSize(0) * 3];
          final float maxDist = 20f;
          for (int body = 0; body < (range.getGlobalSize(0) * 3); body += 3) {
+
             final float theta = (float) (Math.random() * Math.PI * 2);
             final float phi = (float) (Math.random() * Math.PI * 2);
             final float radius = (float) (Math.random() * maxDist);
@@ -117,7 +131,8 @@ public class Local{
             xyz[body + 1] = (float) (radius * Math.sin(theta) * Math.sin(phi));
             xyz[body + 2] = (float) (radius * Math.cos(phi));
 
-            // divide into two 'spheres of bodies' by adjusting x 
+            // divide into two 'spheres of bodies' by adjusting x
+
             if ((body % 2) == 0) {
                xyz[body + 0] += maxDist * 1.5;
             } else {
@@ -127,41 +142,30 @@ public class Local{
          setExplicit(true);
       }
 
-      /** 
+      /**
        * Here is the kernel entrypoint. Here is where we calculate the position of each body
        */
       @Override public void run() {
-
-         final int globalId = getGlobalId(0) * 3;
+         final int body = getGlobalId();
+         final int count = getGlobalSize(0) * 3;
+         final int globalId = body * 3;
 
          float accx = 0.f;
          float accy = 0.f;
          float accz = 0.f;
+
          final float myPosx = xyz[globalId + 0];
          final float myPosy = xyz[globalId + 1];
          final float myPosz = xyz[globalId + 2];
-
-         for (int tile = 0; tile < (getGlobalSize(0) / getLocalSize(0)); tile++) {
-            // load one tile into local memory
-            final int gidx = ((tile * getLocalSize(0)) + getLocalId()) * 3;
-            final int lidx = getLocalId(0) * 3;
-            localStuff[lidx + 0] = xyz[gidx + 0];
-            localStuff[lidx + 1] = xyz[gidx + 1];
-            localStuff[lidx + 2] = xyz[gidx + 2];
-            // Synchronize to make sure data is available for processing
-            localBarrier();
-
-            for (int i = 0; i < (getLocalSize() * 3); i += 3) {
-               final float dx = localStuff[i + 0] - myPosx;
-               final float dy = localStuff[i + 1] - myPosy;
-               final float dz = localStuff[i + 2] - myPosz;
-               final float invDist = rsqrt((dx * dx) + (dy * dy) + (dz * dz) + espSqr);
-               final float s = mass * invDist * invDist * invDist;
-               accx = accx + (s * dx);
-               accy = accy + (s * dy);
-               accz = accz + (s * dz);
-            }
-            localBarrier();
+         for (int i = 0; i < count; i += 3) {
+            final float dx = xyz[i + 0] - myPosx;
+            final float dy = xyz[i + 1] - myPosy;
+            final float dz = xyz[i + 2] - myPosz;
+            final float invDist = rsqrt((dx * dx) + (dy * dy) + (dz * dz) + espSqr);
+            final float s = mass * invDist * invDist * invDist;
+            accx = accx + (s * dx);
+            accy = accy + (s * dy);
+            accz = accz + (s * dz);
          }
          accx = accx * delT;
          accy = accy * delT;
@@ -177,6 +181,7 @@ public class Local{
 
       /**
        * Render all particles to the OpenGL context
+       * 
        * @param gl
        */
 
@@ -204,15 +209,19 @@ public class Local{
 
    public static boolean running;
 
+   static Texture texture;
+
    public static void main(String _args[]) {
 
-      final NBodyKernel kernel = new NBodyKernel(Range.create(Integer.getInteger("bodies", 8192), 256));
+      //System.load("/Library/Java/JavaVirtualMachines/jdk1.7.0_09.jdk/Contents/Home/jre/lib/libawt.dylib");
+      //System.load("/Library/Java/JavaVirtualMachines/jdk1.7.0_09.jdk/Contents/Home/jre/lib/libjawt.dylib");
+      final NBodyKernel kernel = new NBodyKernel(Range.create(Integer.getInteger("bodies", 8192)));
 
       final JFrame frame = new JFrame("NBody");
 
       final JPanel panel = new JPanel(new BorderLayout());
       final JPanel controlPanel = new JPanel(new FlowLayout());
-      panel.add(controlPanel, BorderLayout.SOUTH);
+      panel.add(controlPanel, BorderLayout.NORTH);
 
       final JButton startButton = new JButton("Start");
 
@@ -242,10 +251,12 @@ public class Local{
 
       controlPanel.add(positionUpdatesPerMicroSecondTextField);
       final GLCapabilities caps = new GLCapabilities(null);
+      final GLProfile profile = caps.getGLProfile();
       caps.setDoubleBuffered(true);
       caps.setHardwareAccelerated(true);
       final GLCanvas canvas = new GLCanvas(caps);
-      final Dimension dimension = new Dimension(Integer.getInteger("width", 742), Integer.getInteger("height", 742));
+
+      final Dimension dimension = new Dimension(Integer.getInteger("width", 742 - 64), Integer.getInteger("height", 742 - 64));
       canvas.setPreferredSize(dimension);
 
       canvas.addGLEventListener(new GLEventListener(){
@@ -276,7 +287,8 @@ public class Local{
          @Override public void display(GLAutoDrawable drawable) {
 
             final GL2 gl = drawable.getGL().getGL2();
-
+            texture.enable(gl);
+            texture.bind(gl);
             gl.glLoadIdentity();
             gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
             gl.glColor3f(1f, 1f, 1f);
@@ -325,10 +337,13 @@ public class Local{
             gl.glShadeModel(GLLightingFunc.GL_SMOOTH);
             gl.glEnable(GL.GL_BLEND);
             gl.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE);
+            gl.glEnable(GL.GL_TEXTURE_2D);
+            gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
+            gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
             try {
-               final InputStream textureStream = Local.class.getResourceAsStream("particle.jpg");
-               final Texture texture = TextureIO.newTexture(textureStream, false, null);
-               texture.enable(gl);
+               final InputStream textureStream = Main.class.getResourceAsStream("particle.jpg");
+               TextureData data = TextureIO.newTextureData(profile, textureStream, false, "jpg");
+               texture = TextureIO.newTexture(data);
             } catch (final IOException e) {
                e.printStackTrace();
             } catch (final GLException e) {
@@ -356,8 +371,8 @@ public class Local{
       frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
       frame.pack();
       frame.setVisible(true);
-
       final FPSAnimator animator = new FPSAnimator(canvas, 100);
+
       animator.start();
 
    }
