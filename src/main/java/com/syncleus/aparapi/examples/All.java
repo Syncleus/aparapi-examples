@@ -41,6 +41,7 @@ public class All {
         System.out.println("  24) Configuration - Legacy Configuration");
         System.out.println("  25) Configuration - Profiling");
         System.out.println("  26) Configuration - Profiling (no binary)");
+        System.out.println("  27) Effects");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -148,6 +149,9 @@ public class All {
                 break;
             case "26":
                 com.syncleus.aparapi.examples.configuration.ProfilingDemoNoBinaryCaching.main(args);
+                break;
+            case "27":
+                com.syncleus.aparapi.examples.effects.Main.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
