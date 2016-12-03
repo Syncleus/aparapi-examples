@@ -8,10 +8,10 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.configuration;
+package com.aparapi.examples.configuration;
 
-import com.syncleus.aparapi.device.*;
-import com.syncleus.aparapi.internal.kernel.*;
+import com.aparapi.device.*;
+import com.aparapi.internal.kernel.*;
 
 import java.util.*;
 
@@ -21,7 +21,7 @@ import java.util.*;
 public class CustomConfigurationDemo {
 
    public static void main(String[] ignored) {
-      System.setProperty("com.syncleus.aparapi.dumpProfilesOnExit", "true");
+      System.setProperty("com.aparapi.dumpProfilesOnExit", "true");
       KernelManager manager = new KernelManager() {
          @Override
          protected List<Device.TYPE> getPreferredDeviceTypes() {

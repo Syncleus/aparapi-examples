@@ -46,10 +46,10 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.examples.squares;
+package com.aparapi.examples.squares;
 
-import com.syncleus.aparapi.Kernel;
-import com.syncleus.aparapi.Range;
+import com.aparapi.Kernel;
+import com.aparapi.Range;
 
 /**
  * An example Aparapi application which computes and displays squares of a set of 512 input values.

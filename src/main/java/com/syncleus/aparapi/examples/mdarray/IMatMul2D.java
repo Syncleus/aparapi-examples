@@ -8,9 +8,9 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.mdarray;
+package com.aparapi.examples.mdarray;
 
-import com.syncleus.aparapi.Kernel;
+import com.aparapi.Kernel;
 
 class IMatMul2D extends Kernel{
    int[][] A;

@@ -8,12 +8,12 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.configuration;
+package com.aparapi.examples.configuration;
 
 /**
  * Created by Barney on 24/08/2015.
  */
-public class KernelOkayInOpenCL extends com.syncleus.aparapi.Kernel {
+public class KernelOkayInOpenCL extends com.aparapi.Kernel {
    char[] inChars = "KernelOkayInOpenCL".toCharArray();
    char[] outChars = new char[inChars.length];
 

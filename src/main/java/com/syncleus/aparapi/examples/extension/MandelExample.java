@@ -46,13 +46,13 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.examples.extension;
+package com.aparapi.examples.extension;
 
-import com.syncleus.aparapi.*;
-import com.syncleus.aparapi.device.*;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.opencl.*;
-import com.syncleus.aparapi.opencl.OpenCL.*;
+import com.aparapi.*;
+import com.aparapi.device.*;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.opencl.*;
+import com.aparapi.opencl.OpenCL.*;
 
 import javax.swing.*;
 import java.awt.*;

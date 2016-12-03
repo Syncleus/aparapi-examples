@@ -45,7 +45,7 @@ of EAR).  For the most current Country Group listings, or for additional informa
 under those regulations, please refer to the U.S. Bureau of Industry and Security's website at http://www.bis.doc.gov/. 
 
 */
-package com.syncleus.aparapi.examples.nbody;
+package com.aparapi.examples.nbody;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -72,9 +72,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-import com.syncleus.aparapi.Kernel;
-import com.syncleus.aparapi.ProfileInfo;
-import com.syncleus.aparapi.Range;
+import com.aparapi.Kernel;
+import com.aparapi.ProfileInfo;
+import com.aparapi.Range;
 import com.jogamp.opengl.util.FPSAnimator;
 import com.jogamp.opengl.util.texture.Texture;
 import com.jogamp.opengl.util.texture.TextureIO;
@@ -84,7 +84,7 @@ import com.jogamp.opengl.util.texture.TextureIO;
  * 
  * http://www.browndeertechnology.com/docs/BDT_OpenCL_Tutorial_NBody-rev3.html
  * 
- * @see com.syncleus.aparapi.examples.nbody.Main
+ * @see com.aparapi.examples.nbody.Main
  * 
  * @author gfrost
  *

@@ -8,13 +8,13 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.extension;
+package com.aparapi.examples.extension;
 
-import com.syncleus.aparapi.*;
-import com.syncleus.aparapi.device.*;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.opencl.*;
-import com.syncleus.aparapi.opencl.OpenCL.Resource;
+import com.aparapi.*;
+import com.aparapi.device.*;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.opencl.*;
+import com.aparapi.opencl.OpenCL.Resource;
 
 /**
  * An example Aparapi application which displays a view of the Mandelbrot set and lets the user zoom in to a particular point.
@@ -27,7 +27,7 @@ import com.syncleus.aparapi.opencl.OpenCL.Resource;
  *
  */
 
-@Resource("com/syncleus/aparapi/examples/extension/mandel2.cl")
+@Resource("com/aparapi/aparapi/examples/extension/mandel2.cl")
 public interface MandelBrot extends OpenCL<MandelBrot>{
    MandelBrot createMandleBrot(//
                                Range range,//

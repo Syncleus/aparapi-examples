@@ -46,17 +46,17 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.examples.info;
+package com.aparapi.examples.info;
 
-import com.syncleus.aparapi.device.*;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.internal.opencl.*;
+import com.aparapi.device.*;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.internal.opencl.*;
 
 import java.util.*;
 
 public class Main{
    public static void main(String[] _args) {
-      System.out.println("com.syncleus.aparapi.examples.info.Main");
+      System.out.println("com.aparapi.examples.info.Main");
       List<OpenCLPlatform> platforms = (new OpenCLPlatform()).getOpenCLPlatforms();
       System.out.println("Machine contains " + platforms.size() + " OpenCL platforms");
       int platformc = 0;

@@ -46,19 +46,19 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.examples.convolution;
+package com.aparapi.examples.convolution;
 
-import com.syncleus.aparapi.*;
-import com.syncleus.aparapi.device.*;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.opencl.*;
-import com.syncleus.aparapi.opencl.OpenCL.*;
+import com.aparapi.*;
+import com.aparapi.device.*;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.opencl.*;
+import com.aparapi.opencl.OpenCL.*;
 
 import java.io.*;
 
 public class ConvolutionOpenCL{
 
-   @Resource("com/syncleus/aparapi/examples/convolution/convolution.cl") interface Convolution extends OpenCL<Convolution>{
+   @Resource("com/aparapi/aparapi/examples/convolution/convolution.cl") interface Convolution extends OpenCL<Convolution>{
       Convolution applyConvolution(//
             Range range, //
             @GlobalReadOnly("_convMatrix3x3") float[] _convMatrix3x3,//// only read from kernel 

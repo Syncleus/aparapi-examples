@@ -8,7 +8,7 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.oopnbody;
+package com.aparapi.examples.oopnbody;
 
 import java.util.List;
 

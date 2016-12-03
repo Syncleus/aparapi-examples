@@ -8,18 +8,18 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.extension;
+package com.aparapi.examples.extension;
 
-import com.syncleus.aparapi.Range;
-import com.syncleus.aparapi.device.Device;
-import com.syncleus.aparapi.device.OpenCLDevice;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.opencl.OpenCL;
-import com.syncleus.aparapi.opencl.OpenCL.Resource;
+import com.aparapi.Range;
+import com.aparapi.device.Device;
+import com.aparapi.device.OpenCLDevice;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.opencl.OpenCL;
+import com.aparapi.opencl.OpenCL.Resource;
 
 public class Pow4Example{
 
-   @Resource("com/syncleus/aparapi/examples/extension/squarer.cl")
+   @Resource("com/aparapi/aparapi/examples/extension/squarer.cl")
    interface Squarer extends OpenCL<Squarer>{
 
       public Squarer square(//

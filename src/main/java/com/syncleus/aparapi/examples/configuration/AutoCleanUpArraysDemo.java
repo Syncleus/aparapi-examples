@@ -8,14 +8,14 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.configuration;
+package com.aparapi.examples.configuration;
 
-import com.syncleus.aparapi.examples.mandel.*;
+import com.aparapi.examples.mandel.*;
 
 public class AutoCleanUpArraysDemo {
    public static void main(String[] ignored) {
 
-      System.setProperty("com.syncleus.aparapi.dumpProfileOnExecution", "true");
+      System.setProperty("com.aparapi.dumpProfileOnExecution", "true");
 
       int size = 1024;
       int[] rgbs = new int[size * size];

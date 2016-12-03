@@ -8,9 +8,9 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.progress;
+package com.aparapi.examples.progress;
 
-import com.syncleus.aparapi.Kernel;
+import com.aparapi.Kernel;
 
 /**
  * Kernel which performs very many meaningless calculations, used to demonstrate progress tracking and cancellation of multi-pass Kernels.

@@ -8,7 +8,7 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples;
+package com.aparapi.examples;
 
 import java.util.Scanner;
 
@@ -80,106 +80,106 @@ public class All {
         switch(line)
         {
             case "1":
-                com.syncleus.aparapi.examples.life.Main.main(args);
+                com.aparapi.examples.life.Main.main(args);
                 break;
             case "2":
-                com.syncleus.aparapi.examples.mandel.Main.main(args);
+                com.aparapi.examples.mandel.Main.main(args);
                 break;
             case "3":
-                com.syncleus.aparapi.examples.mandel.Main2D.main(args);
+                com.aparapi.examples.mandel.Main2D.main(args);
                 break;
             case "4":
-                com.syncleus.aparapi.examples.convolution.Convolution.main(args);
+                com.aparapi.examples.convolution.Convolution.main(args);
                 break;
             case "5":
-                com.syncleus.aparapi.examples.convolution.ConvolutionOpenCL.main(args);
+                com.aparapi.examples.convolution.ConvolutionOpenCL.main(args);
                 break;
             case "6":
-                com.syncleus.aparapi.examples.convolution.PureJava.main(args);
+                com.aparapi.examples.convolution.PureJava.main(args);
                 break;
             case "7":
-                com.syncleus.aparapi.examples.blackscholes.Main.main(args);
+                com.aparapi.examples.blackscholes.Main.main(args);
                 break;
             case "8":
-                com.syncleus.aparapi.examples.squares.Main.main(args);
+                com.aparapi.examples.squares.Main.main(args);
                 break;
             case "9":
-                com.syncleus.aparapi.examples.progress.MultiPassKernelSwingWorkerDemo.main(args);
+                com.aparapi.examples.progress.MultiPassKernelSwingWorkerDemo.main(args);
                 break;
             case "10":
-                com.syncleus.aparapi.examples.progress.ProgressAndCancelDemo.main(args);
+                com.aparapi.examples.progress.ProgressAndCancelDemo.main(args);
                 break;
             case "11":
-                com.syncleus.aparapi.examples.info.Main.main(args);
+                com.aparapi.examples.info.Main.main(args);
                 break;
             case "12":
-                com.syncleus.aparapi.examples.median.MedianDemo.main(args);
+                com.aparapi.examples.median.MedianDemo.main(args);
                 break;
             case "13":
-                com.syncleus.aparapi.examples.mdarray.MDArray.main(args);
+                com.aparapi.examples.mdarray.MDArray.main(args);
                 break;
             case "14":
-                com.syncleus.aparapi.examples.add.Main.main(args);
+                com.aparapi.examples.add.Main.main(args);
                 break;
             case "15":
-                com.syncleus.aparapi.examples.extension.FFTExample.main(args);
+                com.aparapi.examples.extension.FFTExample.main(args);
                 break;
             case "16":
-                com.syncleus.aparapi.examples.extension.Histogram.main(args);
+                com.aparapi.examples.extension.Histogram.main(args);
                 break;
             case "17":
-                com.syncleus.aparapi.examples.extension.HistogramIdeal.main(args);
+                com.aparapi.examples.extension.HistogramIdeal.main(args);
                 break;
             case "18":
-                com.syncleus.aparapi.examples.extension.MandelExample.main(args);
+                com.aparapi.examples.extension.MandelExample.main(args);
                 break;
             case "19":
-                com.syncleus.aparapi.examples.extension.SquareExample.main(args);
+                com.aparapi.examples.extension.SquareExample.main(args);
                 break;
             case "20":
-                com.syncleus.aparapi.examples.configuration.AutoCleanUpArraysDemo.main(args);
+                com.aparapi.examples.configuration.AutoCleanUpArraysDemo.main(args);
                 break;
             case "21":
-                com.syncleus.aparapi.examples.configuration.CleanUpArraysDemo.main(args);
+                com.aparapi.examples.configuration.CleanUpArraysDemo.main(args);
                 break;
             case "22":
-                com.syncleus.aparapi.examples.configuration.ConfigurationDemo.main(args);
+                com.aparapi.examples.configuration.ConfigurationDemo.main(args);
                 break;
             case "23":
-                com.syncleus.aparapi.examples.configuration.CustomConfigurationDemo.main(args);
+                com.aparapi.examples.configuration.CustomConfigurationDemo.main(args);
                 break;
             case "24":
-                com.syncleus.aparapi.examples.configuration.LegacyConfigurationDemo.main(args);
+                com.aparapi.examples.configuration.LegacyConfigurationDemo.main(args);
                 break;
             case "25":
-                com.syncleus.aparapi.examples.configuration.ProfilingDemo.main(args);
+                com.aparapi.examples.configuration.ProfilingDemo.main(args);
                 break;
             case "26":
-                com.syncleus.aparapi.examples.configuration.ProfilingDemoNoBinaryCaching.main(args);
+                com.aparapi.examples.configuration.ProfilingDemoNoBinaryCaching.main(args);
                 break;
             case "27":
-                com.syncleus.aparapi.examples.effects.Main.main(args);
+                com.aparapi.examples.effects.Main.main(args);
                 break;
             case "28":
-                com.syncleus.aparapi.examples.javaonedemo.Life.main(args);
+                com.aparapi.examples.javaonedemo.Life.main(args);
                 break;
             case "29":
-                com.syncleus.aparapi.examples.javaonedemo.Mandel.main(args);
+                com.aparapi.examples.javaonedemo.Mandel.main(args);
                 break;
             case "30":
-                com.syncleus.aparapi.examples.javaonedemo.NBody.main(args);
+                com.aparapi.examples.javaonedemo.NBody.main(args);
                 break;
             case "31":
-                com.syncleus.aparapi.examples.nbody.Main.main(args);
+                com.aparapi.examples.nbody.Main.main(args);
                 break;
             case "32":
-                com.syncleus.aparapi.examples.nbody.Local.main(args);
+                com.aparapi.examples.nbody.Local.main(args);
                 break;
             case "33":
-                com.syncleus.aparapi.examples.nbody.Seq.main(args);
+                com.aparapi.examples.nbody.Seq.main(args);
                 break;
             case "34":
-                com.syncleus.aparapi.examples.oopnbody.Main.main(args);
+                com.aparapi.examples.oopnbody.Main.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");

@@ -1,7 +1,7 @@
-package com.syncleus.aparapi.test.runtime;
+package com.aparapi.test.runtime;
 
-import com.syncleus.aparapi.Kernel;
-import com.syncleus.aparapi.Range;
+import com.aparapi.Kernel;
+import com.aparapi.Range;
 
 public class Issue69{
 

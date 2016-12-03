@@ -1,7 +1,7 @@
-package com.syncleus.aparapi.test.runtime;
+package com.aparapi.test.runtime;
 
-import com.syncleus.aparapi.*;
-import com.syncleus.aparapi.device.*;
+import com.aparapi.*;
+import com.aparapi.device.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;

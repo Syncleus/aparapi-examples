@@ -46,10 +46,10 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.examples.mandel;
+package com.aparapi.examples.mandel;
 
-import com.syncleus.aparapi.Kernel;
-import com.syncleus.aparapi.*;
+import com.aparapi.Kernel;
+import com.aparapi.*;
 
 import javax.swing.*;
 import java.awt.*;

@@ -8,7 +8,7 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.extension;
+package com.aparapi.examples.extension;
 
 public class StopWatch{
    long start = 0L;

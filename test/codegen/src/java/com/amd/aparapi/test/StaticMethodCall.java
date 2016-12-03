@@ -1,6 +1,6 @@
-package com.syncleus.aparapi.test;
+package com.aparapi.test;
 
-import com.syncleus.aparapi.Kernel;
+import com.aparapi.Kernel;
 
 public class StaticMethodCall extends Kernel{
    public static int add(int i, int j) {

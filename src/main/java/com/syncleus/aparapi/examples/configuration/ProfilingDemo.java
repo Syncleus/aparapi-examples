@@ -8,12 +8,12 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.configuration;
+package com.aparapi.examples.configuration;
 
-import com.syncleus.aparapi.*;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.examples.blackscholes.Main.*;
-import com.syncleus.aparapi.examples.mandel.*;
+import com.aparapi.*;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.examples.blackscholes.Main.*;
+import com.aparapi.examples.mandel.*;
 
 /**
  * Demonstrate new enhanced profiling capability, profiling the kernel from the blackscholes sample.

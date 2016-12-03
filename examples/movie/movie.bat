@@ -9,7 +9,7 @@ echo "win32!"
 set PATH=%PATH%;ffmpeg\ffmpeg-git-9c2651a-win32-shared\bin
 set PATH=%PATH%;jjmpeg\jjmpeg-0.0\native\mswin-i386
 :win64
-set PATH=%PATH%;..\..\com.syncleus.aparapi.jni\dist
-java -classpath jjmpeg\jjmpeg-0.0\dist\jjmpeg.jar;..\..\com.syncleus.aparapi\dist\aparapi.jar;movie.jar; com.syncleus.aparapi.examples.movie.%1 %2
+set PATH=%PATH%;..\..\com.aparapi.jni\dist
+java -classpath jjmpeg\jjmpeg-0.0\dist\jjmpeg.jar;..\..\com.aparapi\dist\aparapi.jar;movie.jar; com.aparapi.examples.movie.%1 %2
 
 ENDLOCAL

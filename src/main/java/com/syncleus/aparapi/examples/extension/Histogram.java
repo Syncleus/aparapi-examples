@@ -8,18 +8,18 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.extension;
+package com.aparapi.examples.extension;
 
-import com.syncleus.aparapi.Kernel;
-import com.syncleus.aparapi.Range;
-import com.syncleus.aparapi.device.Device;
-import com.syncleus.aparapi.device.OpenCLDevice;
-import com.syncleus.aparapi.opencl.OpenCL;
-import com.syncleus.aparapi.opencl.OpenCL.Resource;
+import com.aparapi.Kernel;
+import com.aparapi.Range;
+import com.aparapi.device.Device;
+import com.aparapi.device.OpenCLDevice;
+import com.aparapi.opencl.OpenCL;
+import com.aparapi.opencl.OpenCL.Resource;
 
 public class Histogram{
 
-   @Resource("com/syncleus/aparapi/examples/extension/HistogramKernel.cl") interface HistogramKernel extends OpenCL<HistogramKernel>{
+   @Resource("com/aparapi/aparapi/examples/extension/HistogramKernel.cl") interface HistogramKernel extends OpenCL<HistogramKernel>{
 
       public HistogramKernel histogram256(//
             Range _range,//

@@ -1,4 +1,4 @@
-package com.syncleus.aparapi.test;
+package com.aparapi.test;
 
 public class AccessNested2DIntArray{
    int[] indices = new int[1024];

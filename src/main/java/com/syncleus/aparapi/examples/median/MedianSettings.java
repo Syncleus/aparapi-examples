@@ -8,7 +8,7 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.median;
+package com.aparapi.examples.median;
 
 public class MedianSettings {
    public final int windowWidth;

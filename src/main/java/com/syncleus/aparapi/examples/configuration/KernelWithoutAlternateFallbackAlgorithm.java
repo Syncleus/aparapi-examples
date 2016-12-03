@@ -8,9 +8,9 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.configuration;
+package com.aparapi.examples.configuration;
 
-import com.syncleus.aparapi.*;
+import com.aparapi.*;
 
 /**
  * Kernel which will always fail to run on an OpenCLDevice but has an alternative fallback algorithm.

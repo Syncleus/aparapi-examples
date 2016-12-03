@@ -8,9 +8,9 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.median;
+package com.aparapi.examples.median;
 
-import com.syncleus.aparapi.*;
+import com.aparapi.*;
 
 /**
  * Provides support for pixel windows of size no greater than 49 (e.g. 7x7).

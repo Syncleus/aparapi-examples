@@ -8,7 +8,7 @@
  */
 package gov.pnnl.aparapi.matrix;
 
-import com.syncleus.aparapi.Kernel;
+import com.aparapi.Kernel;
 
 /**
  * This kernel attempts to re-implement the Lucene OpenBitSet functionality on a GPU

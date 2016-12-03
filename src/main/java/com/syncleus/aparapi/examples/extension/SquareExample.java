@@ -8,16 +8,16 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.extension;
+package com.aparapi.examples.extension;
 
-import com.syncleus.aparapi.ProfileInfo;
-import com.syncleus.aparapi.Range;
-import com.syncleus.aparapi.device.Device;
-import com.syncleus.aparapi.device.OpenCLDevice;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.opencl.OpenCL;
-import com.syncleus.aparapi.opencl.OpenCL.Resource;
-import com.syncleus.aparapi.opencl.OpenCL.Source;
+import com.aparapi.ProfileInfo;
+import com.aparapi.Range;
+import com.aparapi.device.Device;
+import com.aparapi.device.OpenCLDevice;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.opencl.OpenCL;
+import com.aparapi.opencl.OpenCL.Resource;
+import com.aparapi.opencl.OpenCL.Source;
 import java.util.List;
 
 public class SquareExample{
@@ -33,7 +33,7 @@ public class SquareExample{
             @GlobalReadWrite("out") float[] out);
    }
 
-   @Resource("com/syncleus/aparapi/examples/extension/squarer.cl") interface SquarerWithResource extends OpenCL<SquarerWithResource>{
+   @Resource("com/aparapi/aparapi/examples/extension/squarer.cl") interface SquarerWithResource extends OpenCL<SquarerWithResource>{
       public SquarerWithResource square(//
             Range _range,//
             @GlobalReadWrite("in") float[] in,//

@@ -1,9 +1,9 @@
-package com.syncleus.aparapi.test;
+package com.aparapi.test;
 
 // this example gave the following error:
-/// com.syncleus.aparapi.classtools.writer.CodeGenException: composite COMPOSITE_ARBITRARY_SCOPE
+/// com.aparapi.classtools.writer.CodeGenException: composite COMPOSITE_ARBITRARY_SCOPE
 
-import com.syncleus.aparapi.Kernel;
+import com.aparapi.Kernel;
 
 public class CompositeArbitraryScope extends Kernel{
 

@@ -1,7 +1,7 @@
 # Aparapi
 
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
-[![Javadocs](http://www.javadoc.io/badge/com.syncleus.aparapi/aparapi.svg)](http://www.javadoc.io/doc/com.syncleus.aparapi/aparapi)
+[![Javadocs](http://www.javadoc.io/badge/com.aparapi/aparapi.svg)](http://www.javadoc.io/doc/com.aparapi/aparapi)
 [![Gitter](https://badges.gitter.im/Syncleus/aparapi.svg)](https://gitter.im/Syncleus/aparapi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A framework for executing native Java code on the GPU.
@@ -14,7 +14,7 @@ A GPU has a unique architecture that causes them to behave differently than a CP
 
 Aparapi was originally a project conceived and developed by AMD corporation. It was later abandoned by AMD and sat mostly-idle for several years. Despite this there were some failed efforts by the community to keep the project alive, but without a clear community leader no new releases ever came. Eventually we came along and rescued the project, and modernized the project. Finally after such a long wait the first Aparapi release in 5 years was published and the community continues to push forward with renewed excitement.
 
-For detailed documentation see [Aparapi.com](http://Aparapi.com) or check out the [latest Javadocs](http://www.javadoc.io/doc/com.syncleus.ferma/ferma).
+For detailed documentation see [Aparapi.com](http://Aparapi.com) or check out the [latest Javadocs](http://www.javadoc.io/doc/com.aparapi.ferma/ferma).
 
 For support please use [Gitter](https://gitter.im/Syncleus/aparapi) or the [official Aparapi mailing list](https://groups.google.com/a/syncleus.com/d/forum/aparapi-list).
 
@@ -27,7 +27,7 @@ To include Aparapi in your project of choice include the following Maven depende
 ```xml
 
 <dependency>
-    <groupId>com.syncleus.aparapi</groupId>
+    <groupId>com.aparapi</groupId>
     <artifactId>aparapi</artifactId>
     <version>1.0.0</version>
 </dependency>

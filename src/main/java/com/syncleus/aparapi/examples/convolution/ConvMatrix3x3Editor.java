@@ -46,7 +46,7 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.examples.convolution;
+package com.aparapi.examples.convolution;
 
 import java.awt.BorderLayout;
 import java.awt.Component;

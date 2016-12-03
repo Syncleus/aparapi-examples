@@ -8,9 +8,9 @@
         <version>3</version>
     </parent>
 
-    <groupId>com.syncleus.aparapi</groupId>
+    <groupId>com.aparapi</groupId>
     <artifactId>aparapi-examples</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -33,7 +33,7 @@
 
     <organization>
         <name>Syncleus</name>
-        <url>http://www.syncleus.com</url>
+        <url>http://syncleus.com</url>
     </organization>
 
     <scm>
@@ -54,7 +54,7 @@
             <email>Jeffrey.Freeman@Syncleus.com</email>
             <url>http://JeffreyFreeman.me</url>
             <organization>Syncleus</organization>
-            <organizationUrl>http://www.syncleus.com</organizationUrl>
+            <organizationUrl>http://www.aparapi.com</organizationUrl>
             <roles>
                 <role>Chief Technology Officer</role>
                 <role>Project Owner</role>
@@ -79,7 +79,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.syncleus.aparapi</groupId>
+            <groupId>com.aparapi</groupId>
             <artifactId>aparapi</artifactId>
             <version>1.0.0</version>
         </dependency>
@@ -102,10 +102,10 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.syncleus.aparapi.examples.All</mainClass>
+                    <mainClass>com.aparapi.examples.All</mainClass>
                     <arguments>
-                        <argument>com.syncleus.aparapi.executionMode=GPU</argument>
-                        <argument>com.syncleus.aparapi.enableShowGeneratedOpenCL=true</argument>
+                        <argument>com.aparapi.executionMode=GPU</argument>
+                        <argument>com.aparapi.enableShowGeneratedOpenCL=true</argument>
                     </arguments>
                 </configuration>
             </plugin>

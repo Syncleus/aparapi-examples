@@ -8,17 +8,17 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.extension;
+package com.aparapi.examples.extension;
 
-import com.syncleus.aparapi.Range;
-import com.syncleus.aparapi.device.Device;
-import com.syncleus.aparapi.device.OpenCLDevice;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.opencl.OpenCL;
+import com.aparapi.Range;
+import com.aparapi.device.Device;
+import com.aparapi.device.OpenCLDevice;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.opencl.OpenCL;
 
 public class HistogramIdeal{
 
-   // @Resource("com/amd/aparapi/sample/extension/HistogramKernel.cl")
+   // @Resource("com/aparapi/sample/extension/HistogramKernel.cl")
    interface HistogramKernel extends OpenCL<HistogramKernel>{
 
       public HistogramKernel histogram256(//
@@ -63,7 +63,7 @@ public class HistogramIdeal{
             final OpenCLDevice openclDevice = (OpenCLDevice) device;
 
             final HistogramKernel histogram = openclDevice.bind(HistogramKernel.class, Histogram.class.getClassLoader()
-                  .getResourceAsStream("com/amd/aparapi/sample/extension/HistogramKernel.cl"));
+                  .getResourceAsStream("com/aparapi/sample/extension/HistogramKernel.cl"));
             long start = System.nanoTime();
             histogram.begin()//
                   .put(data)//

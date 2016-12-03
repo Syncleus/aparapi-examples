@@ -8,11 +8,11 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.progress;
+package com.aparapi.examples.progress;
 
-import com.syncleus.aparapi.*;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.util.swing.MultiPassKernelSwingWorker;
+import com.aparapi.*;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.util.swing.MultiPassKernelSwingWorker;
 
 import javax.swing.*;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;

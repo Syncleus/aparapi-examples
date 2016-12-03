@@ -1,4 +1,4 @@
-package com.syncleus.aparapi.test;
+package com.aparapi.test;
 
 public class AccessLongArray{
    long[] longs = new long[1024];

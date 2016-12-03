@@ -46,9 +46,9 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
  */
 
-package com.syncleus.aparapi.examples.convolution;
+package com.aparapi.examples.convolution;
 
-import com.syncleus.aparapi.*;
+import com.aparapi.*;
 
 import java.io.*;
 

@@ -8,9 +8,9 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.progress;
+package com.aparapi.examples.progress;
 
-import com.syncleus.aparapi.internal.kernel.*;
+import com.aparapi.internal.kernel.*;
 
 import javax.swing.*;
 import javax.swing.plaf.nimbus.*;
@@ -36,11 +36,11 @@ public class ProgressAndCancelDemo {
 
    public static void main(String[] ignored) throws Exception {
 
-      System.setProperty("com.syncleus.aparapi.enableShowGeneratedOpenCL", "true");
-      System.setProperty("com.syncleus.aparapi.enableVerboseJNI", "true");
-      System.setProperty("com.syncleus.aparapi.dumpFlags", "true");
-      System.setProperty("com.syncleus.aparapi.enableVerboseJNIOpenCLResourceTracking", "true");
-      System.setProperty("com.syncleus.aparapi.enableExecutionModeReporting", "true");
+      System.setProperty("com.aparapi.enableShowGeneratedOpenCL", "true");
+      System.setProperty("com.aparapi.enableVerboseJNI", "true");
+      System.setProperty("com.aparapi.dumpFlags", "true");
+      System.setProperty("com.aparapi.enableVerboseJNIOpenCLResourceTracking", "true");
+      System.setProperty("com.aparapi.enableExecutionModeReporting", "true");
 
       kernel = new LongRunningKernel();
       if (TEST_JTP) {

@@ -8,9 +8,9 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.configuration;
+package com.aparapi.examples.configuration;
 
-import com.syncleus.aparapi.internal.kernel.*;
+import com.aparapi.internal.kernel.*;
 
 /**
  * Created by Barney on 13/09/2015.

@@ -8,13 +8,13 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.extension;
+package com.aparapi.examples.extension;
 
-import com.syncleus.aparapi.Range;
-import com.syncleus.aparapi.device.Device;
-import com.syncleus.aparapi.device.OpenCLDevice;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.opencl.OpenCL;
+import com.aparapi.Range;
+import com.aparapi.device.Device;
+import com.aparapi.device.OpenCLDevice;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.opencl.OpenCL;
 
 public class SwapExample{
 

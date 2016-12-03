@@ -35,7 +35,7 @@ of EAR).  For the most current Country Group listings, or for additional informa
 under those regulations, please refer to the U.S. Bureau of Industry and Security's website at http://www.bis.doc.gov/. 
 
 */
-package com.syncleus.aparapi;
+package com.aparapi;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -78,7 +78,7 @@ public class CreateJUnitTests {
          Source source = new Source(Class.forName(testPackageName + "." + className), sourceDir);
 
          StringBuilder sb = new StringBuilder();
-         sb.append("package com.syncleus.aparapi.test.junit.codegen;\n");
+         sb.append("package com.aparapi.test.junit.codegen;\n");
          sb.append("import org.junit.Test;\n");
          String doc = source.getDocString();
          if (doc.length() > 0) {
@@ -86,7 +86,7 @@ public class CreateJUnitTests {
             sb.append(doc);
             sb.append("\n */\n");
          }
-         sb.append("public class " + className + " extends com.syncleus.aparapi.CodeGenJUnitBase{\n");
+         sb.append("public class " + className + " extends com.aparapi.CodeGenJUnitBase{\n");
          appendExpectedOpenCL(source, sb);
          appendExpectedExceptions(source, sb);
          appendTest(testPackageName, className, "", sb);
@@ -112,12 +112,12 @@ public class CreateJUnitTests {
    private static void appendExpectedExceptions(Source source, StringBuilder sb) {
       String exceptions = source.getExceptionsString();
       if (exceptions.length() > 0) {
-         sb.append("   private static final Class<? extends com.syncleus.aparapi.internal.exception.AparapiException> expectedException = ");
+         sb.append("   private static final Class<? extends com.aparapi.internal.exception.AparapiException> expectedException = ");
 
-         sb.append("com.syncleus.aparapi.internal.exception." + exceptions + ".class");
+         sb.append("com.aparapi.internal.exception." + exceptions + ".class");
          sb.append(";\n");
       } else {
-         sb.append("   private static final Class<? extends com.syncleus.aparapi.internal.exception.AparapiException> expectedException = null;\n");
+         sb.append("   private static final Class<? extends com.aparapi.internal.exception.AparapiException> expectedException = null;\n");
       }
    }
 

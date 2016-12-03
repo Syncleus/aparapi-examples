@@ -46,10 +46,10 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 
 */
 
-package com.syncleus.aparapi.examples.add;
+package com.aparapi.examples.add;
 
-import com.syncleus.aparapi.Kernel;
-import com.syncleus.aparapi.Range;
+import com.aparapi.Kernel;
+import com.aparapi.Range;
 
 public class Main{
 

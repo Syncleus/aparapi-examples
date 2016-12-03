@@ -8,15 +8,15 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.configuration;
+package com.aparapi.examples.configuration;
 
-import com.syncleus.aparapi.*;
-import com.syncleus.aparapi.internal.kernel.*;
+import com.aparapi.*;
+import com.aparapi.internal.kernel.*;
 
 import java.util.*;
 
 /**
- * Tests device selection via {@link com.syncleus.aparapi.internal.kernel.KernelManager}.
+ * Tests device selection via {@link com.aparapi.internal.kernel.KernelManager}.
  */
 public class ConfigurationDemo {
    public static void main(String[] ignored) {

@@ -8,9 +8,9 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.median;
+package com.aparapi.examples.median;
 
-import com.syncleus.aparapi.internal.kernel.*;
+import com.aparapi.internal.kernel.*;
 
 import javax.imageio.*;
 import javax.swing.*;
@@ -37,15 +37,15 @@ public class MedianDemo {
 
    public static void main(String[] ignored) {
       final int size = 5;
-      System.setProperty("com.syncleus.aparapi.dumpProfilesOnExit", "true");
+      System.setProperty("com.aparapi.dumpProfilesOnExit", "true");
       boolean verbose = false;
       if (verbose)
       {
-          System.setProperty("com.syncleus.aparapi.enableVerboseJNI", "true");
-          System.setProperty("com.syncleus.aparapi.dumpFlags", "true");
-          System.setProperty("com.syncleus.aparapi.enableShowGeneratedOpenCL", "true");
-          System.setProperty("com.syncleus.aparapi.enableVerboseJNIOpenCLResourceTracking", "true");
-          System.setProperty("com.syncleus.aparapi.enableExecutionModeReporting", "true");
+          System.setProperty("com.aparapi.enableVerboseJNI", "true");
+          System.setProperty("com.aparapi.dumpFlags", "true");
+          System.setProperty("com.aparapi.enableShowGeneratedOpenCL", "true");
+          System.setProperty("com.aparapi.enableVerboseJNIOpenCLResourceTracking", "true");
+          System.setProperty("com.aparapi.enableExecutionModeReporting", "true");
       }
 
 //      KernelManager.setKernelManager(new KernelManager(){

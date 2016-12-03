@@ -35,17 +35,17 @@ of EAR).  For the most current Country Group listings, or for additional informa
 under those regulations, please refer to the U.S. Bureau of Industry and Security's website at http://www.bis.doc.gov/. 
 
 */
-package com.syncleus.aparapi;
+package com.aparapi;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
-import com.syncleus.aparapi.internal.exception.AparapiException;
-import com.syncleus.aparapi.internal.model.ClassModel;
-import com.syncleus.aparapi.internal.model.Entrypoint;
-import com.syncleus.aparapi.internal.writer.KernelWriter;
+import com.aparapi.internal.exception.AparapiException;
+import com.aparapi.internal.model.ClassModel;
+import com.aparapi.internal.model.Entrypoint;
+import com.aparapi.internal.writer.KernelWriter;
 
 public class CodeGenJUnitBase {
 

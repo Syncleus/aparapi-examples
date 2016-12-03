@@ -8,19 +8,19 @@
  * For additional credits (generally to people who reported problems)
  * see CREDITS file.
  */
-package com.syncleus.aparapi.examples.extension;
+package com.aparapi.examples.extension;
 
-import com.syncleus.aparapi.*;
-import com.syncleus.aparapi.device.*;
-import com.syncleus.aparapi.internal.kernel.*;
-import com.syncleus.aparapi.opencl.*;
-import com.syncleus.aparapi.opencl.OpenCL.*;
+import com.aparapi.*;
+import com.aparapi.device.*;
+import com.aparapi.internal.kernel.*;
+import com.aparapi.opencl.*;
+import com.aparapi.opencl.OpenCL.*;
 
 import java.util.*;
 
 public class FFTExample{
 
-   @Resource("com/syncleus/aparapi/examples/extension/fft.cl") interface FFT extends OpenCL<FFT>{
+   @Resource("com/aparapi/aparapi/examples/extension/fft.cl") interface FFT extends OpenCL<FFT>{
 
       public FFT forward(//
             Range _range,//
