@@ -81,7 +81,7 @@
         <dependency>
             <groupId>com.aparapi</groupId>
             <artifactId>aparapi</artifactId>
-            <version>1.0.0</version>
+            <version>1.1.0</version>
         </dependency>
         <dependency>
             <groupId>org.jogamp.jogl</groupId>
