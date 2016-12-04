@@ -1,7 +1,8 @@
 # Aparapi
 
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
-[![Javadocs](http://www.javadoc.io/badge/com.aparapi/aparapi.svg)](http://www.javadoc.io/doc/com.aparapi/aparapi)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aparapi/aparapi-examples/badge.png?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.aparapi/aparapi-examples/)
+[![Javadocs](http://www.javadoc.io/badge/com.aparapi/aparapi-examples.svg)](http://www.javadoc.io/doc/com.aparapi/aparapi-examples)
 [![Gitter](https://badges.gitter.im/Syncleus/aparapi.svg)](https://gitter.im/Syncleus/aparapi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A framework for executing native Java code on the GPU.
@@ -14,11 +15,11 @@ A GPU has a unique architecture that causes them to behave differently than a CP
 
 Aparapi was originally a project conceived and developed by AMD corporation. It was later abandoned by AMD and sat mostly-idle for several years. Despite this there were some failed efforts by the community to keep the project alive, but without a clear community leader no new releases ever came. Eventually we came along and rescued the project, and modernized the project. Finally after such a long wait the first Aparapi release in 5 years was published and the community continues to push forward with renewed excitement.
 
-For detailed documentation see [Aparapi.com](http://Aparapi.com) or check out the [latest Javadocs](http://www.javadoc.io/doc/com.aparapi.ferma/ferma).
+For detailed documentation see [Aparapi.com](http://Aparapi.com) or check out the [latest Javadocs](http://www.javadoc.io/doc/com.aparapi/aparapi-examples).
 
 For support please use [Gitter](https://gitter.im/Syncleus/aparapi) or the [official Aparapi mailing list](https://groups.google.com/a/syncleus.com/d/forum/aparapi-list).
 
-Please file bugs and feature requests on [Github](https://github.com/Syncleus/aparapi/issues).
+Please file bugs and feature requests on [Github](https://github.com/Syncleus/aparapi-examples/issues).
 
 ## Dependency
 
@@ -35,12 +36,12 @@ To include Aparapi in your project of choice include the following Maven depende
 
 ## Obtaining the Source
 
-The official source repository for Aparapi is located in the Syncleus Github repository and can be cloned using the
+The official source repository for Aparapi Examples is located in the Syncleus Github repository and can be cloned using the
 following command.
 
 ```bash
 
-git clone https://github.com/Syncleus/aparapi.git
+git clone https://github.com/Syncleus/aparapi-examples.git
 ```
 
 ## Getting Started
