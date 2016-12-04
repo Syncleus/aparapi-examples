@@ -84,7 +84,7 @@ import com.jogamp.opengl.util.texture.TextureIO;
  * 
  * http://www.browndeertechnology.com/docs/BDT_OpenCL_Tutorial_NBody-rev3.html
  * 
- * @see com.aparapi.examples.nbody.Main
+ * @see Main
  * 
  * @author gfrost
  *

@@ -20,7 +20,7 @@ import java.util.*;
 
 public class FFTExample{
 
-   @Resource("com/aparapi/aparapi/examples/extension/fft.cl") interface FFT extends OpenCL<FFT>{
+   @Resource("com/aparapi/examples/extension/fft.cl") interface FFT extends OpenCL<FFT>{
 
       public FFT forward(//
             Range _range,//

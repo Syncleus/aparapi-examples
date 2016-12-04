@@ -27,7 +27,7 @@ import com.aparapi.opencl.OpenCL.Resource;
  *
  */
 
-@Resource("com/aparapi/aparapi/examples/extension/mandel2.cl")
+@Resource("com/aparapi/examples/extension/mandel2.cl")
 public interface MandelBrot extends OpenCL<MandelBrot>{
    MandelBrot createMandleBrot(//
                                Range range,//

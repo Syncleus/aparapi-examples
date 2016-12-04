@@ -10,17 +10,16 @@
  */
 package com.aparapi.examples.configuration;
 
+import com.aparapi.examples.mandel.Main;
 import com.aparapi.*;
 import com.aparapi.internal.kernel.*;
-import com.aparapi.examples.blackscholes.Main.*;
-import com.aparapi.examples.mandel.*;
 
 /**
  * Demonstrate new enhanced profiling capability, profiling the kernel from the blackscholes sample.
  */
 public class ProfilingDemo {
 
-   private static BlackScholesKernel kernel;
+   private static com.aparapi.examples.blackscholes.Main.BlackScholesKernel kernel;
 
    public static void main(String[] ignored) {
 
@@ -63,7 +62,7 @@ public class ProfilingDemo {
    }
 
    private static void printLastProfile(String tableHeader) {
-      KernelProfile profile = KernelManager.instance().getProfile(BlackScholesKernel.class);
+      KernelProfile profile = KernelManager.instance().getProfile(com.aparapi.examples.blackscholes.Main.BlackScholesKernel.class);
       KernelDeviceProfile deviceProfile = profile.getLastDeviceProfile();
       String row = deviceProfile.getLastAsTableRow();
       System.out.println(tableHeader);
@@ -88,6 +87,6 @@ public class ProfilingDemo {
          kernel.dispose();
       }
       System.gc();
-      kernel = new BlackScholesKernel(size);
+      kernel = new com.aparapi.examples.blackscholes.Main.BlackScholesKernel(size);
    }
 }

@@ -19,7 +19,7 @@ import com.aparapi.opencl.OpenCL.Resource;
 
 public class Histogram{
 
-   @Resource("com/aparapi/aparapi/examples/extension/HistogramKernel.cl") interface HistogramKernel extends OpenCL<HistogramKernel>{
+   @Resource("com/aparapi/examples/extension/HistogramKernel.cl") interface HistogramKernel extends OpenCL<HistogramKernel>{
 
       public HistogramKernel histogram256(//
             Range _range,//

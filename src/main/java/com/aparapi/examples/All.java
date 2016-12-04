@@ -10,6 +10,23 @@
  */
 package com.aparapi.examples;
 
+import com.aparapi.examples.blackscholes.Main;
+import com.aparapi.examples.configuration.*;
+import com.aparapi.examples.convolution.Convolution;
+import com.aparapi.examples.convolution.ConvolutionOpenCL;
+import com.aparapi.examples.convolution.PureJava;
+import com.aparapi.examples.extension.*;
+import com.aparapi.examples.javaonedemo.Life;
+import com.aparapi.examples.javaonedemo.Mandel;
+import com.aparapi.examples.javaonedemo.NBody;
+import com.aparapi.examples.mandel.Main2D;
+import com.aparapi.examples.mdarray.MDArray;
+import com.aparapi.examples.median.MedianDemo;
+import com.aparapi.examples.nbody.Local;
+import com.aparapi.examples.nbody.Seq;
+import com.aparapi.examples.progress.MultiPassKernelSwingWorkerDemo;
+import com.aparapi.examples.progress.ProgressAndCancelDemo;
+
 import java.util.Scanner;
 
 public class All {
@@ -86,97 +103,97 @@ public class All {
                 com.aparapi.examples.mandel.Main.main(args);
                 break;
             case "3":
-                com.aparapi.examples.mandel.Main2D.main(args);
+                Main2D.main(args);
                 break;
             case "4":
-                com.aparapi.examples.convolution.Convolution.main(args);
+                Convolution.main(args);
                 break;
             case "5":
-                com.aparapi.examples.convolution.ConvolutionOpenCL.main(args);
+                ConvolutionOpenCL.main(args);
                 break;
             case "6":
-                com.aparapi.examples.convolution.PureJava.main(args);
+                PureJava.main(args);
                 break;
             case "7":
-                com.aparapi.examples.blackscholes.Main.main(args);
+                Main.main(args);
                 break;
             case "8":
                 com.aparapi.examples.squares.Main.main(args);
                 break;
             case "9":
-                com.aparapi.examples.progress.MultiPassKernelSwingWorkerDemo.main(args);
+                MultiPassKernelSwingWorkerDemo.main(args);
                 break;
             case "10":
-                com.aparapi.examples.progress.ProgressAndCancelDemo.main(args);
+                ProgressAndCancelDemo.main(args);
                 break;
             case "11":
                 com.aparapi.examples.info.Main.main(args);
                 break;
             case "12":
-                com.aparapi.examples.median.MedianDemo.main(args);
+                MedianDemo.main(args);
                 break;
             case "13":
-                com.aparapi.examples.mdarray.MDArray.main(args);
+                MDArray.main(args);
                 break;
             case "14":
                 com.aparapi.examples.add.Main.main(args);
                 break;
             case "15":
-                com.aparapi.examples.extension.FFTExample.main(args);
+                FFTExample.main(args);
                 break;
             case "16":
-                com.aparapi.examples.extension.Histogram.main(args);
+                Histogram.main(args);
                 break;
             case "17":
-                com.aparapi.examples.extension.HistogramIdeal.main(args);
+                HistogramIdeal.main(args);
                 break;
             case "18":
-                com.aparapi.examples.extension.MandelExample.main(args);
+                MandelExample.main(args);
                 break;
             case "19":
-                com.aparapi.examples.extension.SquareExample.main(args);
+                SquareExample.main(args);
                 break;
             case "20":
-                com.aparapi.examples.configuration.AutoCleanUpArraysDemo.main(args);
+                AutoCleanUpArraysDemo.main(args);
                 break;
             case "21":
-                com.aparapi.examples.configuration.CleanUpArraysDemo.main(args);
+                CleanUpArraysDemo.main(args);
                 break;
             case "22":
-                com.aparapi.examples.configuration.ConfigurationDemo.main(args);
+                ConfigurationDemo.main(args);
                 break;
             case "23":
-                com.aparapi.examples.configuration.CustomConfigurationDemo.main(args);
+                CustomConfigurationDemo.main(args);
                 break;
             case "24":
-                com.aparapi.examples.configuration.LegacyConfigurationDemo.main(args);
+                LegacyConfigurationDemo.main(args);
                 break;
             case "25":
-                com.aparapi.examples.configuration.ProfilingDemo.main(args);
+                ProfilingDemo.main(args);
                 break;
             case "26":
-                com.aparapi.examples.configuration.ProfilingDemoNoBinaryCaching.main(args);
+                ProfilingDemoNoBinaryCaching.main(args);
                 break;
             case "27":
                 com.aparapi.examples.effects.Main.main(args);
                 break;
             case "28":
-                com.aparapi.examples.javaonedemo.Life.main(args);
+                Life.main(args);
                 break;
             case "29":
-                com.aparapi.examples.javaonedemo.Mandel.main(args);
+                Mandel.main(args);
                 break;
             case "30":
-                com.aparapi.examples.javaonedemo.NBody.main(args);
+                NBody.main(args);
                 break;
             case "31":
                 com.aparapi.examples.nbody.Main.main(args);
                 break;
             case "32":
-                com.aparapi.examples.nbody.Local.main(args);
+                Local.main(args);
                 break;
             case "33":
-                com.aparapi.examples.nbody.Seq.main(args);
+                Seq.main(args);
                 break;
             case "34":
                 com.aparapi.examples.oopnbody.Main.main(args);

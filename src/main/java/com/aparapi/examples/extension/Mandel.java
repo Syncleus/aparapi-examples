@@ -34,12 +34,12 @@ import com.aparapi.opencl.OpenCL.Resource;
  *
  */
 
-@Resource("com/aparapi/aparapi/examples/extension/mandel2.cl")
-public interface Mandel extends OpenCL<com.aparapi.examples.extension.Mandel>{
-   com.aparapi.examples.extension.Mandel createMandleBrot(//
-                                                                 Range range,//
-                                                                 @Arg("scale") float scale, //
-                                                                 @Arg("offsetx") float offsetx, //
-                                                                 @Arg("offsety") float offsety, //
-                                                                 @GlobalWriteOnly("rgb") int[] rgb);
+@Resource("com/aparapi/examples/extension/mandel2.cl")
+public interface Mandel extends OpenCL<Mandel>{
+   Mandel createMandleBrot(//
+                           Range range,//
+                           @Arg("scale") float scale, //
+                           @Arg("offsetx") float offsetx, //
+                           @Arg("offsety") float offsety, //
+                           @GlobalWriteOnly("rgb") int[] rgb);
 }

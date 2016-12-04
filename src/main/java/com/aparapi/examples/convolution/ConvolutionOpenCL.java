@@ -58,7 +58,7 @@ import java.io.*;
 
 public class ConvolutionOpenCL{
 
-   @Resource("com/aparapi/aparapi/examples/convolution/convolution.cl") interface Convolution extends OpenCL<Convolution>{
+   @Resource("com/aparapi/examples/convolution/convolution.cl") interface Convolution extends OpenCL<Convolution>{
       Convolution applyConvolution(//
             Range range, //
             @GlobalReadOnly("_convMatrix3x3") float[] _convMatrix3x3,//// only read from kernel 

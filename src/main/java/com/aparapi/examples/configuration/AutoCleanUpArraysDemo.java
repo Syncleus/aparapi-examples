@@ -10,7 +10,7 @@
  */
 package com.aparapi.examples.configuration;
 
-import com.aparapi.examples.mandel.*;
+import com.aparapi.examples.mandel.Main;
 
 public class AutoCleanUpArraysDemo {
    public static void main(String[] ignored) {

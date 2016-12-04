@@ -19,7 +19,7 @@ import com.aparapi.opencl.OpenCL.Resource;
 
 public class Pow4Example{
 
-   @Resource("com/aparapi/aparapi/examples/extension/squarer.cl")
+   @Resource("com/aparapi/examples/extension/squarer.cl")
    interface Squarer extends OpenCL<Squarer>{
 
       public Squarer square(//
