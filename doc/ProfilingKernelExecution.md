@@ -3,7 +3,7 @@
 
 If you want to extract OpenCL performance info from a kernel at runtime you need to set the property :-
 
-    -Dcom.syncleus.aparapi.enableProfiling=true
+    -Dcom.aparapi.enableProfiling=true
 
 Your application can then call kernel.getProfileInfo() after a successful call to kernel.execute(range) to extract a List List<ProfileInfo>.
 
@@ -42,7 +42,7 @@ And here is the tabular output from
 
         java
            -Djava.library.path=${APARAPI_HOME}
-           -Dcom.syncleus.aparapi.enableProfiling=true
+           -Dcom.aparapi.enableProfiling=true
            -cp ${APARAPI_HOME}:.
            MyClass
 

@@ -25,7 +25,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.syncleus.aparapi.Kernel.EXECUTION_MODE;
+import com.aparapi.Kernel.EXECUTION_MODE;
 
 /**
  * This test class performs the following functions:

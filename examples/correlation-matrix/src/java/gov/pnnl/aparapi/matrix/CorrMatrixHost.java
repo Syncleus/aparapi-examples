@@ -10,11 +10,11 @@ package gov.pnnl.aparapi.matrix;
 
 import org.apache.log4j.Logger;
 
-import com.syncleus.aparapi.Kernel;
-import com.syncleus.aparapi.Kernel.EXECUTION_MODE;
-import com.syncleus.aparapi.Range;
-import com.syncleus.aparapi.device.Device;
-import com.syncleus.aparapi.device.OpenCLDevice;
+import com.aparapi.Kernel;
+import com.aparapi.Kernel.EXECUTION_MODE;
+import com.aparapi.Range;
+import com.aparapi.device.Device;
+import com.aparapi.device.OpenCLDevice;
 
 /**
  * GPU calculations using OpenBitSet Intersection for OpenBitSets

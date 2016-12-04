@@ -1,4 +1,4 @@
-package com.syncleus.aparapi.test.runtime;
+package com.aparapi.test.runtime;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.syncleus.aparapi.test;
+package com.aparapi.test;
 
 public class AccessShortArray{
    short[] shorts = new short[1024];

@@ -1,4 +1,4 @@
-package com.syncleus.aparapi.test;
+package com.aparapi.test;
 
 public class StaticFieldStore{
    int[] ints = new int[1024];

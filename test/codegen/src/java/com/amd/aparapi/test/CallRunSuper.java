@@ -1,6 +1,6 @@
-package com.syncleus.aparapi.test;
+package com.aparapi.test;
 
-import com.syncleus.aparapi.Kernel;
+import com.aparapi.Kernel;
 
 class CallRunSuperBase extends Kernel{
    @Override public void run() {

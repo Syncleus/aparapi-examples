@@ -9,14 +9,14 @@ OpenCL™ code generation tests
 The initial open source tree includes the codegen subdirectory (test/codegen), which used to validate the Aparapi bytecode to OpenCL™ conversion.
 
     aparapi/trunk/
-       com.syncleus.aparapi/
-          src/java/com.syncleus.aparapi/
+       com.aparapi/
+          src/java/com.aparapi/
           build.xml
        test/
           codegen/
              src/java/
-                com.syncleus.aparapi/
-                com.syncleus.aparapi.test/
+                com.aparapi/
+                com.aparapi.test/
              build.xml
        build.xml
 
@@ -24,7 +24,7 @@ The code generation tests to not require OpenCL™ , AMD APP SDK or a GPU device
 
 ##Running the OpenCL™ code generation JUnit tests
 
-Before executing the code generation tests, build the com.syncleus.aparapi sub-project and ensure that you have JUnit 4 installed.
+Before executing the code generation tests, build the com.aparapi sub-project and ensure that you have JUnit 4 installed.
 
 Edit the junit.jar property in test/codegen/build.xml to point to your install directory.
 
@@ -49,13 +49,13 @@ On Linux(r) platforms just invoke your browser (Firefox in this case).
 
 The test cases for OpenCL™ code generation are not strictly JUnit tests. Instead the codegen Java tree contains a tool (CreateJUnitTests) to create JUnit test cases from specially formatted test source files.
 
-The package `com.syncleus.aparapi.test (codegen/src/java/com/amd/aparapi/test)` contains all of the existing code generation tests.
+The package `com.aparapi.test (codegen/src/java/com/amd/aparapi/test)` contains all of the existing code generation tests.
 
-Here is an example that tests the code generation resulting from a call to Kernel.getPassId(), this is taken from com.syncleus.aparapi.test.CallGetPassId
+Here is an example that tests the code generation resulting from a call to Kernel.getPassId(), this is taken from com.aparapi.test.CallGetPassId
 
-    package com.syncleus.aparapi.test;
+    package com.aparapi.test;
 
-    import com.syncleus.aparapi.Kernel;
+    import com.aparapi.Kernel;
 
     public class CallGetPassId extends Kernel{
        public void run() {
@@ -90,7 +90,7 @@ The test source takes the form of a simple class that extends the kernel and a b
 The code-generating ant build.xml file performs the following steps to generate its report:
 
 * compiles the src/java tree. This compiles all the test cases as well as a few ‘utility’ classes.
-* executes the com.syncleus.aparapi.test.CreateJUnitTests program. This iterates through all of the test source files and converts them to JUnit form. The generated source is written to the src/genjava tree.
+* executes the com.aparapi.test.CreateJUnitTests program. This iterates through all of the test source files and converts them to JUnit form. The generated source is written to the src/genjava tree.
 * compiles the src/genjava tree to create the required JUnit classes
 * initiates the JUnit test phase (result data in junit/data)
 * creates the JUnit report (in junit/html/junit from junit/data)
@@ -122,7 +122,7 @@ Logically either of the above are correct. However, to accommodate the alternate
 
 Here is the complete BooleanToggle code.
 
-    package com.syncleus.aparapi.test;
+    package com.aparapi.test;
 
     public class BooleanToggle{
        public void run() {

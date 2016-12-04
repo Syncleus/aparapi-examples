@@ -49,7 +49,7 @@ Due to Java's lack of vector types (float4 for example) Aparapi can't directly u
 
 ##Is there a way I can see the generated OpenCL?
 
-Yes, by using adding -Dcom.syncleus.aparapi.enableShowGeneratedOpenCL=true to your command line when you start your JVM.
+Yes, by using adding -Dcom.aparapi.enableShowGeneratedOpenCL=true to your command line when you start your JVM.
 
 ##Does Aparapi support sharing buffers with JOGL? Can I exploit the features of JOGAMP/glugen?
 
@@ -94,7 +94,7 @@ From within the Java code itself you can query the execution mode after Kernel.e
 
 The above code fragment will print either ‘GPU’ if the kernel executed on the GPU or JTP if Aparapi executed the Kernel in a Java Thread Pool.
 
-Alternatively, setting the property –Dcom.syncleus.aparapi.enableShowExecutionModes=true when you start your JVM will cause Aparapi to automatically report the execution mode of all kernels to stdout.
+Alternatively, setting the property –Dcom.aparapi.enableShowExecutionModes=true when you start your JVM will cause Aparapi to automatically report the execution mode of all kernels to stdout.
 
 ##Why does Aparapi need me to compile my code with -g?
 

@@ -1,4 +1,4 @@
-package com.syncleus.aparapi.test;
+package com.aparapi.test;
 
 public class AccessFloatArray{
    float[] floats = new float[1024];

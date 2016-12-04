@@ -42,5 +42,5 @@ Assuming your aparapi svn trunk is /home/gfrost/aparapi
     $ cd /home/gfrost/aparapi/branches/lambda
     $ ant
     $ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${OKRA}/dist/bin
-    $ java -agentpath:com.syncleus.aparapi.jni/dist/libaparapi_x86_64.so -cp com.syncleus.aparapi/dist/aparapi.jar:${OKRA}/dist/okra.jar hsailtest.Squares
+    $ java -agentpath:com.aparapi.jni/dist/libaparapi_x86_64.so -cp com.aparapi/dist/aparapi.jar:${OKRA}/dist/okra.jar hsailtest.Squares
     $

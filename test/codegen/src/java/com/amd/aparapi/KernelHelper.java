@@ -35,10 +35,10 @@ of EAR).  For the most current Country Group listings, or for additional informa
 under those regulations, please refer to the U.S. Bureau of Industry and Security's website at http://www.bis.doc.gov/. 
 
 */
-package com.syncleus.aparapi;
+package com.aparapi;
 
 // contains some things that only tests would use
-// but in the com.syncleus.aparapi package for convenience
+// but in the com.aparapi package for convenience
 
 public class KernelHelper{
    //   public KernelHelper(Kernel kernel) {

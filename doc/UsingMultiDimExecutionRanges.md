@@ -3,7 +3,7 @@
 
 Aparapi now allows developers to execute over one, two or three dimensional ranges. OpenCL natively allows the user to execute over 1, 2 or 3 dimension grids via the clEnqueueNDRangeKernel() method.
 
-Initially we chose not to expose 2D or 3D ranges (Aparapi's Kernel.execute(range) allowed only !d ranges, but following a specific request we added the notion of a Range via the new com.syncleus.aparapi.Range class.
+Initially we chose not to expose 2D or 3D ranges (Aparapi's Kernel.execute(range) allowed only !d ranges, but following a specific request we added the notion of a Range via the new com.aparapi.Range class.
 
 A range is created using various static factory methods. For example to create a simple range {0..1024} we would use.
 

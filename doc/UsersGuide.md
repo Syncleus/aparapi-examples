@@ -48,7 +48,7 @@ Java developers should recognize the general pattern as similar to that used to 
     });
     thread.start();
     thread.join();
-The Aparapi developer extends the com.syncleus.aparapi.Kernel and overrides the public void Kernel.run() method. It is this Kernel.run() method that is executed in parallel.
+The Aparapi developer extends the com.aparapi.Kernel and overrides the public void Kernel.run() method. It is this Kernel.run() method that is executed in parallel.
 
 The base class also exposes the Kernel.execute(range) method which is used to initiate the execution of Kernel.run() over the range 0...n.
 
@@ -88,9 +88,9 @@ An application can detect whether a kernel was executed on the GPU or by a Java 
        System.out.println(“Kernel nid not execute on the GPU!”);
     }
 
-To obtain a runtime report of the execution mode of all kernel executions, set the com.syncleus.aparapi.enableExecutionModeReporting property to true when the JVM is launched.
+To obtain a runtime report of the execution mode of all kernel executions, set the com.aparapi.enableExecutionModeReporting property to true when the JVM is launched.
 
-    $ java –Djava.library.path=${APARAPI_DIR} –Dcom.syncleus.aparapi.enableExecutionModeReporting=true –cp ${APARAPI_DIR}/aparapi.jar;. Squares
+    $ java –Djava.library.path=${APARAPI_DIR} –Dcom.aparapi.enableExecutionModeReporting=true –cp ${APARAPI_DIR}/aparapi.jar;. Squares
 
 ##Running the sample applications
 Aparapi includes two sample applications in the /samples subdirectory of the binary distribution zip file.
@@ -104,7 +104,7 @@ You will need an appropriate GPU card, OpenCL® enabled Catalyst® driver and a 
 Set the environment variable JAVA_HOME to point to the root of your JRE or JDK.
 Change to the appropriate samples directory (samples/squares or samples/mandel)
 Run either the .bat or .sh script. On Linux® , you might have to initially chmod +x script.sh to add execute permissions.
-The sample scripts pass the first arg (%1 or $1) to -Dcom.syncleus.aparapi.executionMode when the JVM is launched. This allows the sample to be tested in either GPU or JTP execution modes by passing the requested mode.
+The sample scripts pass the first arg (%1 or $1) to -Dcom.aparapi.executionMode when the JVM is launched. This allows the sample to be tested in either GPU or JTP execution modes by passing the requested mode.
 
     $ cd samples/mandel
     $ bash ./mandel.sh GPU

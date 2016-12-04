@@ -35,14 +35,14 @@ of EAR).  For the most current Country Group listings, or for additional informa
 under those regulations, please refer to the U.S. Bureau of Industry and Security's website at http://www.bis.doc.gov/. 
 
 */
-package com.syncleus.aparapi.examples.movie;
+package com.aparapi.examples.movie;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
 
-import com.syncleus.aparapi.Kernel;
-import com.syncleus.aparapi.Range;
+import com.aparapi.Kernel;
+import com.aparapi.Range;
 
 public class ReferenceSolution{
 
