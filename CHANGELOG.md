@@ -1,5 +1,9 @@
 # Aparapi Examples Changelog
 
+## 1.2.0
+
+* Synced to Aparapi 1.2.0.
+
 ## 1.1.2
 
 * Fixed some bugs causing the OpenCL kernel to be compiled twice.
