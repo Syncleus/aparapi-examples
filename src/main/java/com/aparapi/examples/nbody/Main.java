@@ -210,6 +210,10 @@ public class Main{
    public static boolean running;
 
    static Texture texture;
+   
+   // !!! oren fix. first time not calculated properly. Should be set on start!!!
+   private static long last = 0;//System.currentTimeMillis();
+
 
    public static void main(String _args[]) {
 
@@ -228,6 +232,7 @@ public class Main{
       startButton.addActionListener(new ActionListener(){
          @Override public void actionPerformed(ActionEvent e) {
             running = true;
+            last = System.currentTimeMillis();
             startButton.setEnabled(false);
          }
       });
@@ -277,8 +282,15 @@ public class Main{
          public final float zoomFactor = 1.0f;
 
          private int frames;
+         
+         private float totalCalcPerMicroSec = 0.0f;
+         private float totalFramePerSec = 0.0f;
+         private int totalSamples = 0;
+         private boolean firstMeasurment=true;
 
-         private long last = System.currentTimeMillis();
+         
+         // !!! oren fix. first time not calculated properly. Should be set on start!!!
+         //private long last = 0;//System.currentTimeMillis();
 
          @Override public void dispose(GLAutoDrawable drawable) {
 
@@ -305,7 +317,7 @@ public class Main{
                final List<ProfileInfo> profileInfo = kernel.getProfileInfo();
                if ((profileInfo != null) && (profileInfo.size() > 0)) {
                   for (final ProfileInfo p : profileInfo) {
-                     System.out.print(" " + p.getType() + " " + p.getLabel() + ((p.getEnd() - p.getStart()) / 1000) + "us");
+                     System.out.print(" " + p.getType() + " " + p.getLabel() + " " +((p.getEnd() - p.getStart()) / 1000) + "us");
                   }
                   System.out.println();
                }
@@ -321,6 +333,21 @@ public class Main{
                   final float framesPerSecond = (frames * 1000.0f) / time;
                   final int updatesPerMicroSecond = (int) ((framesPerSecond * kernel.range.getGlobalSize(0) * kernel.range
                         .getGlobalSize(0)) / 1000000);
+				/// !!! oren change -> add avg calc
+                  // the first calculation is never accurate when the system is initializing so discard it
+                  if(!firstMeasurment)
+                  {
+                    totalCalcPerMicroSec += updatesPerMicroSecond;
+                    totalFramePerSec += framesPerSecond;
+                    totalSamples+=1;//(time/1000.0f);
+                    // only print once every 10s
+                    //if((int)totalTimeSec%10==0)
+                      System.out.printf("last(CPMC,FPS)=(%d,%5.2f)",updatesPerMicroSecond,framesPerSecond);  
+                      System.out.printf("avg(CPMC,FPS)=(%5.2f,%5.2f)\n",totalCalcPerMicroSec/totalSamples,totalFramePerSec/totalSamples);
+                  }
+                  else
+                	  firstMeasurment = false;
+                  //////////////////////////////////
                   framesPerSecondTextField.setText(String.format("%5.2f", framesPerSecond));
                   positionUpdatesPerMicroSecondTextField.setText(String.format("%4d", updatesPerMicroSecond));
                }

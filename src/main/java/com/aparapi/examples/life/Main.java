@@ -193,6 +193,9 @@ public class Main{
    public static void main(String[] _args) {
 
       final JFrame frame = new JFrame("Game of Life");
+      //final int width = 400;//Integer.getInteger("width", 1024 + 512 + 256 + 128);
+
+      //final int height = 400;//Integer.getInteger("height", 768 + 256);
       final int width = Integer.getInteger("width", 1024 + 512 + 256 + 128);
 
       final int height = Integer.getInteger("height", 768 + 256);
