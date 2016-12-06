@@ -29,3 +29,7 @@ hs_err_pid*
 **/include/
 **/nbproject/
 target/
+
+# java files
+*.class
+*~
