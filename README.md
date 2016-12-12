@@ -2,18 +2,13 @@
 
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aparapi/aparapi-examples/badge.png?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.aparapi/aparapi-examples/)
-[![Javadocs](http://www.javadoc.io/badge/com.aparapi/aparapi-examples.svg)](http://www.javadoc.io/doc/com.aparapi/aparapi-examples)
 [![Gitter](https://badges.gitter.im/Syncleus/aparapi.svg)](https://gitter.im/Syncleus/aparapi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 A framework for executing native Java code on the GPU.
 
 **Licensed under the Apache Software License v2**
 
-Aparapi allows developers to write native Java code capable of being executed directly on a graphics card GPU by converting Java byte code to an OpenCL kernel dynamically at runtime. Because it is backed by OpenCL Aparapi is compatible with all OpenCL compatible Graphics Cards.
-
-A GPU has a unique architecture that causes them to behave differently than a CPU. One of the most noticeable differences is that while a typical CPU has less than a dozen cores a high end GPU may have hundreds of cores. This makes them uniquely suited for data-parallel computation that can result in speedups hundreds of times more than what is capable with your average CPU. This can mean the difference between needing a whole data center to house your application versus just one or two computers, potentially saving millions in server costs.
-
-Aparapi was originally a project conceived and developed by AMD corporation. It was later abandoned by AMD and sat mostly-idle for several years. Despite this there were some failed efforts by the community to keep the project alive, but without a clear community leader no new releases ever came. Eventually we came along and rescued the project, and modernized the project. Finally after such a long wait the first Aparapi release in 5 years was published and the community continues to push forward with renewed excitement.
+This project is a collection of examples for the Aparapi project. For more information see the [website](http://Aparapi.com) or the [Github page](https://github.com/Syncleus/aparapi-examples).
 
 For detailed documentation see [Aparapi.com](http://Aparapi.com).
 
@@ -21,18 +16,11 @@ For support please use [Gitter](https://gitter.im/Syncleus/aparapi) or the [offi
 
 Please file bugs and feature requests on [Github](https://github.com/Syncleus/aparapi-examples/issues).
 
-## Dependency
+## Prerequisites
 
-To include Aparapi in your project of choice include the following Maven dependency into your build.
+The examples should run on any system as-is. For GPU acceleration support you must have OpenCL installed and a compatible graphics card.
 
-```xml
-
-<dependency>
-    <groupId>com.aparapi</groupId>
-    <artifactId>aparapi</artifactId>
-    <version>1.3.1</version>
-</dependency>
-```
+**Aparapi runs on all operating systems and platforms, however GPU acceleration support is currently provided for the following platforms: Windows 64bit, Mac OSX 64bit, Linux 64bit, and Linux 32bit.**
 
 ## Obtaining the Source
 
@@ -44,34 +32,11 @@ following command.
 git clone https://github.com/Syncleus/aparapi-examples.git
 ```
 
-## Getting Started
+## Running
 
-With Aparapi we can take a sequential loop such as this (which adds each element from inA and inB arrays and puts the result in result).
+To run the examples simply execute it through maven.
 
-```java
+```bash
 
-final float inA[] = .... // get a float array of data from somewhere
-final float inB[] = .... // get a float array of data from somewhere
-assert (inA.length == inB.length);
-final float result = new float[inA.length];
-
-for (int i = 0; i < array.length; i++) {
-    result[i] = intA[i] + inB[i];
-}
-```
-
-And refactor the sequential loop to the following form:
-
-```java
-
-Kernel kernel = new Kernel() {
-    @Override
-    public void run() {
-        int i = getGlobalId();
-        result[i] = intA[i] + inB[i];
-    }
-};
-
-Range range = Range.create(result.length);
-kernel.execute(range);
+mvn clean package exec:java
 ```
