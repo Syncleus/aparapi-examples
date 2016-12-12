@@ -34,7 +34,7 @@ git clone https://github.com/Syncleus/aparapi-examples.git
 
 ## Running
 
-To run the examples simply execute it through maven.
+To run the examples simply checkout the version you want to run and execute it through maven.
 
 ```bash
 
