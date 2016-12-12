@@ -1,8 +1,14 @@
 # Aparapi Examples Changelog
 
+## 1.3.2
+
+* Synced to Aparapi 1.3.2
+* Examples now work on Windows 64bit GPUs.
+
 ## 1.3.1
 
 * Synced to Aparapi 1.3.1
+* Examples now work on Mac OSX SPUs.
 
 ## 1.3.0
 
