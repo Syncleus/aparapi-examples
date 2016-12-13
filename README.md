@@ -8,7 +8,7 @@ A framework for executing native Java code on the GPU.
 
 **Licensed under the Apache Software License v2**
 
-This project is a collection of examples for the Aparapi project. For more information see the [website](http://Aparapi.com) or the [Github page](https://github.com/Syncleus/aparapi-examples).
+This project is a collection of examples for the Aparapi project. For more information see the Aparapi [website](http://Aparapi.com) or the [Github page](https://github.com/Syncleus/aparapi-examples).
 
 For detailed documentation see [Aparapi.com](http://Aparapi.com).
 
@@ -34,7 +34,7 @@ git clone https://github.com/Syncleus/aparapi-examples.git
 
 ## Running
 
-To run the examples simply execute it through maven.
+To run the examples simply checkout the version you want to run and execute it through maven.
 
 ```bash
 
