@@ -1,5 +1,10 @@
 # Aparapi Examples Changelog
 
+## 1.3.3
+
+* Fixed "`CXXABI_1.3.8' not found " error encountered on some older systems.
+* Synced to Aparapi 1.3.3
+
 ## 1.3.2
 
 * Synced to Aparapi 1.3.2
