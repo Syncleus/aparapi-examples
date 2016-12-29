@@ -34,9 +34,13 @@ git clone https://github.com/Syncleus/aparapi-examples.git
 
 ## Running
 
-To run the examples simply checkout the version you want to run and execute it through maven.
+To run the examples simply checkout the git tag for the version you want to run and execute it through maven. Unless you
+specifically want to try the latest snapshot it is important you checkout a specific git tag instead of the master
+branch. To use the snapshot in the master branch you will have to manually install the core aparapi snapshot that
+matches it since snapshots do not appear in maven central.
 
 ```bash
 
+git checkout v1.3.4
 mvn clean package exec:java
 ```
