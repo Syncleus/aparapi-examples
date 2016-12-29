@@ -66,6 +66,7 @@ public class All {
         System.out.println(" 32) NBody - Local");
         System.out.println(" 33) NBody - Sequential");
         System.out.println(" 34) OOPN Body");
+        System.out.println(" 35) Map-reduce");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -197,6 +198,9 @@ public class All {
                 break;
             case "34":
                 com.aparapi.examples.oopnbody.Main.main(args);
+                break;
+            case "35":
+                com.aparapi.examples.mapreduce.Main.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
