@@ -20,7 +20,7 @@ Please file bugs and feature requests on [Github](https://github.com/Syncleus/ap
 
 The examples should run on any system as-is. For GPU acceleration support you must have OpenCL installed and a compatible graphics card.
 
-**Aparapi runs on all operating systems and platforms, however GPU acceleration support is currently provided for the following platforms: Windows 64bit, Mac OSX 64bit, Linux 64bit, and Linux 32bit.**
+**Aparapi runs on all operating systems and platforms, however GPU acceleration support is currently provided for the following platforms: Windows 64bit, Windows 32bit, Mac OSX 64bit, Linux 64bit, and Linux 32bit.**
 
 ## Obtaining the Source
 
