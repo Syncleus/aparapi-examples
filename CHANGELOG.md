@@ -1,5 +1,9 @@
 # Aparapi Examples Changelog
 
+## 1.4.0
+
+* Synced to Aparapi 1.4.0
+
 ## 1.3.4
 
 * Updated to aparapi-jni 1.1.2 thus fixing `UnsatisfiedLinkError` which occured only on Windows.
