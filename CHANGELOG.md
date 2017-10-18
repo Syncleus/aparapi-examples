@@ -3,6 +3,7 @@
 ## 1.4.1
 
 * Updated parent pon to v6.
+* Removed explicit version on nexus-staging-maven-plugin plugin, relies on parent now.
 
 ## 1.4.0
 
