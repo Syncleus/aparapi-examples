@@ -32,6 +32,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
+import java.net.URISyntaxException;
 
 /**
  * Demonstrate use of __private namespaces and @NoCL annotations.
@@ -41,12 +42,12 @@ public class MedianDemo {
 
    static {
       try {
-         File imageFile = new File("./src/main/resources/testcard.jpg").getCanonicalFile();
+         File imageFile = new File(MedianDemo.class.getResource("/testcard.jpg").toURI()).getCanonicalFile();
          if (imageFile.exists()) {
             testImage = ImageIO.read(imageFile);
          }
-      } catch (IOException e) {
-         throw new RuntimeException(e);
+      } catch (IOException | URISyntaxException e) {
+         throw new IllegalStateException("Could not open image", e);
       }
    }
 
@@ -62,18 +63,6 @@ public class MedianDemo {
           System.setProperty("com.aparapi.enableVerboseJNIOpenCLResourceTracking", "true");
           System.setProperty("com.aparapi.enableExecutionModeReporting", "true");
       }
-
-//      KernelManager.setKernelManager(new KernelManager(){
-//         @Override
-//         protected Comparator<OpenCLDevice> getDefaultGPUComparator() {
-//            return new Comparator<OpenCLDevice>() {
-//               @Override
-//               public int compare(OpenCLDevice o1, OpenCLDevice o2) {
-//                  return o2.getMaxComputeUnits() - o1.getMaxComputeUnits();
-//               }
-//            };
-//         }
-//      });
 
       System.out.println(KernelManager.instance().bestDevice());
 

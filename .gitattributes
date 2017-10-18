@@ -1,4 +1,7 @@
 * eol=lf
 *.bat eol=crlf
 *.sh eol=lf
+*.jpg binary
+*.png binary
+*.pdf binary
 .git* export-ignore

@@ -64,6 +64,7 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 package com.aparapi.examples.convolution;
 
 import java.io.File;
+import java.net.URISyntaxException;
 
 import com.aparapi.Kernel;
 
@@ -114,7 +115,12 @@ public class PureJava{
    }
 
    public static void main(final String[] _args) {
-      File file = new File(_args.length == 1 ? _args[0] : "./src/main/resources/testcard.jpg");
+      final File file;
+      try{
+         file = new File(PureJava.class.getResource("/testcard.jpg").toURI());
+      } catch (URISyntaxException e) {
+         throw new IllegalStateException("could not get testcard", e);
+      }
 
       final ImageConvolution convolution = new ImageConvolution();
 

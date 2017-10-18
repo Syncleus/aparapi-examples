@@ -125,10 +125,6 @@ public class NBody{
 
       private final float[] vxyz; // velocity component of x,y and z of bodies 
 
-      /**
-       * Constructor initializes xyz and vxyz arrays.
-       * @param _bodies
-       */
       public NBodyKernel(Range _range) {
          range = _range;
          // range = Range.create(bodies);
@@ -245,8 +241,6 @@ public class NBody{
       });
       controlPanel.add(startButton);
 
-      //  controlPanel.add(new JLabel("   Particles"));
-
       final String[] choices = new String[] {
             // "Java Sequential",
             "Java Threads",
@@ -259,16 +253,10 @@ public class NBody{
          @Override public void itemStateChanged(ItemEvent e) {
             final String item = (String) modeButton.getSelectedItem();
 
-            // if (item.equals(choices[2])) {
-            // modeButton = gpuMandelBrot;
-            //   } else 
             if (item.equals(choices[0])) {
                kernel.setExecutionMode(Kernel.EXECUTION_MODE.JTP);
 
-               // modeButton = javaMandelBrot;
             } else if (item.equals(choices[1])) {
-               // lifeKernel = lifeKernelGPU;
-               // modeButton = javaMandelBrotMultiThread;
                kernel.setExecutionMode(Kernel.EXECUTION_MODE.GPU);
             }
          }
@@ -326,7 +314,7 @@ public class NBody{
             gl.glColor3f(1f, 1f, 1f);
 
             final GLU glu = new GLU();
-            glu.gluPerspective(45f, ratio, 0f, 1000f);
+            glu.gluPerspective(45f, ratio, 1f, 1000f);
 
             glu.gluLookAt(xeye, yeye, zeye * zoomFactor, xat, yat, zat, 0f, 1f, 0f);
             if (running) {
@@ -368,12 +356,12 @@ public class NBody{
             gl.glEnable(GL.GL_BLEND);
             gl.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE);
             try {
-               final InputStream textureStream = NBody.class.getResourceAsStream("particle.jpg");
+               final InputStream textureStream = NBody.class.getResourceAsStream("/particle.jpg");
+               if( textureStream == null )
+                  throw new IllegalStateException("Could not access particle.jpg resource");
                texture = TextureIO.newTexture(textureStream, false, null);
-            } catch (final IOException e) {
-               e.printStackTrace();
-            } catch (final GLException e) {
-               e.printStackTrace();
+            } catch (final IOException | GLException e) {
+               throw new IllegalStateException("Could not create texture", e);
             }
 
          }

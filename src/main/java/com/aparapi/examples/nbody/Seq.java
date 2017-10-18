@@ -311,7 +311,7 @@ public class Seq{
             gl.glColor3f(1f, 1f, 1f);
 
             final GLU glu = new GLU();
-            glu.gluPerspective(45f, ratio, 0f, 1000f);
+            glu.gluPerspective(45f, ratio, 1f, 1000f);
 
             glu.gluLookAt(xeye, yeye, zeye * zoomFactor, xat, yat, zat, 0f, 1f, 0f);
             if (running) {
@@ -347,7 +347,7 @@ public class Seq{
             gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR);
             gl.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST);
             try {
-               final InputStream textureStream = Seq.class.getResourceAsStream("particle.jpg");
+               final InputStream textureStream = Seq.class.getResourceAsStream("/particle.jpg");
                TextureData data = TextureIO.newTextureData(profile, textureStream, false, "jpg");
                texture = TextureIO.newTexture(data);
             } catch (final IOException e) {

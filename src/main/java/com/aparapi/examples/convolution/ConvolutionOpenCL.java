@@ -70,6 +70,7 @@ import com.aparapi.opencl.*;
 import com.aparapi.opencl.OpenCL.*;
 
 import java.io.*;
+import java.net.URISyntaxException;
 
 public class ConvolutionOpenCL{
 
@@ -84,7 +85,12 @@ public class ConvolutionOpenCL{
    }
 
    public static void main(final String[] _args) {
-      final File file = new File(_args.length == 1 ? _args[0] : "./src/main/resources/testcard.jpg");
+      final File file;
+      try{
+         file = (_args.length >= 1 ? new File(_args[0]) : new File(ConvolutionOpenCL.class.getResource("/testcard.jpg").toURI()));
+      } catch (URISyntaxException e) {
+         throw new IllegalStateException("could not get testcard", e);
+      }
 
       final OpenCLDevice openclDevice = (OpenCLDevice) KernelManager.instance().bestDevice();
 

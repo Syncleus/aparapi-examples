@@ -121,10 +121,6 @@ public class Local{
 
       @Local private final float[] localStuff; // local memory
 
-      /**
-       * Constructor initializes xyz and vxyz arrays.
-       * @param _bodies
-       */
       public NBodyKernel(Range _range) {
          range = _range;
          localStuff = new float[range.getLocalSize(0) * 3];
@@ -307,7 +303,7 @@ public class Local{
             gl.glColor3f(1f, 1f, 1f);
 
             final GLU glu = new GLU();
-            glu.gluPerspective(45f, ratio, 0f, 1000f);
+            glu.gluPerspective(45f, ratio, 1f, 1000f);
 
             glu.gluLookAt(xeye, yeye, zeye * zoomFactor, xat, yat, zat, 0f, 1f, 0f);
             if (running) {
@@ -351,7 +347,7 @@ public class Local{
             gl.glEnable(GL.GL_BLEND);
             gl.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE);
             try {
-               final InputStream textureStream = Local.class.getResourceAsStream("particle.jpg");
+               final InputStream textureStream = Local.class.getResourceAsStream("/particle.jpg");
                final Texture texture = TextureIO.newTexture(textureStream, false, null);
                texture.enable(gl);
             } catch (final IOException e) {

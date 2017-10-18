@@ -66,12 +66,17 @@ package com.aparapi.examples.convolution;
 import com.aparapi.*;
 
 import java.io.*;
+import java.net.URISyntaxException;
 
 public class Convolution {
 
     public static void main(final String[] _args) throws IOException {
-
-        final File file = new File(_args.length == 1 ? _args[0] : "./src/main/resources/testcard.jpg").getCanonicalFile();
+        final File file;
+        try{
+            file = new File(Convolution.class.getResource("/testcard.jpg").toURI());
+        } catch (URISyntaxException e) {
+            throw new IllegalStateException("could not get testcard", e);
+        }
 
         final ImageConvolution convolution = new ImageConvolution();
 
