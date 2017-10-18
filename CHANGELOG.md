@@ -2,6 +2,8 @@
 
 ## 1.4.1
 
+* Updated parent pon to v6.
+
 ## 1.4.0
 
 * Synced to Aparapi 1.4.0
