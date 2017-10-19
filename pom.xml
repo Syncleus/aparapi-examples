@@ -81,7 +81,7 @@
         <dependency>
             <groupId>com.aparapi</groupId>
             <artifactId>aparapi</artifactId>
-            <version>1.4.1-SNAPSHOT</version>
+            <version>1.4.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.jogamp.gluegen</groupId>
