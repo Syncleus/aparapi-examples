@@ -74,7 +74,7 @@ import java.net.URISyntaxException;
 
 public class ConvolutionOpenCL{
 
-   @Resource("com/aparapi/examples/convolution/convolution.cl") interface Convolution extends OpenCL<Convolution>{
+   @Resource("convolution.cl") interface Convolution extends OpenCL<Convolution>{
       Convolution applyConvolution(//
             Range range, //
             @GlobalReadOnly("_convMatrix3x3") float[] _convMatrix3x3,//// only read from kernel 
@@ -87,7 +87,7 @@ public class ConvolutionOpenCL{
    public static void main(final String[] _args) {
       final File file;
       try{
-         file = (_args.length >= 1 ? new File(_args[0]) : new File(ConvolutionOpenCL.class.getResource("/testcard.jpg").toURI()));
+         file = new File(ConvolutionOpenCL.class.getResource("/testcard.jpg").toURI());
       } catch (URISyntaxException e) {
          throw new IllegalStateException("could not get testcard", e);
       }

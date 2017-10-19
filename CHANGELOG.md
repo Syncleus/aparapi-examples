@@ -6,6 +6,7 @@
 * Removed explicit version on nexus-staging-maven-plugin plugin, relies on parent now.
 * createProgram had the wrong signature producing a unsatisfied link exception that is now fixed.
 * Fixed several bad references to resource locations.
+* Fixed all of the broken examples that werent running.
 
 ## 1.4.0
 
