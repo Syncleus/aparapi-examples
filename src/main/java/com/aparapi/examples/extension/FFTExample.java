@@ -35,12 +35,13 @@ import java.util.*;
 
 public class FFTExample{
 
-   @Resource("com/aparapi/examples/extension/fft.cl") interface FFT extends OpenCL<FFT>{
+   @Resource("fft.cl")
+   interface FFT extends OpenCL<FFT>{
 
-      public FFT forward(//
-            Range _range,//
-            @GlobalReadWrite("real") float[] real,//
-            @GlobalReadWrite("imaginary") float[] imaginary//
+      public FFT forward(
+            Range _range,
+            @GlobalReadWrite("real") float[] real,
+            @GlobalReadWrite("imaginary") float[] imaginary
       );
    }
 

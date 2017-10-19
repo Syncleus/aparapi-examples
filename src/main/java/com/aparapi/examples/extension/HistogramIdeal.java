@@ -78,7 +78,7 @@ public class HistogramIdeal{
             final OpenCLDevice openclDevice = (OpenCLDevice) device;
 
             final HistogramKernel histogram = openclDevice.bind(HistogramKernel.class, Histogram.class.getClassLoader()
-                  .getResourceAsStream("com/amd/aparapi/sample/extension/HistogramKernel.cl"));
+                  .getResourceAsStream("HistogramKernel.cl"));
             long start = System.nanoTime();
             histogram.begin()//
                   .put(data)//

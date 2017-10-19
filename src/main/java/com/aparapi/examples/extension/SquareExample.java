@@ -48,7 +48,7 @@ public class SquareExample{
             @GlobalReadWrite("out") float[] out);
    }
 
-   @Resource("com/aparapi/examples/extension/squarer.cl") interface SquarerWithResource extends OpenCL<SquarerWithResource>{
+   @Resource("squarer.cl") interface SquarerWithResource extends OpenCL<SquarerWithResource>{
       public SquarerWithResource square(//
             Range _range,//
             @GlobalReadWrite("in") float[] in,//
