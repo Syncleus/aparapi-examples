@@ -1,4 +1,19 @@
 /**
+ * Copyright (c) 2016 - 2017 Syncleus, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
  * This material was prepared as an account of work sponsored by an agency of the United States Government.  
  * Neither the United States Government nor the United States Department of Energy, nor Battelle, nor any of 
  * their employees, nor any jurisdiction or organization that has cooperated in the development of these materials, 
@@ -6,9 +21,7 @@
  * completeness, or usefulness or any information, apparatus, product, software, or process disclosed, or represents
  * that its use would not infringe privately owned rights.
  */
-package gov.pnnl.aparapi.test;
-
-import gov.pnnl.aparapi.matrix.CorrMatrixHost;
+package com.aparapi.examples.matrix;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -29,12 +42,12 @@ import com.aparapi.Kernel.EXECUTION_MODE;
 
 /**
  * This test class performs the following functions:
- * 
+ *
  * 1) Create a randomly populated set of matrices for correlation/co-occurrence computation
  * 2) Execute the CPU-based computation using Lucene OpenBitSets
  * 3) Execute the GPU-based computation using Aparapi CorrMatrix host and kernel
  * 4) Verify the results of OpenBitSet and CorrMatrix by comparing matrices to each other
- *  
+ *
  * @author ryan.lamothe at gmail.com
  *
  */
@@ -126,11 +139,7 @@ public class CorrMatrixTest {
       // came from a GUI where a user could select "Use Hardware Acceleration" instead
       // of the application forcing the setting globally on the command-line
       final int[][] gpuResultMatrix;
-      if (Boolean.getBoolean("useGPU")) {
-         gpuResultMatrix = CorrMatrixHost.intersectionMatrix(matrixA, matrixB, EXECUTION_MODE.GPU);
-      } else {
-         gpuResultMatrix = CorrMatrixHost.intersectionMatrix(matrixA, matrixB, EXECUTION_MODE.CPU);
-      }
+      gpuResultMatrix = CorrMatrixHost.intersectionMatrix(matrixA, matrixB, EXECUTION_MODE.GPU);
 
       // Compare the two result arrays to make sure we are generating the same output
       for (int i = 0; i < obsResultMatrix.length; i++) {

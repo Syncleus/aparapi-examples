@@ -81,7 +81,7 @@
         <dependency>
             <groupId>com.aparapi</groupId>
             <artifactId>aparapi</artifactId>
-            <version>1.4.2-SNAPSHOT</version>
+            <version>1.4.1</version>
         </dependency>
         <dependency>
             <groupId>org.jogamp.gluegen</groupId>
@@ -97,6 +97,25 @@
             <groupId>org.jogamp.gluegen</groupId>
             <artifactId>gluegen</artifactId>
             <version>2.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>3.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.6</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
     </dependencies>
 

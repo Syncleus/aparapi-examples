@@ -1,4 +1,19 @@
 /**
+ * Copyright (c) 2016 - 2017 Syncleus, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
  * This material was prepared as an account of work sponsored by an agency of the United States Government.  
  * Neither the United States Government nor the United States Department of Energy, nor Battelle, nor any of 
  * their employees, nor any jurisdiction or organization that has cooperated in the development of these materials, 
@@ -6,7 +21,7 @@
  * completeness, or usefulness or any information, apparatus, product, software, or process disclosed, or represents
  * that its use would not infringe privately owned rights.
  */
-package gov.pnnl.aparapi.matrix;
+package com.aparapi.examples.matrix;
 
 import org.apache.log4j.Logger;
 
@@ -40,7 +55,7 @@ public class CorrMatrixHost {
     * @return result Matrix
     * @throws Exception
     */
-   public static int[][] intersectionMatrix(final long[][] matrixA, final long[][] matrixB, final EXECUTION_MODE executionMode) throws Exception {
+   public static int[][] intersectionMatrix(final long[][] matrixA, final long[][] matrixB, final EXECUTION_MODE executionMode) {
 
       // Basic validation
       if (matrixA == null) {
@@ -225,7 +240,7 @@ public class CorrMatrixHost {
 
                for (int i = aSubRowStart; i < aSubRowEnd; i++) {
                   if (matrixA_numLongs != matrixA[i].length) {
-                     throw new Exception("All rows in the matrix need be the same length");
+                     throw new IllegalStateException("All rows in the matrix need be the same length");
                   }
 
                   System.arraycopy(matrixA[i], 0, subMatrixA, (i - aSubRowStart) * matrixA_numLongs, matrixA_numLongs);
@@ -236,7 +251,7 @@ public class CorrMatrixHost {
 
                for (int i = bSubRowStart; i < bSubRowEnd; i++) {
                   if (matrixA_numLongs != matrixB[i].length) {
-                     throw new Exception("All rows in the matrix need be the same length");
+                     throw new IllegalStateException("All rows in the matrix need be the same length");
                   }
 
                   System.arraycopy(matrixB[i], 0, subMatrixB, (i - bSubRowStart) * matrixB_numLongs, matrixB_numLongs);
