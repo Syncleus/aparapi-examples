@@ -147,7 +147,7 @@ public class Main{
             // divide into two 'spheres of bodies' by adjusting x
             if ((body % 2) == 0) {
                x += maxDist * 10.0f;
-               bodies[body] = new Body(x, y, z, 0.1f, false);
+               bodies[body] = new Body(x, y, z, 0.01f, false);
             } else {
                bodies[body] = new Body(x, y, z, 1f, true);
             }
