@@ -25,23 +25,25 @@
  */
 package com.aparapi.examples.oopnbody;
 
-import java.util.List;
 
 public final class Body{
-   protected final float delT = .005f;
-
-   protected final float espSqr = 1.0f;
-
    public static Body[] allBodies;
 
-   public Body(float _x, float _y, float _z, float _m) {
-      x = _x;
-      y = _y;
-      z = _z;
+   final private boolean isHeavy;
+
+   public Body(float x, float y, float z, float _m, boolean isHeavy) {
+      this.x = x;
+      this.y = y;
+      this.z = z;
       m = _m;
+      this.isHeavy = isHeavy;
    }
 
    float x, y, z, m, vx, vy, vz;
+
+   public boolean isHeavy() {
+      return isHeavy;
+   }
 
    public float getX() {
       return x;
@@ -53,6 +55,18 @@ public final class Body{
 
    public float getZ() {
       return z;
+   }
+
+   public float getRadius() {
+      return (float) Math.sqrt(x * x + y * y + z* z);
+   }
+
+   public float getTheta() {
+      return (float) Math.acos(z / getRadius());
+   }
+
+   public float getPhi() {
+      return (float) Math.atan(y / x);
    }
 
    public float getVx() {
@@ -85,6 +99,30 @@ public final class Body{
 
    public void setZ(float _z) {
       z = _z;
+   }
+
+   public void setRadius(float radius) {
+      final float theta = getTheta();
+      final float phi = getPhi();
+      x = (float) (radius * Math.cos(theta) * Math.sin(phi));
+      y = (float) (radius * Math.sin(theta) * Math.sin(phi));
+      z = (float) (radius * Math.cos(phi));
+   }
+
+   public void setTheta(float theta) {
+      final float radius = getRadius();
+      final float phi = getPhi();
+      x = (float) (radius * Math.cos(theta) * Math.sin(phi));
+      y = (float) (radius * Math.sin(theta) * Math.sin(phi));
+      z = (float) (radius * Math.cos(phi));
+   }
+
+   public void setPhi(float phi) {
+      final float radius = getRadius();
+      final float theta = getTheta();
+      x = (float) (radius * Math.cos(theta) * Math.sin(phi));
+      y = (float) (radius * Math.sin(theta) * Math.sin(phi));
+      z = (float) (radius * Math.cos(phi));
    }
 
    public void setVx(float _vx) {

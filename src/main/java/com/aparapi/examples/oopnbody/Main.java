@@ -62,16 +62,12 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
  */
 package com.aparapi.examples.oopnbody;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
@@ -91,7 +87,6 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import com.aparapi.Kernel;
-import com.aparapi.ProfileInfo;
 import com.aparapi.Range;
 
 import com.jogamp.opengl.util.FPSAnimator;
@@ -115,11 +110,9 @@ public class Main{
 
    public static class NBodyKernel extends Kernel{
 
-      protected final float delT = .005f;
+      protected final float delT = 0.5f;
 
-      protected final float espSqr = 1.0f;
-
-      protected final float mass = 5f;
+      protected final float espSqr = 10000.0f;
 
       private final Range range;
 
@@ -138,7 +131,13 @@ public class Main{
          for (int body = 0; body < range.getGlobalSize(0); body++) {
             final float theta = (float) (Math.random() * Math.PI * 2);
             final float phi = (float) (Math.random() * Math.PI * 2);
-            final float radius = (float) (Math.random() * maxDist);
+            final float radius;
+            final float seed = (float) (Math.random() * 0.01f) + 0.99f;
+            if ((body % 2) == 0) {
+               radius = ((float) (seed * maxDist)) / 1f;
+            } else {
+               radius = ((float) (seed * maxDist)) / 0.5f;
+            }
 
             // get the 3D dimensional coordinates
             float x = (float) (radius * Math.cos(theta) * Math.sin(phi));
@@ -147,11 +146,11 @@ public class Main{
 
             // divide into two 'spheres of bodies' by adjusting x
             if ((body % 2) == 0) {
-               x += maxDist * 1.5;
+               x += maxDist * 10.0f;
+               bodies[body] = new Body(x, y, z, 0.1f, false);
             } else {
-               x -= maxDist * 1.5;
+               bodies[body] = new Body(x, y, z, 1f, true);
             }
-            bodies[body] = new Body(x, y, z, 5f);
          }
 
          Body.allBodies = bodies;
@@ -206,15 +205,11 @@ public class Main{
          int sz = range.getGlobalSize(0);
          for (int i = 0; i < sz; i++) {
 
-            if (i < (sz / 2)) {
-               gl.glColor3f(1f, 0f, 0f);
-            } else if (i < (sz * 0.666)) {
-               gl.glColor3f(0f, 1f, 0f);
-            } else {
-               gl.glColor3f(0f, 0f, 1f);
-            }
-
             Body currBody = bodies[i];
+            if(currBody.isHeavy())
+               gl.glColor3f(1f, 0f, 0f);
+            else
+               gl.glColor3f(0f, 0f, 1f);
 
             gl.glTexCoord2f(0, 1);
             gl.glVertex3f(currBody.getX(), currBody.getY() + 1, currBody.getZ());
@@ -286,22 +281,32 @@ public class Main{
       final Dimension dimension = new Dimension(Integer.getInteger("width", 742 - 64), Integer.getInteger("height", 742 - 64));
       canvas.setPreferredSize(dimension);
 
+      final Perspective perspective = new Perspective(0f, 0f, -800f, 0f, 0f, 0f, 1f);
+
+      KeyboardFocusManager.getCurrentKeyboardFocusManager()
+              .addKeyEventDispatcher(new KeyEventDispatcher() {
+                 @Override
+                 public boolean dispatchKeyEvent(KeyEvent e) {
+                    switch(e.getKeyCode()) {
+                       case 37:
+                          perspective.setPhi(perspective.getPhi() - 0.1f);
+                          break;
+                       case 38:
+                          perspective.setTheta(perspective.getTheta() + 0.1f);
+                          break;
+                       case 39:
+                          perspective.setPhi(perspective.getPhi() + 0.1f);
+                          break;
+                       case 40:
+                          perspective.setTheta(perspective.getTheta() - 0.1f);
+                          break;
+                    }
+                    return false;
+                 }
+              });
+
       canvas.addGLEventListener(new GLEventListener(){
          private double ratio;
-
-         private final float xeye = 0f;
-
-         private final float yeye = 0f;
-
-         private final float zeye = 100f;
-
-         private final float xat = 0f;
-
-         private final float yat = 0f;
-
-         private final float zat = 0f;
-
-         public final float zoomFactor = 1.0f;
 
          private int frames;
 
@@ -323,7 +328,7 @@ public class Main{
             final GLU glu = new GLU();
             glu.gluPerspective(45f, ratio, 1f, 1000f);
 
-            glu.gluLookAt(xeye, yeye, zeye * zoomFactor, xat, yat, zat, 0f, 1f, 0f);
+            glu.gluLookAt(perspective.getXeye(), perspective.getYeye(), perspective.getZeye(), perspective.getXat(), perspective.getYat(), perspective.getZat(), 0f, 1f, 0f);
             if (running) {
                //Arrays.parallel(bodies.toArray(new Body[1])).forEach(b -> {b.nextMove();});
                kernel.execute(kernel.range);
