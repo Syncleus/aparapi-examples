@@ -41,6 +41,6 @@ matches it since snapshots do not appear in maven central.
 
 ```bash
 
-git checkout v1.3.4
+git checkout v1.6.0
 mvn clean package exec:java
 ```
