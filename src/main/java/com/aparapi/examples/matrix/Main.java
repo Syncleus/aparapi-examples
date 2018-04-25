@@ -26,7 +26,6 @@ package com.aparapi.examples.matrix;
 import com.aparapi.Kernel.EXECUTION_MODE;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-import org.apache.lucene.util.OpenBitSet;
 
 import java.io.File;
 import java.io.FileNotFoundException;

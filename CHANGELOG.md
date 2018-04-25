@@ -1,8 +1,10 @@
 # Aparapi Examples Changelog
 
-##v1.8.0
+## v1.8.0
 
 * Synced to Aparapi 1.8.0
+* Updated dependency org.apache.commons:commons-lang3 from 3.6 to 3.7
+
 
 ## 1.7.0
 
