@@ -95,16 +95,16 @@ import com.jogamp.opengl.util.texture.TextureIO;
 
 /**
  * NBody implementing demonstrating Aparapi kernels.
- * 
- * For a description of the NBody problem.
- * 
- * @see http://en.wikipedia.org/wiki/N-body_problem
- * 
- *      We use JOGL to render the bodies.
- * @see http://jogamp.org/jogl/www/
- * 
+ *
+ * For a description of the NBody problem, see
+ * <a href="https://en.wikipedia.org/wiki/N-body_problem">n-body problem</a>
+ *
+ * We use JOGL to render the bodies. <a href="http://jogamp.org/jogl/www/">JOGL</a>
+ *
+ * @see <a href="http://jogamp.org/jogl/www/">JOGL</a>
+ * @see <a href="https://en.wikipedia.org/wiki/N-body_problem">n-body problem</a>
+ *
  * @author gfrost
- * 
  */
 public class Main{
 
@@ -121,7 +121,7 @@ public class Main{
       /**
        * Constructor initializes xyz and vxyz arrays.
        * 
-       * @param _bodies
+       * @param _range The execution range provided.
        */
       public NBodyKernel(Range _range) {
          range = _range;

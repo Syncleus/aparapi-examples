@@ -34,8 +34,8 @@ import com.aparapi.device.OpenCLDevice;
 /**
  * GPU calculations using OpenBitSet Intersection for OpenBitSets
  * 
- * Based on code from: <br/>
- * {@link http://grepcode.com/file/repo1.maven.org/maven2/org.apache.lucene/lucene-core/3.1.0/org/apache/lucene/util/BitUtil.java}
+ * Based on code from:
+ * <a href="http://grepcode.com/file/repo1.maven.org/maven2/org.apache.lucene/lucene-core/3.1.0/org/apache/lucene/util/BitUtil.java">apache.lucene.util.BitUtil.java</a>
  * 
  * @author ryan.lamothe at gmail.com
  * @author sedillard at gmail.com
@@ -51,9 +51,8 @@ public class CorrMatrixHost {
     *    The first term-document matrix
     * @param matrixB
     *    The second term-document matrix
-    * @param Aparapi EXECUTION_MODE
+    * @param executionMode EXECUTION_MODE
     * @return result Matrix
-    * @throws Exception
     */
    public static int[][] intersectionMatrix(final long[][] matrixA, final long[][] matrixB, final EXECUTION_MODE executionMode) {
 
