@@ -29,7 +29,7 @@ import com.aparapi.*;
 
 /**
  * Provides support for pixel windows of size no greater than 49 (e.g. 7x7).
- * <p/>
+ *
  * <p>Demonstrates use of __private array for (partial) sorting, also demonstrates @NoCl annotation for specialised use of ThreadLocal in JTP execution.
  */
 public class MedianKernel7x7 extends Kernel {
@@ -155,6 +155,8 @@ public class MedianKernel7x7 extends Kernel {
     *                    Title: Algorithms + data structures = programs
     *                Publisher: Englewood Cliffs: Prentice-Hall, 1976
     * </pre>
+    *
+    * @param actualPixelCount The actual pixel count.
     */
    protected final int median(int actualPixelCount) {
       int i, j, L, m;

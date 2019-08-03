@@ -140,7 +140,6 @@ public class Mandel{
        * @param _width Mandelbrot image width
        * @param _height Mandelbrot image height
        * @param _rgb Mandelbrot image RGB buffer
-       * @param _pallette Mandelbrot image palette
        */
       public MandelKernel(int _width, int _height, int[] _rgb) {
          //Initialize palette values

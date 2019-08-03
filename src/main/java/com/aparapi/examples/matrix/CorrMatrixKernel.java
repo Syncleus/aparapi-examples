@@ -27,10 +27,10 @@ import com.aparapi.Kernel;
 
 /**
  * This kernel attempts to re-implement the Lucene OpenBitSet functionality on a GPU
- * 
- * Based on code from: <br/>
- * {@link http://grepcode.com/file/repo1.maven.org/maven2/org.apache.lucene/lucene-core/3.1.0/org/apache/lucene/util/BitUtil.java}
- * 
+ *
+ * Based on code from:
+ * <a href="http://grepcode.com/file/repo1.maven.org/maven2/org.apache.lucene/lucene-core/3.1.0/org/apache/lucene/util/BitUtil.java">apache.lucene.util.BitUtil.java</a>
+ *
  * @author ryan.lamothe at gmail.com
  * @author sedillard at gmail.com
  */
@@ -50,6 +50,13 @@ public class CorrMatrixKernel extends Kernel {
 
    /**
     * Default constructor
+    *
+    * @param matrixA          Matrix A.
+    * @param matrixB          Matrix B.
+    * @param matrixA_NumTerms Number of terms in Matrix A.
+    * @param matrixB_NumTerms Number of terms in Matrix B.
+    * @param numLongs         Number of longs.
+    * @param resultMatrix     The matrix to store the results in.
     */
    public CorrMatrixKernel(final long[] matrixA, final int matrixA_NumTerms, final long[] matrixB, final int matrixB_NumTerms,
          final int numLongs, final int[] resultMatrix) {
@@ -78,6 +85,12 @@ public class CorrMatrixKernel extends Kernel {
 
    /**
     * A naive implementation of the pop_array code below
+    *
+    * @param matrixA  Matrix A.
+    * @param matrixB  Matrix B.
+    * @param aStart   Offset for Matrix A.
+    * @param bStart   Offset for Matrix B.
+    * @param numWords The number of words to operate on.
     */
    private int naive_pop_intersect(final long matrixA[], final int aStart, final long matrixB[], final int bStart, final int numWords) {
       int sum = 0;
@@ -92,8 +105,14 @@ public class CorrMatrixKernel extends Kernel {
    /**
     * Returns the popcount or cardinality of the two sets after an intersection.
     * Neither array is modified.
-    * 
+    *
     * Modified for the purposes of this kernel from its original version
+    *
+    * @param matrixA  Matrix A.
+    * @param matrixB  Matrix B.
+    * @param aStart   Offset for Matrix A.
+    * @param bStart   Offset for Matrix B.
+    * @param numWords The number of words to operate on.
     */
    private int pop_intersect(final long matrixA[], final int aStart, final long matrixB[], final int bStart, final int numWords) {
 
@@ -242,6 +261,8 @@ public class CorrMatrixKernel extends Kernel {
 
    /**
     * Returns the number of bits set in the long
+    *
+    * @param x The long whose bit count is needed.
     */
    private int pop(long x) {
 
@@ -252,7 +273,7 @@ public class CorrMatrixKernel extends Kernel {
       /*
        * Hacker's Delight 32 bit pop function:
        * http://www.hackersdelight.org/HDcode/newCode/pop_arrayHS.c.txt
-       * 
+       *
        * int pop(unsigned x) {
        * x = x - ((x >> 1) & 0x55555555);
        * x = (x & 0x33333333) + ((x >> 2) & 0x33333333);

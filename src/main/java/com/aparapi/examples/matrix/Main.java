@@ -50,6 +50,8 @@ import java.util.Random;
 public class Main {
     /**
      * NumTerms and NumLongs (documents) need to be adjusted manually right now to force 'striping' to occur (see Host code for details)
+     *
+     * @param _args The command-line arguments.
      */
     public static void main(String[] _args) {
         final List<Pair<OpenBitSet, OpenBitSet>> obsPairs = new ArrayList<Pair<OpenBitSet, OpenBitSet>>();
@@ -59,9 +61,9 @@ public class Main {
 
         int[][] obsResultMatrix;
 
-      /*
-       * Populate test data
-       */
+        /*
+         * Populate test data
+         */
         System.out.println("----------");
         System.out.println("Populating test matrix data using settings from build.xml...");
         System.out.println("----------");
@@ -79,9 +81,9 @@ public class Main {
             obsPairs.add(i, new ImmutablePair<OpenBitSet, OpenBitSet>(new OpenBitSet(bits, numLongs), new OpenBitSet(bits, numLongs)));
         }
 
-      /*
-       * OpenBitSet calculations
-       */
+        /*
+         * OpenBitSet calculations
+         */
         System.out.println("Executing OpenBitSet intersectionCount");
 
         final long startTime = System.currentTimeMillis();
@@ -107,9 +109,9 @@ public class Main {
         System.out.println("OpenBitSet Gross Execution Time: " + endTime + " ms <------OpenBitSet");
         System.out.println("----------");
 
-      /*
-       * GPU calculations
-       */
+        /*
+         * GPU calculations
+         */
         System.out.println("Executing Aparapi intersectionCount");
 
         final long[][] matrixA = new long[obsPairs.size()][];
@@ -137,7 +139,7 @@ public class Main {
             for (int j = 0; j < obsResultMatrix[i].length; j++)
                 if (obsResultMatrix[i][j] != gpuResultMatrix[i][j]) {
                     System.out.println("[" + i + "][" + j + "] -> " + obsResultMatrix[i][j] + " : " + gpuResultMatrix[i][j]);
-            }
+                }
         }
         System.out.println("Any elements not listed matched!");
     }

@@ -98,16 +98,16 @@ import com.jogamp.opengl.util.texture.TextureIO;
 
 /**
  * NBody implemented sequentially 
- * 
- * For a description of the NBody problem.
- * 
- * @see http://en.wikipedia.org/wiki/N-body_problem
- * 
- *      We use JOGL to render the bodies.
- * @see http://jogamp.org/jogl/www/
- * 
+ *
+ * For a description of the NBody problem, see
+ * <a href="https://en.wikipedia.org/wiki/N-body_problem">n-body problem</a>
+ *
+ * We use JOGL to render the bodies. <a href="http://jogamp.org/jogl/www/">JOGL</a>
+ *
+ * @see <a href="http://jogamp.org/jogl/www/">JOGL</a>
+ * @see <a href="https://en.wikipedia.org/wiki/N-body_problem">n-body problem</a>
+ *
  * @author gfrost
- * 
  */
 public class Seq{
 
@@ -127,7 +127,7 @@ public class Seq{
       /**
        * Constructor initializes xyz and vxyz arrays.
        * 
-       * @param _bodies
+       * @param _bodies The number of bodies to be simulated.
        */
       public NBodyKernel(int _bodies) {
          bodies = _bodies;
@@ -196,7 +196,7 @@ public class Seq{
       /**
        * Render all particles to the OpenGL context
        * 
-       * @param gl
+       * @param gl The OpenGL context to render to.
        */
 
       protected void render(GL2 gl) {
