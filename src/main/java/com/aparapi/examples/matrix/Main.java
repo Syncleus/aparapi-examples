@@ -26,7 +26,7 @@ package com.aparapi.examples.matrix;
 import com.aparapi.Kernel.EXECUTION_MODE;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-import org.apache.lucene.util.OpenBitSet;
+import org.apache.lucene.util.FixedBitSet;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -40,9 +40,9 @@ import java.util.Random;
  * This test class performs the following functions:
  *
  * 1) Create a randomly populated set of matrices for correlation/co-occurrence computation
- * 2) Execute the CPU-based computation using Lucene OpenBitSets
+ * 2) Execute the CPU-based computation using Lucene FixedBitSets
  * 3) Execute the GPU-based computation using Aparapi CorrMatrix host and kernel
- * 4) Verify the results of OpenBitSet and CorrMatrix by comparing matrices to each other
+ * 4) Verify the results of FixedBitSet and CorrMatrix by comparing matrices to each other
  *
  * @author ryan.lamothe at gmail.com
  *
@@ -54,7 +54,7 @@ public class Main {
      * @param _args The command-line arguments.
      */
     public static void main(String[] _args) {
-        final List<Pair<OpenBitSet, OpenBitSet>> obsPairs = new ArrayList<Pair<OpenBitSet, OpenBitSet>>();
+        final List<Pair<FixedBitSet, FixedBitSet>> obsPairs = new ArrayList<Pair<FixedBitSet, FixedBitSet>>();
         ;
 
         final Random rand = new Random();
@@ -73,18 +73,24 @@ public class Main {
         final int numLongs = Integer.getInteger("numColumns", 10000); // # Columns
 
         for (int i = 0; i < numTerms; ++i) {
-            final long[] bits = new long[numLongs];
+            final FixedBitSet first = new FixedBitSet(numLongs);
+            final FixedBitSet second = new FixedBitSet(numLongs);
+
+            //final long[] bits = new long[numLongs];
             for (int j = 0; j < numLongs; ++j) {
-                bits[j] = rand.nextLong();
+                if (rand.nextBoolean()) 
+                   first.set(j);
+                if (rand.nextBoolean()) 
+                   second.set(j);
             }
 
-            obsPairs.add(i, new ImmutablePair<OpenBitSet, OpenBitSet>(new OpenBitSet(bits, numLongs), new OpenBitSet(bits, numLongs)));
+            obsPairs.add(i, new ImmutablePair<FixedBitSet, FixedBitSet>(first, second));
         }
 
         /*
-         * OpenBitSet calculations
+         * FixedBitSet calculations
          */
-        System.out.println("Executing OpenBitSet intersectionCount");
+        System.out.println("Executing FixedBitSet intersectionCount");
 
         final long startTime = System.currentTimeMillis();
 
@@ -93,20 +99,20 @@ public class Main {
         // This is an N^2 comparison loop
         // FIXME This entire loop needs to be parallelized to show an apples-to-apples comparison to Aparapi
         for (int i = 0; i < obsPairs.size(); i++) {
-            final Pair<OpenBitSet, OpenBitSet> docFreqVector1 = obsPairs.get(i);
+            final Pair<FixedBitSet, FixedBitSet> docFreqVector1 = obsPairs.get(i);
 
             for (int j = 0; j < obsPairs.size(); j++) {
-                final Pair<OpenBitSet, OpenBitSet> docFreqVector2 = obsPairs.get(j);
+                final Pair<FixedBitSet, FixedBitSet> docFreqVector2 = obsPairs.get(j);
 
                 // # of matches in both sets of documents
-                final int result = (int) OpenBitSet.intersectionCount(docFreqVector1.getLeft(), docFreqVector2.getRight());
+                final int result = (int) FixedBitSet.intersectionCount(docFreqVector1.getLeft(), docFreqVector2.getRight());
                 obsResultMatrix[i][j] = result;
             }
         }
 
         final long endTime = System.currentTimeMillis() - startTime;
 
-        System.out.println("OpenBitSet Gross Execution Time: " + endTime + " ms <------OpenBitSet");
+        System.out.println("FixedBitSet Gross Execution Time: " + endTime + " ms <------FixedBitSet");
         System.out.println("----------");
 
         /*
@@ -117,11 +123,11 @@ public class Main {
         final long[][] matrixA = new long[obsPairs.size()][];
         final long[][] matrixB = new long[obsPairs.size()][];
 
-        // Convert OpenBitSet pairs to long primitive arrays for use with Aparapi
+        // Convert FixedBitSet pairs to long primitive arrays for use with Aparapi
         // TODO It would be nice if we could find a way to put the obsPairs onto the GPU directly :)
         for (int i = 0; i < obsPairs.size(); i++) {
-            final OpenBitSet obsA = obsPairs.get(i).getLeft();
-            final OpenBitSet obsB = obsPairs.get(i).getRight();
+            final FixedBitSet obsA = obsPairs.get(i).getLeft();
+            final FixedBitSet obsB = obsPairs.get(i).getRight();
 
             matrixA[i] = obsA.getBits();
             matrixB[i] = obsB.getBits();
@@ -134,7 +140,7 @@ public class Main {
         gpuResultMatrix = CorrMatrixHost.intersectionMatrix(matrixA, matrixB, EXECUTION_MODE.GPU);
 
         // Compare the two result arrays to make sure we are generating the same output
-        System.out.println("[i][j] -> OpenBitSet Result : GPU Result Array");
+        System.out.println("[i][j] -> FixedBitSet Result : GPU Result Array");
         for (int i = 0; i < obsResultMatrix.length; i++) {
             for (int j = 0; j < obsResultMatrix[i].length; j++)
                 if (obsResultMatrix[i][j] != gpuResultMatrix[i][j]) {
