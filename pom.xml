@@ -21,7 +21,7 @@
 
     <name>Aparapi Examples</name>
     <description>A collection of examples for the aparapi framework.</description>
-    <url>https://github.com/Syncleus/aparapi</url>
+    <url>https://git.qoto.org/aparapi/aparapi</url>
 
     <licenses>
         <license>
@@ -37,14 +37,14 @@
     </organization>
 
     <scm>
-        <connection>scm:git:https://github.com/Syncleus/aparapi-examples.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/Syncleus/aparapi-examples.git</developerConnection>
-        <url>https://github.com/Syncleus/aparapi-examples</url>
+        <connection>scm:git:https://git.qoto.org/aparapi/aparapi-examples.git</connection>
+        <developerConnection>scm:git:ssh://git@git.qoto.org/aparapi/aparapi-examples.git</developerConnection>
+        <url>https://git.qoto.org/aparapi/aparapi-examples</url>
     </scm>
 
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/Syncleus/aparapi-examples/issues</url>
+        <url>https://git.qoto.org/aparapi/aparapi-examples/issues</url>
     </issueManagement>
 
     <developers>
