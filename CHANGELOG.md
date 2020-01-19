@@ -1,5 +1,9 @@
 # Aparapi Examples Changelog
 
+## 2.0.0
+
+* Synced to Aparapi 2.0.0
+
 ## 1.10.0
 
 * Synced to Aparapi 1.10.0
