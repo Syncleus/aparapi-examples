@@ -8,13 +8,13 @@ A framework for executing native Java code on the GPU.
 
 **Licensed under the Apache Software License v2**
 
-This project is a collection of examples for the Aparapi project. For more information see the Aparapi [website](http://Aparapi.com) or the [Github page](https://github.com/Syncleus/aparapi-examples).
+This project is a collection of examples for the Aparapi project. For more information see the Aparapi [website](http://Aparapi.com) or the [QOTO GitLab repository](https://git.qoto.org/aparapi/aparapi-examples). An up-to-date mirror of this repository is also maintained on [Github](https://github.com/Syncleus/aparapi-examples).
 
 For detailed documentation see [Aparapi.com](http://Aparapi.com).
 
-For support please use [Gitter](https://gitter.im/Syncleus/aparapi) or the [official Aparapi mailing list](https://groups.google.com/a/syncleus.com/d/forum/aparapi-list).
+For support please use [Gitter](https://gitter.im/Syncleus/aparapi) or the [official Aparapi mailing list and Discourse forum](https://discourse.qoto.org/c/PROJ/APA).
 
-Please file bugs and feature requests on [Github](https://github.com/Syncleus/aparapi-examples/issues).
+Please file bugs and feature requests at [QOTO GitLab](https://git.qoto.org/aparapi/aparapi-examples); a mirror of older issues can be found at [Github](https://github.com/Syncleus/aparapi-examples/issues).
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ following command.
 
 ```bash
 
-git clone https://github.com/Syncleus/aparapi-examples.git
+git clone https://git.qoto.org/aparapi/aparapi-examples.git
 ```
 
 ## Running
