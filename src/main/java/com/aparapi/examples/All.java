@@ -84,6 +84,7 @@ public class All {
         System.out.println(" 35) Map-reduce");
         System.out.println(" 36) Correlation Matrix");
         System.out.println(" 37) Reduce Sum");
+        System.out.println(" 38) Matrix Multiplication with Local Memory");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -107,7 +108,6 @@ public class All {
         if (line.toUpperCase().equals("Q"))
             return false;
 
-        line="37";
         switch (line) {
             case "1":
                 com.aparapi.examples.life.Main.main(args);
@@ -219,6 +219,9 @@ public class All {
                 break;
             case "37":
                 com.aparapi.examples.reductions.ReductionSum.main(args);
+                break;
+            case "38":
+                com.aparapi.examples.matrices.MatrixMultiplicationLocal.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
