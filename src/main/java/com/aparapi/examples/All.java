@@ -83,36 +83,32 @@ public class All {
         System.out.println(" 34) OOPN Body");
         System.out.println(" 35) Map-reduce");
         System.out.println(" 36) Correlation Matrix");
+        System.out.println(" 37) Reduce Sum");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
         boolean running = true;
-        while(running)
-        {
+        while (running) {
             System.out.print("Enter your selection, or q/Q to quit: ");
-            if( in.hasNextLine() )
-            {
+            if (in.hasNextLine()) {
                 String line = in.nextLine();
                 running = selected(line, _args);
                 System.out.println();
-            }
-            else
+            } else
                 try {
                     Thread.sleep(100);
-                }
-                catch(InterruptedException ex) {
+                } catch (InterruptedException ex) {
                     return;
                 }
         }
     }
 
-    private static boolean selected(String line, String[] args) throws Exception
-    {
-        if( line.toUpperCase().equals("Q") )
-           return false;
+    private static boolean selected(String line, String[] args) throws Exception {
+        if (line.toUpperCase().equals("Q"))
+            return false;
 
-        switch(line)
-        {
+        line="37";
+        switch (line) {
             case "1":
                 com.aparapi.examples.life.Main.main(args);
                 break;
@@ -220,6 +216,9 @@ public class All {
                 break;
             case "36":
                 com.aparapi.examples.matrix.Main.main(args);
+                break;
+            case "37":
+                com.aparapi.examples.reductions.ReductionSum.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
