@@ -64,56 +64,42 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 package com.aparapi.examples.matrices;
 
 import com.aparapi.Kernel;
+import com.aparapi.ProfileInfo;
 import com.aparapi.Range;
 
 import javax.swing.table.TableStringConverter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 /**
  * An example Aparapi application which computes and displays squares of a set of 512 input values.
  * While executing on GPU using Aparpi framework, each square value is computed in a separate kernel invocation and 
  * can thus maximize performance by optimally utilizing all GPU computing units 
  *
- * @author gfrost
- *
  */
 
 public class MatrixMultiplicationLocal {
 
     public static void main(String[] _args) {
+        int size = 256;
 
-        int size = 1024;
+        float[] arrayA = new float[size * size];
+        float[] arrayB = new float[size * size];
 
-        final float[] arrayA = new float[size * size];
-        final float[] arrayB = new float[size * size];
-
-        for (int i = 0; i < size * size; i++) {
-            arrayA[i] = 4.23f;
-            arrayB[i] = 4.34f;
-        }
+        initializeInputArrays(arrayA, size);
+        initializeInputArrays(arrayB, size);
 
         float[] arrayC = new float[size * size];
         final float[] arrayCParallel = new float[size * size];
 
+        Arrays.fill(arrayC,0f);
+        Arrays.fill(arrayCParallel,0f);
 
-        final int finalSize = size;
+        MatrixMultiplication kernel = new MatrixMultiplication(arrayA, arrayB, arrayCParallel, size);
 
-        Kernel kernel = new Kernel() {
-            @Override
-            public void run() {
-
-                float sum = 0f;
-                if (getGlobalId(0) < finalSize && getGlobalId(1) < finalSize)
-                    for (int y = 0; y < finalSize; y++) {
-                        sum += arrayA[(getGlobalId(1) * finalSize) + y] * arrayB[(y * finalSize) + getGlobalId(0)];
-                    }
-
-                arrayCParallel[(getGlobalId(1) * finalSize) + getGlobalId(0)] = sum;
-            }
-        };
-
-        Range range = Range.create2D(kernel.getTargetDevice(), 1024, 1024);
+        Range range = Range.create2D(kernel.getTargetDevice(), size, size);
 
         kernel.put(arrayA);
         kernel.put(arrayB);
@@ -124,24 +110,28 @@ public class MatrixMultiplicationLocal {
         kernel.get(arrayCParallel);
 
 
-        for (int iter = 0; iter < 10; iter++) {
-            System.out.println("Device info " + kernel.getTargetDevice().toString() + " ! ");
+        System.out.println("Device info " + kernel.getTargetDevice().toString() + " ! ");
+        for (int iter = 0; iter < 15; iter++) {
             kernel.execute(range);
-            System.out.println("iteration: " + iter);
-            System.out.println("Time " + kernel.getExecutionTime() + " ! ");
+            System.out.println("Time " + kernel.getExecutionTime() + " (ms) "); //Determine the execution time of the previous Kernel.execute(range) call.
         }
 
-        arrayC = matrixMultiplicationSerial(arrayA, arrayB,arrayC, size);
+        kernel.get(arrayCParallel);
+        arrayC = matrixMultiplicationSerial(arrayA, arrayB, arrayC, size);
 
         System.out.println("Verify :  " + verify(arrayC, arrayCParallel, size));
 
+        List<ProfileInfo> profileInfo = kernel.getProfileInfo();
+
+        System.out.println("profile infor : " + profileInfo.get(0).getType());
+//        for (final ProfileInfo p : profileInfo) {
+//            System.out.print(" " + p.getType() + " " + p.getLabel() + " " + (p.getStart() / 1000) + " .. "
+//                    + (p.getEnd() / 1000) + " " + ((p.getEnd() - p.getStart()) / 1000) + "us");
+//            System.out.println();
+//        }
 
 //        System.out.println(" paralleArray " + Arrays.toString(arrayCParallel));
 //        System.out.println("Device = " + kernel.getTargetDevice().getShortDescription());
-
-        for (int i = 0; i < size; i++) {
-            //   System.out.printf("%6.0f %8.0f\n", values[i], squares[i]);
-        }
 
         kernel.dispose();
     }
@@ -161,7 +151,6 @@ public class MatrixMultiplicationLocal {
     }
 
     private static float[] matrixMultiplicationSerial(float[] a, float[] b, float[] c, int size) {
-
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 float sum = 0f;
@@ -171,7 +160,39 @@ public class MatrixMultiplicationLocal {
                 c[j * size + i] = sum;
             }
         }
-
         return c;
+    }
+
+    private static float[] initializeInputArrays(float[] input, int size) {
+        Random number = new Random();
+        for (int i = 0; i < size * size; i++) {
+            input[i] = number.nextFloat();
+        }
+        return input;
+    }
+
+    public static class MatrixMultiplication extends Kernel {
+
+        final float[] arrayA;
+        final float[] arrayB;
+        final float[] arrayC;
+        final int size;
+
+        MatrixMultiplication(float[] arrayA, float[] arrayB, float[] arrayC, int size) {
+            this.arrayA = arrayA;
+            this.arrayB = arrayB;
+            this.arrayC = arrayC;
+            this.size = size;
+        }
+
+        @Override
+        public void run() {
+            float sum = 0f;
+            if (getGlobalId(0) < size && getGlobalId(1) < size)
+                for (int y = 0; y < size; y++) {
+                    sum += arrayA[(getGlobalId(1) * size) + y] * arrayB[(y * size) + getGlobalId(0)];
+                }
+            arrayC[(getGlobalId(1) * size) + getGlobalId(0)] = sum;
+        }
     }
 }
