@@ -129,7 +129,8 @@
                     <mainClass>com.aparapi.examples.All</mainClass>
                     <arguments>
                         <argument>com.aparapi.executionMode=GPU</argument>
-                        <argument>com.aparapi.enableShowGeneratedOpenCL=true</argument>
+                        <argument>com.amd.aparapi.enableShowGeneratedOpenCL=true</argument>
+                        <argument>com.amd.aparapi.enableProfiling=true</argument>
                     </arguments>
                 </configuration>
             </plugin>
