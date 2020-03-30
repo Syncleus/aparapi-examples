@@ -64,13 +64,9 @@ under those regulations, please refer to the U.S. Bureau of Industry and Securit
 package com.aparapi.examples.matrices;
 
 import com.aparapi.Kernel;
-import com.aparapi.ProfileInfo;
 import com.aparapi.Range;
 
-import javax.swing.table.TableStringConverter;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -80,7 +76,7 @@ import java.util.Random;
  *
  */
 
-public class MatrixMultiplicationLocal {
+public class MatrixMultiplication {
 
     public static void main(String[] _args) {
         int size = 256;
@@ -97,7 +93,7 @@ public class MatrixMultiplicationLocal {
         Arrays.fill(arrayC,0f);
         Arrays.fill(arrayCParallel,0f);
 
-        MatrixMultiplication kernel = new MatrixMultiplication(arrayA, arrayB, arrayCParallel, size);
+        MatrixMultiplicationKernel kernel = new MatrixMultiplicationKernel(arrayA, arrayB, arrayCParallel, size);
 
         Range range = Range.create2D(kernel.getTargetDevice(), size, size);
 
@@ -117,21 +113,10 @@ public class MatrixMultiplicationLocal {
         }
 
         kernel.get(arrayCParallel);
+
         arrayC = matrixMultiplicationSerial(arrayA, arrayB, arrayC, size);
 
         System.out.println("Verify :  " + verify(arrayC, arrayCParallel, size));
-
-        List<ProfileInfo> profileInfo = kernel.getProfileInfo();
-
-        System.out.println("profile infor : " + profileInfo.get(0).getType());
-//        for (final ProfileInfo p : profileInfo) {
-//            System.out.print(" " + p.getType() + " " + p.getLabel() + " " + (p.getStart() / 1000) + " .. "
-//                    + (p.getEnd() / 1000) + " " + ((p.getEnd() - p.getStart()) / 1000) + "us");
-//            System.out.println();
-//        }
-
-//        System.out.println(" paralleArray " + Arrays.toString(arrayCParallel));
-//        System.out.println("Device = " + kernel.getTargetDevice().getShortDescription());
 
         kernel.dispose();
     }
@@ -166,19 +151,21 @@ public class MatrixMultiplicationLocal {
     private static float[] initializeInputArrays(float[] input, int size) {
         Random number = new Random();
         for (int i = 0; i < size * size; i++) {
-            input[i] = number.nextFloat();
+//            input[i] = number.nextFloat();
+//            input[i] = number.nextFloat();
+            input[i] = 2f;
         }
         return input;
     }
 
-    public static class MatrixMultiplication extends Kernel {
+    public static class MatrixMultiplicationKernel extends Kernel {
 
         final float[] arrayA;
         final float[] arrayB;
         final float[] arrayC;
         final int size;
 
-        MatrixMultiplication(float[] arrayA, float[] arrayB, float[] arrayC, int size) {
+        MatrixMultiplicationKernel(float[] arrayA, float[] arrayB, float[] arrayC, int size) {
             this.arrayA = arrayA;
             this.arrayB = arrayB;
             this.arrayC = arrayC;

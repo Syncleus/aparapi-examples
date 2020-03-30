@@ -35,6 +35,7 @@ import com.aparapi.examples.javaonedemo.Life;
 import com.aparapi.examples.javaonedemo.Mandel;
 import com.aparapi.examples.javaonedemo.NBody;
 import com.aparapi.examples.mandel.Main2D;
+import com.aparapi.examples.matrices.MatrixMultiplication;
 import com.aparapi.examples.mdarray.MDArray;
 import com.aparapi.examples.median.MedianDemo;
 import com.aparapi.examples.nbody.Local;
@@ -84,7 +85,8 @@ public class All {
         System.out.println(" 35) Map-reduce");
         System.out.println(" 36) Correlation Matrix");
         System.out.println(" 37) Reduce Sum");
-        System.out.println(" 38) Matrix Multiplication with Local Memory");
+        System.out.println(" 38) Matrix Multiplication");
+        System.out.println(" 39) Matrix Multiplication with Local Memory");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -221,7 +223,10 @@ public class All {
                 com.aparapi.examples.reductions.ReductionSum.main(args);
                 break;
             case "38":
-                com.aparapi.examples.matrices.MatrixMultiplicationLocal.main(args);
+                MatrixMultiplication.main(args);
+                break;
+            case "39":
+                MatrixMultiplication.main(args);
                 break;
             default:
                 System.out.println("Invalid selection.");
