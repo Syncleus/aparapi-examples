@@ -9,6 +9,7 @@
 * Paul Miner
 * Lorenzo Gallucci
 * Subhomoy Haldar (HungryBlueDev)
+* Marco Stefanetti 
 
 # Details
 
