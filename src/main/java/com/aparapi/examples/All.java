@@ -83,6 +83,9 @@ public class All {
         System.out.println(" 34) OOPN Body");
         System.out.println(" 35) Map-reduce");
         System.out.println(" 36) Correlation Matrix");
+        System.out.println(" 37) AparapiFractals - Mandelbrot explorer ");
+        System.out.println(" 38) AparapiFractals - soft benchmark ");
+        System.out.println(" 39) AparapiFractals - hard benchmark ");
         System.out.println();
 
         Scanner in = new Scanner(System.in);
@@ -220,6 +223,15 @@ public class All {
                 break;
             case "36":
                 com.aparapi.examples.matrix.Main.main(args);
+                break;
+            case "37":
+                com.aparapi.examples.afmandelbrot.AfMain.main(args);
+                break;
+            case "38":
+                com.aparapi.examples.afmandelbrot.AfBenchmark.main(new String[]{"SOFT"});
+                break;
+            case "39":
+                com.aparapi.examples.afmandelbrot.AfBenchmark.main(new String[]{"HARD"});
                 break;
             default:
                 System.out.println("Invalid selection.");
