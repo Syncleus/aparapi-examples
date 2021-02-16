@@ -2,6 +2,7 @@
 
 ## 2.0.1
 
+* Added an interactive Mandlebrot set explorer along with some related benchmarks.
 * Updated the following dependency versions:
 ** com.aparapi: aparapi 2.0.0 -> 2.0.1
 ** org.apache.commons:commons-lang3 3.9 -> 3.11
