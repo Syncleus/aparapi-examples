@@ -66,8 +66,19 @@ package com.aparapi.examples.add;
 import com.aparapi.Kernel;
 import com.aparapi.Range;
 
+/**
+ * <p>Main class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class Main{
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] _args) {
 
       final int size = 512;

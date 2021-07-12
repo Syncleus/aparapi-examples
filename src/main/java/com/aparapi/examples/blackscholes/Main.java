@@ -65,6 +65,12 @@ package com.aparapi.examples.blackscholes;
 import com.aparapi.Kernel;
 import com.aparapi.Range;
 
+/**
+ * <p>Main class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class Main{
 
    public static class BlackScholesKernel extends Kernel{
@@ -203,6 +209,14 @@ public class Main{
       }
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    * @throws java.lang.ClassNotFoundException if any.
+    * @throws java.lang.InstantiationException if any.
+    * @throws java.lang.IllegalAccessException if any.
+    */
    public static void main(String[] _args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
       int size = Integer.getInteger("size", 1024);

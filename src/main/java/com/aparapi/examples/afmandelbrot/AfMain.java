@@ -19,13 +19,14 @@ import org.apache.log4j.Logger;
 
 /**
  * Aparapi Fractals
- *  
+ *
  * The main class coordinates the GUI and Aparapi's executions. Complex plane
  * coordinates and iterations are saved here. If you are interested in Aparapi
  * code, just check AfAparapiUtils and AfKernel.
- * 
+ *
  * @author marco.stefanetti at gmail.com
- * 
+ * @version $Id: $Id
+ * @since 2.0.1
  */
 public class AfMain {
 
@@ -224,7 +225,9 @@ public class AfMain {
 
 	}
 
-	/** constructor */
+	/**
+	 * constructor
+	 */
 	public AfMain() {
 
 		profiler("MAIN start");
@@ -242,10 +245,10 @@ public class AfMain {
 
 	/**
 	 * initialize local iterations array and aparapiUtils
-	 * 
-	 * @param selectedDeviceKey new device key
+	 *
 	 * @param _W                new image width
 	 * @param _H                new image height
+	 * @param _selectedDeviceKey a {@link java.lang.String} object.
 	 */
 	public synchronized void init(String _selectedDeviceKey, int _W, int _H) {
 
@@ -264,7 +267,7 @@ public class AfMain {
 
 	/**
 	 * go to new coordinates using x,y pixel as new center and a zoom factor.
-	 * 
+	 *
 	 * @param x          new central pixel x
 	 * @param y          new central pixel y
 	 * @param zoomFactor zoomFactor is relative to dimensions in complex plane
@@ -366,15 +369,26 @@ public class AfMain {
 		return elapsed;
 	}
 
+	/**
+	 * <p>threadGoHome.</p>
+	 *
+	 * @param steps a int.
+	 */
 	public void threadGoHome(int steps) {
 		threadGo(-2d, -2d, 2d, 2d, steps);
 	}
 
+	/**
+	 * <p>goHome.</p>
+	 */
 	public void goHome() {
 		stopThread();
 		go(-2d, -2d, 2d, 2d);
 	}
 
+	/**
+	 * <p>stopThread.</p>
+	 */
 	public void stopThread() {
 
 		if (goThread == null) {
@@ -390,10 +404,22 @@ public class AfMain {
 
 	}
 
+	/**
+	 * <p>threadGo.</p>
+	 */
 	public void threadGo() {
 		threadGo(cx1, cy1, cx2, cy2, 0);
 	}
 
+	/**
+	 * <p>threadGo.</p>
+	 *
+	 * @param tx1 a double.
+	 * @param ty1 a double.
+	 * @param tx2 a double.
+	 * @param ty2 a double.
+	 * @param steps a double.
+	 */
 	public void threadGo(double tx1, double ty1, double tx2, double ty2, double steps) {
 
 		stopThread();
@@ -402,7 +428,11 @@ public class AfMain {
 
 	}
 
-	/** starts a benchmark in a separate thread */
+	/**
+	 * starts a benchmark in a separate thread
+	 *
+	 * @param benchmarkMode a {@link java.lang.String} object.
+	 */
 	public void benchmark(final String benchmarkMode) {
 
 		if (benchmarkRunning) {
@@ -440,7 +470,9 @@ public class AfMain {
 
 	}
 
-	/** stops the benchmark thread */
+	/**
+	 * stops the benchmark thread
+	 */
 	public void stopBenchmark() {
 
 		if (!benchmarkRunning) {
@@ -458,7 +490,7 @@ public class AfMain {
 
 	/**
 	 * used by the GUI, the GUI has no direct access to the aparapi stuffs
-	 * 
+	 *
 	 * @return the list of devices from aparapiUtils
 	 */
 	public String[] getDeviceKeys() {
@@ -469,21 +501,27 @@ public class AfMain {
 	 * used by the GUI to show the name of the device. It's different from the
 	 * combobox (selectedDeviceKey), here you get the real name of the device, e.g.
 	 * "NVidia 1650 SUPER""
-	 * 
+	 *
 	 * @return the name of the current device
 	 */
 	public String getDeviceName() {
 		return afAparapiUtils.getDeviceName();
 	}
 
-	/** used to profile main and gui startup */
+	/**
+	 * used to profile main and gui startup
+	 *
+	 * @param message a {@link java.lang.String} object.
+	 */
 	protected void profiler(String message) {
 		long ms = System.currentTimeMillis() - profilerLastTimeMillis;
 		LOG.debug(String.format("profiler - %-20s : %-10d ms", message, ms));
 		profilerLastTimeMillis = System.currentTimeMillis();
 	}
 
-	/** gui creation executed in the swing thread */
+	/**
+	 * gui creation executed in the swing thread
+	 */
 	protected void createAndShowGUI() {
 
 		// swing load
@@ -497,6 +535,11 @@ public class AfMain {
 
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 
 		System.setProperty("com.aparapi.enableShowGeneratedOpenCL", "true");

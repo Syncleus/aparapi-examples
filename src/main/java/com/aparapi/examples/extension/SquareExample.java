@@ -35,6 +35,12 @@ import com.aparapi.opencl.OpenCL.Resource;
 import com.aparapi.opencl.OpenCL.Source;
 import java.util.List;
 
+/**
+ * <p>SquareExample class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class SquareExample{
 
    interface Squarer extends OpenCL<Squarer>{
@@ -68,6 +74,11 @@ public class SquareExample{
             @GlobalWriteOnly("out") float[] out);
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] args) {
       final int size = 32;
       final float[] in = new float[size];

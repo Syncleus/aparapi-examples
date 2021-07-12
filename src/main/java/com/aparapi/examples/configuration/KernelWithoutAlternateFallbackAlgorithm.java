@@ -29,8 +29,12 @@ import com.aparapi.*;
 
 /**
  * Kernel which will always fail to run on an OpenCLDevice but has an alternative fallback algorithm.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class KernelWithoutAlternateFallbackAlgorithm extends Kernel {
+   /** {@inheritDoc} */
    @Override
    public void run() {
       // deliberately, will fail to generate OpenCL as println is unsupported

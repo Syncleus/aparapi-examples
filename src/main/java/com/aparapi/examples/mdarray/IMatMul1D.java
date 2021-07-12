@@ -36,6 +36,14 @@ class IMatMul1D extends Kernel{
 
    int N;
 
+   /**
+    * <p>Constructor for IMatMul1D.</p>
+    *
+    * @param A an array of {@link int} objects.
+    * @param B an array of {@link int} objects.
+    * @param C an array of {@link int} objects.
+    * @param N a int.
+    */
    public IMatMul1D(int[] A, int[] B, int[] C, int N) {
       this.A = A;
       this.B = B;
@@ -43,6 +51,7 @@ class IMatMul1D extends Kernel{
       this.N = N;
    }
 
+   /** {@inheritDoc} */
    @Override public void run() {
       int id = getGlobalId();
       int i = id / N;

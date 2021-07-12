@@ -31,11 +31,19 @@ import com.aparapi.internal.kernel.*;
 
 /**
  * Demonstrate new enhanced profiling capability, profiling the kernel from the blackscholes sample.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class ProfilingDemo {
 
    private static com.aparapi.examples.blackscholes.Main.BlackScholesKernel kernel;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] ignored) {
 
       final int size = 1024;

@@ -106,8 +106,8 @@ import com.jogamp.opengl.util.texture.TextureIO;
  *
  * @see <a href="http://jogamp.org/jogl/www/">JOGL</a>
  * @see <a href="https://en.wikipedia.org/wiki/N-body_problem">n-body problem</a>
- *
  * @author gfrost
+ * @version $Id: $Id
  */
 public class Main{
 
@@ -218,14 +218,22 @@ public class Main{
 
    }
 
+   /** Constant <code>width</code> */
    public static int width;
 
+   /** Constant <code>height</code> */
    public static int height;
 
+   /** Constant <code>running</code> */
    public static boolean running;
 
    static Texture texture;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    public static void main(String _args[]) {
 
       //System.load("/Library/Java/JavaVirtualMachines/jdk1.7.0_09.jdk/Contents/Home/jre/lib/libawt.dylib");

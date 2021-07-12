@@ -68,6 +68,12 @@ import java.net.URISyntaxException;
 
 import com.aparapi.Kernel;
 
+/**
+ * <p>PureJava class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class PureJava{
 
    final static class ImageConvolution extends Kernel{
@@ -114,6 +120,11 @@ public class PureJava{
 
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    public static void main(final String[] _args) {
       final File file;
       try{

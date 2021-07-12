@@ -26,11 +26,27 @@
 package com.aparapi.examples.oopnbody;
 
 
+/**
+ * <p>Body class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public final class Body{
+   /** Constant <code>allBodies</code> */
    public static Body[] allBodies;
 
    final private boolean isHeavy;
 
+   /**
+    * <p>Constructor for Body.</p>
+    *
+    * @param x a float.
+    * @param y a float.
+    * @param z a float.
+    * @param _m a float.
+    * @param isHeavy a boolean.
+    */
    public Body(float x, float y, float z, float _m, boolean isHeavy) {
       this.x = x;
       this.y = y;
@@ -41,66 +57,146 @@ public final class Body{
 
    float x, y, z, m, vx, vy, vz;
 
+   /**
+    * <p>isHeavy.</p>
+    *
+    * @return a boolean.
+    */
    public boolean isHeavy() {
       return isHeavy;
    }
 
+   /**
+    * <p>Getter for the field <code>x</code>.</p>
+    *
+    * @return a float.
+    */
    public float getX() {
       return x;
    }
 
+   /**
+    * <p>Getter for the field <code>y</code>.</p>
+    *
+    * @return a float.
+    */
    public float getY() {
       return y;
    }
 
+   /**
+    * <p>Getter for the field <code>z</code>.</p>
+    *
+    * @return a float.
+    */
    public float getZ() {
       return z;
    }
 
+   /**
+    * <p>getRadius.</p>
+    *
+    * @return a float.
+    */
    public float getRadius() {
       return (float) Math.sqrt(x * x + y * y + z* z);
    }
 
+   /**
+    * <p>getTheta.</p>
+    *
+    * @return a float.
+    */
    public float getTheta() {
       return (float) Math.acos(z / getRadius());
    }
 
+   /**
+    * <p>getPhi.</p>
+    *
+    * @return a float.
+    */
    public float getPhi() {
       return (float) Math.atan(y / x);
    }
 
+   /**
+    * <p>Getter for the field <code>vx</code>.</p>
+    *
+    * @return a float.
+    */
    public float getVx() {
       return vx;
    }
 
+   /**
+    * <p>Getter for the field <code>vy</code>.</p>
+    *
+    * @return a float.
+    */
    public float getVy() {
       return vy;
    }
 
+   /**
+    * <p>Getter for the field <code>vz</code>.</p>
+    *
+    * @return a float.
+    */
    public float getVz() {
       return vz;
    }
 
+   /**
+    * <p>Getter for the field <code>m</code>.</p>
+    *
+    * @return a float.
+    */
    public float getM() {
       return m;
    }
 
+   /**
+    * <p>Setter for the field <code>m</code>.</p>
+    *
+    * @param _m a float.
+    */
    public void setM(float _m) {
       m = _m;
    }
 
+   /**
+    * <p>Setter for the field <code>x</code>.</p>
+    *
+    * @param _x a float.
+    */
    public void setX(float _x) {
       x = _x;
    }
 
+   /**
+    * <p>Setter for the field <code>y</code>.</p>
+    *
+    * @param _y a float.
+    */
    public void setY(float _y) {
       y = _y;
    }
 
+   /**
+    * <p>Setter for the field <code>z</code>.</p>
+    *
+    * @param _z a float.
+    */
    public void setZ(float _z) {
       z = _z;
    }
 
+   /**
+    * <p>setRadius.</p>
+    *
+    * @param radius a float.
+    */
    public void setRadius(float radius) {
       final float theta = getTheta();
       final float phi = getPhi();
@@ -109,6 +205,11 @@ public final class Body{
       z = (float) (radius * Math.cos(phi));
    }
 
+   /**
+    * <p>setTheta.</p>
+    *
+    * @param theta a float.
+    */
    public void setTheta(float theta) {
       final float radius = getRadius();
       final float phi = getPhi();
@@ -117,6 +218,11 @@ public final class Body{
       z = (float) (radius * Math.cos(phi));
    }
 
+   /**
+    * <p>setPhi.</p>
+    *
+    * @param phi a float.
+    */
    public void setPhi(float phi) {
       final float radius = getRadius();
       final float theta = getTheta();
@@ -125,14 +231,29 @@ public final class Body{
       z = (float) (radius * Math.cos(phi));
    }
 
+   /**
+    * <p>Setter for the field <code>vx</code>.</p>
+    *
+    * @param _vx a float.
+    */
    public void setVx(float _vx) {
       vx = _vx;
    }
 
+   /**
+    * <p>Setter for the field <code>vy</code>.</p>
+    *
+    * @param _vy a float.
+    */
    public void setVy(float _vy) {
       vy = _vy;
    }
 
+   /**
+    * <p>Setter for the field <code>vz</code>.</p>
+    *
+    * @param _vz a float.
+    */
    public void setVz(float _vz) {
       vz = _vz;
    }

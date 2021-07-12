@@ -32,9 +32,17 @@ import java.util.*;
 
 /**
  * Created by Barney on 31/08/2015.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class CustomConfigurationDemo {
 
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] ignored) {
       System.setProperty("com.aparapi.dumpProfilesOnExit", "true");
       KernelManager manager = new KernelManager() {

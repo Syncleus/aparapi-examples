@@ -36,8 +36,12 @@ import java.net.URISyntaxException;
 
 /**
  * Demonstrate use of __private namespaces and @NoCL annotations.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class MedianDemo {
+   /** Constant <code>testImage</code> */
    public static BufferedImage testImage;
 
    static {
@@ -51,6 +55,11 @@ public class MedianDemo {
       }
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] ignored) {
       final int size = 5;
       System.setProperty("com.aparapi.dumpProfilesOnExit", "true");

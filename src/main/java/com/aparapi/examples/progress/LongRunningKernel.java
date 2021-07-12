@@ -29,14 +29,19 @@ import com.aparapi.Kernel;
 
 /**
  * Kernel which performs very many meaningless calculations, used to demonstrate progress tracking and cancellation of multi-pass Kernels.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class LongRunningKernel extends Kernel {
 
+   /** Constant <code>RANGE=20000</code> */
    public static final int RANGE = 20000;
    private static final int REPETITIONS = 1 * 1000 * 1000;
 
    public final long[] data = new long[RANGE];
 
+   /** {@inheritDoc} */
    @Override
    public void run() {
       int id = getGlobalId();
@@ -48,6 +53,9 @@ public class LongRunningKernel extends Kernel {
       }
    }
 
+   /**
+    * <p>report.</p>
+    */
    @NoCL
    public void report() {
       int passId = getPassId();

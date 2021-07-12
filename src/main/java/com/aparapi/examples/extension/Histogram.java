@@ -32,6 +32,12 @@ import com.aparapi.device.OpenCLDevice;
 import com.aparapi.opencl.OpenCL;
 import com.aparapi.opencl.OpenCL.Resource;
 
+/**
+ * <p>Histogram class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class Histogram{
 
    @Resource("HistogramKernel.cl") interface HistogramKernel extends OpenCL<HistogramKernel>{
@@ -50,6 +56,11 @@ public class Histogram{
             @Arg("subHistogramSize") int subHistogramSize);
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] args) {
       final int WIDTH = 1024 * 16;
       final int HEIGHT = 1024 * 8;

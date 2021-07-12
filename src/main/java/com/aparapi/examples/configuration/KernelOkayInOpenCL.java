@@ -27,11 +27,15 @@ package com.aparapi.examples.configuration;
 
 /**
  * Created by Barney on 24/08/2015.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class KernelOkayInOpenCL extends com.aparapi.Kernel {
    char[] inChars = "KernelOkayInOpenCL".toCharArray();
    char[] outChars = new char[inChars.length];
 
+   /** {@inheritDoc} */
    @Override
    public void run() {
       int index = getGlobalId();

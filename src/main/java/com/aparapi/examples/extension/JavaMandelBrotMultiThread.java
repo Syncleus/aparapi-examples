@@ -33,6 +33,12 @@ import com.aparapi.internal.kernel.*;
 import com.aparapi.opencl.*;
 import com.aparapi.Range;
 
+/**
+ * <p>JavaMandelBrotMultiThread class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class JavaMandelBrotMultiThread extends OpenCLAdapter<MandelBrot> implements MandelBrot{
    final int MAX_ITERATIONS = 64;
 
@@ -104,6 +110,7 @@ public class JavaMandelBrotMultiThread extends OpenCLAdapter<MandelBrot> impleme
          0
    };
 
+   /** {@inheritDoc} */
    @Override public MandelBrot createMandleBrot(final Range range, final float scale, final float offsetx, final float offsety,
          final int[] rgb) {
 

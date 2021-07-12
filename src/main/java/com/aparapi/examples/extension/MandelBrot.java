@@ -39,11 +39,21 @@ import com.aparapi.opencl.OpenCL.Resource;
  * application might suffer with sub-optimal frame refresh rate as compared to GPU.
  *
  * @author gfrost
- *
+ * @version $Id: $Id
  */
 
 @Resource("mandel2.cl")
 public interface MandelBrot extends OpenCL<MandelBrot>{
+   /**
+    * <p>createMandleBrot.</p>
+    *
+    * @param range a {@link com.aparapi.Range} object.
+    * @param scale a float.
+    * @param offsetx a float.
+    * @param offsety a float.
+    * @param rgb an array of {@link int} objects.
+    * @return a {@link com.aparapi.examples.extension.MandelBrot} object.
+    */
    MandelBrot createMandleBrot(//
                                Range range,//
                                @Arg("scale") float scale, //

@@ -36,6 +36,14 @@ class LMatMul3D extends Kernel{
 
    int N;
 
+   /**
+    * <p>Constructor for LMatMul3D.</p>
+    *
+    * @param A an array of {@link long} objects.
+    * @param B an array of {@link long} objects.
+    * @param C an array of {@link long} objects.
+    * @param N a int.
+    */
    public LMatMul3D(long[][][] A, long[][][] B, long[][][] C, int N) {
       this.A = A;
       this.B = B;
@@ -43,6 +51,7 @@ class LMatMul3D extends Kernel{
       this.N = N;
    }
 
+   /** {@inheritDoc} */
    @Override public void run() {
       int id = getGlobalId();
       int i = id / (N * N);

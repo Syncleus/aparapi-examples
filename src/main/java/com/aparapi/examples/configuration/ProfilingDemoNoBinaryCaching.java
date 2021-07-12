@@ -29,9 +29,17 @@ import com.aparapi.internal.kernel.*;
 
 /**
  * Created by Barney on 13/09/2015.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class ProfilingDemoNoBinaryCaching {
 
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] ignored) {
       KernelRunner.BINARY_CACHING_DISABLED = true;
       ProfilingDemo.main(null);

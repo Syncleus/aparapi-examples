@@ -36,6 +36,14 @@ class BMatMul1D extends Kernel{
 
    int N;
 
+   /**
+    * <p>Constructor for BMatMul1D.</p>
+    *
+    * @param A an array of {@link byte} objects.
+    * @param B an array of {@link byte} objects.
+    * @param C an array of {@link byte} objects.
+    * @param N a int.
+    */
    public BMatMul1D(byte[] A, byte[] B, byte[] C, int N) {
       this.A = A;
       this.B = B;
@@ -43,6 +51,7 @@ class BMatMul1D extends Kernel{
       this.N = N;
    }
 
+   /** {@inheritDoc} */
    @Override public void run() {
       int id = getGlobalId();
       int i = id / N;

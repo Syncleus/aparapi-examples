@@ -27,7 +27,18 @@ package com.aparapi.examples.configuration;
 
 import com.aparapi.examples.mandel.Main;
 
+/**
+ * <p>CleanUpArraysDemo class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class CleanUpArraysDemo {
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] ignored) {
 
       System.setProperty("com.aparapi.enableVerboseJNI", "true");

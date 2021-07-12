@@ -34,6 +34,9 @@ import java.awt.event.*;
 
 /**
  * Demonstrates progress tracking and cancellation for multi-pass kernels.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class ProgressAndCancelDemo {
 
@@ -49,6 +52,12 @@ public class ProgressAndCancelDemo {
 
    private static final boolean TEST_JTP = false;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    * @throws java.lang.Exception if any.
+    */
    public static void main(String[] ignored) throws Exception {
 
       System.setProperty("com.aparapi.enableShowGeneratedOpenCL", "true");

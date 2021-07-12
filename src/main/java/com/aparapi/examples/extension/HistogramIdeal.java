@@ -31,6 +31,12 @@ import com.aparapi.device.OpenCLDevice;
 import com.aparapi.internal.kernel.*;
 import com.aparapi.opencl.OpenCL;
 
+/**
+ * <p>HistogramIdeal class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class HistogramIdeal{
 
    // @Resource("com/amd/aparapi/sample/extension/HistogramKernel.cl")
@@ -50,6 +56,11 @@ public class HistogramIdeal{
             @Arg("subHistogramSize") int subHistogramSize);
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] args) {
       final int WIDTH = 1024 * 16;
       final int HEIGHT = 1024 * 8;

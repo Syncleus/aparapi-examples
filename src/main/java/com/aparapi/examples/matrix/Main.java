@@ -45,7 +45,7 @@ import java.util.Random;
  * 4) Verify the results of FixedBitSet and CorrMatrix by comparing matrices to each other
  *
  * @author ryan.lamothe at gmail.com
- *
+ * @version $Id: $Id
  */
 public class Main {
     /**

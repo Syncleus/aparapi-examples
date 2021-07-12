@@ -25,13 +25,27 @@
  */
 package com.aparapi.examples.extension;
 
+/**
+ * <p>StopWatch class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class StopWatch{
    long start = 0L;
 
+   /**
+    * <p>start.</p>
+    */
    public void start() {
       start = System.nanoTime();
    }
 
+   /**
+    * <p>print.</p>
+    *
+    * @param _str a {@link java.lang.String} object.
+    */
    public void print(String _str) {
       long end = (System.nanoTime() - start) / 1000000;
       System.out.println(_str + " " + end);

@@ -91,16 +91,15 @@ import com.aparapi.ProfileInfo;
 import com.aparapi.Range;
 
 /**
- * An example Aparapi application which displays a view of the Mandelbrot set and lets the user zoom in to a particular point. 
- * 
- * When the user clicks on the view, this example application will zoom in to the clicked point and zoom out there after.
- * On GPU, additional computing units will offer a better viewing experience. On the other hand on CPU, this example 
- * application might suffer with sub-optimal frame refresh rate as compared to GPU. 
- *  
- * @author gfrost
+ * An example Aparapi application which displays a view of the Mandelbrot set and lets the user zoom in to a particular point.
  *
+ * When the user clicks on the view, this example application will zoom in to the clicked point and zoom out there after.
+ * On GPU, additional computing units will offer a better viewing experience. On the other hand on CPU, this example
+ * application might suffer with sub-optimal frame refresh rate as compared to GPU.
+ *
+ * @author gfrost
+ * @version $Id: $Id
  */
-
 public class Mandel{
 
    /**
@@ -194,10 +193,17 @@ public class Mandel{
    /** User selected zoom-in point on the Mandelbrot view. */
    public static volatile Point to = null;
 
+   /** Constant <code>frameCount=0</code> */
    public static int frameCount = 0;
 
+   /** Constant <code>start=0</code> */
    public static long start = 0;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    @SuppressWarnings("serial") public static void main(String[] _args) {
 
       final JFrame frame = new JFrame("MandelBrot");

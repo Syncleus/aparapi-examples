@@ -33,12 +33,13 @@ import com.aparapi.device.OpenCLDevice;
 
 /**
  * GPU calculations using OpenBitSet Intersection for OpenBitSets
- * 
+ *
  * Based on code from:
  * <a href="http://grepcode.com/file/repo1.maven.org/maven2/org.apache.lucene/lucene-core/3.1.0/org/apache/lucene/util/BitUtil.java">apache.lucene.util.BitUtil.java</a>
- * 
+ *
  * @author ryan.lamothe at gmail.com
  * @author sedillard at gmail.com
+ * @version $Id: $Id
  */
 public class CorrMatrixHost {
 
@@ -46,7 +47,7 @@ public class CorrMatrixHost {
 
    /**
     * Perform matrix intersection for two lists of Lucene OpenBitSet-based packed longs
-    * 
+    *
     * @param matrixA
     *    The first term-document matrix
     * @param matrixB

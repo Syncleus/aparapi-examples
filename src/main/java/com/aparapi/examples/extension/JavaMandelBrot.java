@@ -30,6 +30,12 @@ import com.aparapi.device.*;
 import com.aparapi.internal.kernel.*;
 import com.aparapi.opencl.*;
 
+/**
+ * <p>JavaMandelBrot class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class JavaMandelBrot extends OpenCLAdapter<MandelBrot> implements MandelBrot{
    final int MAX_ITERATIONS = 64;
 
@@ -101,6 +107,7 @@ public class JavaMandelBrot extends OpenCLAdapter<MandelBrot> implements MandelB
          0
    };
 
+   /** {@inheritDoc} */
    @Override public MandelBrot createMandleBrot(Range range, float scale, float offsetx, float offsety, int[] rgb) {
 
       final int width = range.getGlobalSize(0);

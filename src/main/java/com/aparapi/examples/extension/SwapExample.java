@@ -31,6 +31,12 @@ import com.aparapi.device.OpenCLDevice;
 import com.aparapi.internal.kernel.*;
 import com.aparapi.opencl.OpenCL;
 
+/**
+ * <p>SwapExample class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class SwapExample{
 
    interface Swapper extends OpenCL<Swapper>{
@@ -45,6 +51,11 @@ public class SwapExample{
             @GlobalReadWrite("rhs") float[] rhs);
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] args) {
 
       final int size = 32;

@@ -20,7 +20,18 @@ import com.aparapi.Range;
 
 import java.util.Arrays;
 
+/**
+ * <p>Main class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class Main {
+    /**
+     * <p>main.</p>
+     *
+     * @param args an array of {@link java.lang.String} objects.
+     */
     public static void main(String[] args) {
         int size = 1048576;
         final int count = 3;

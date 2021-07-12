@@ -33,6 +33,7 @@ import com.aparapi.Kernel;
  *
  * @author ryan.lamothe at gmail.com
  * @author sedillard at gmail.com
+ * @version $Id: $Id
  */
 public class CorrMatrixKernel extends Kernel {
 
@@ -68,6 +69,7 @@ public class CorrMatrixKernel extends Kernel {
       this.resultMatrix = resultMatrix;
    }
 
+   /** {@inheritDoc} */
    @Override
    public void run() {
       final int i = this.getGlobalId(0);

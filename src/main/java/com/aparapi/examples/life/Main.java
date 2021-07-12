@@ -74,13 +74,14 @@ import java.util.List;
 
 /**
  * An example Aparapi application which demonstrates Conways 'Game Of Life'.
- * 
+ *
  * Original code from Witold Bolt's site https://github.com/houp/aparapi/tree/master/samples/gameoflife.
- * 
+ *
  * Converted to use int buffer and some performance tweaks by Gary Frost
- * 
+ *
  * @author Wiltold Bolt
  * @author Gary Frost
+ * @version $Id: $Id
  */
 public class Main{
 
@@ -205,6 +206,11 @@ public class Main{
 
    static boolean running = false;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] _args) {
 
       final JFrame frame = new JFrame("Game of Life");

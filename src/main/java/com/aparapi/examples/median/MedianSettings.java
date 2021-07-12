@@ -25,14 +25,31 @@
  */
 package com.aparapi.examples.median;
 
+/**
+ * <p>MedianSettings class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class MedianSettings {
    public final int windowWidth;
    public final int windowHeight;
 
+   /**
+    * <p>Constructor for MedianSettings.</p>
+    *
+    * @param windowSize a int.
+    */
    public MedianSettings(int windowSize) {
       this(windowSize, windowSize);
    }
 
+   /**
+    * <p>Constructor for MedianSettings.</p>
+    *
+    * @param windowWidth a int.
+    * @param windowHeight a int.
+    */
    public MedianSettings(int windowWidth, int windowHeight) {
       this.windowWidth = windowWidth;
       this.windowHeight = windowHeight;

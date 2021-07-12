@@ -36,6 +36,14 @@ class FMatMul1D extends Kernel{
 
    int N;
 
+   /**
+    * <p>Constructor for FMatMul1D.</p>
+    *
+    * @param A an array of {@link float} objects.
+    * @param B an array of {@link float} objects.
+    * @param C an array of {@link float} objects.
+    * @param N a int.
+    */
    public FMatMul1D(float[] A, float[] B, float[] C, int N) {
       this.A = A;
       this.B = B;
@@ -43,6 +51,7 @@ class FMatMul1D extends Kernel{
       this.N = N;
    }
 
+   /** {@inheritDoc} */
    @Override public void run() {
       int id = getGlobalId();
       int i = id / N;

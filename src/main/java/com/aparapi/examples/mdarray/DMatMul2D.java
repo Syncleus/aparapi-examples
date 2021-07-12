@@ -36,6 +36,14 @@ class DMatMul2D extends Kernel{
 
    int N;
 
+   /**
+    * <p>Constructor for DMatMul2D.</p>
+    *
+    * @param A an array of {@link double} objects.
+    * @param B an array of {@link double} objects.
+    * @param C an array of {@link double} objects.
+    * @param N a int.
+    */
    public DMatMul2D(double[][] A, double[][] B, double[][] C, int N) {
       this.A = A;
       this.B = B;
@@ -43,6 +51,7 @@ class DMatMul2D extends Kernel{
       this.N = N;
    }
 
+   /** {@inheritDoc} */
    @Override public void run() {
       int id = getGlobalId();
       int i = id / N;

@@ -72,6 +72,12 @@ import com.aparapi.opencl.OpenCL.*;
 import java.io.*;
 import java.net.URISyntaxException;
 
+/**
+ * <p>ConvolutionOpenCL class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class ConvolutionOpenCL{
 
    @Resource("convolution.cl") interface Convolution extends OpenCL<Convolution>{
@@ -84,6 +90,11 @@ public class ConvolutionOpenCL{
             @Arg("_height") int _height);
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    public static void main(final String[] _args) {
       final File file;
       try{

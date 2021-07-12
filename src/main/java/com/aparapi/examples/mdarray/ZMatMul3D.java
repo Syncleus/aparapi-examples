@@ -36,6 +36,14 @@ class ZMatMul3D extends Kernel{
 
    int N;
 
+   /**
+    * <p>Constructor for ZMatMul3D.</p>
+    *
+    * @param A an array of {@link boolean} objects.
+    * @param B an array of {@link boolean} objects.
+    * @param C an array of {@link boolean} objects.
+    * @param N a int.
+    */
    public ZMatMul3D(boolean[][][] A, boolean[][][] B, boolean[][][] C, int N) {
       this.A = A;
       this.B = B;
@@ -43,6 +51,7 @@ class ZMatMul3D extends Kernel{
       this.N = N;
    }
 
+   /** {@inheritDoc} */
    @Override public void run() {
       int id = getGlobalId();
       int i = id / (N * N);

@@ -91,13 +91,14 @@ import com.aparapi.Range;
 
 /**
  * An example Aparapi application which demonstrates Conways 'Game Of Life'.
- * 
+ *
  * Original code from Witold Bolt's site https://github.com/houp/aparapi/tree/master/samples/gameoflife.
- * 
+ *
  * Converted to use int buffer and some performance tweaks by Gary Frost
- * 
+ *
  * @author Wiltold Bolt
  * @author Gary Frost
+ * @version $Id: $Id
  */
 public class Life{
 
@@ -217,6 +218,11 @@ public class Life{
 
    static double generationsPerSecondField = 0;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] _args) {
 
       final JFrame frame = new JFrame("Game of Life");

@@ -36,6 +36,14 @@ class SMatMul1D extends Kernel{
 
    int N;
 
+   /**
+    * <p>Constructor for SMatMul1D.</p>
+    *
+    * @param A an array of {@link short} objects.
+    * @param B an array of {@link short} objects.
+    * @param C an array of {@link short} objects.
+    * @param N a int.
+    */
    public SMatMul1D(short[] A, short[] B, short[] C, int N) {
       this.A = A;
       this.B = B;
@@ -43,6 +51,7 @@ class SMatMul1D extends Kernel{
       this.N = N;
    }
 
+   /** {@inheritDoc} */
    @Override public void run() {
       int id = getGlobalId();
       int i = id / N;

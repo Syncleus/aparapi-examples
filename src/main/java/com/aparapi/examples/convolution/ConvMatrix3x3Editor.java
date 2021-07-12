@@ -79,6 +79,12 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+/**
+ * <p>ConvMatrix3x3Editor class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class ConvMatrix3x3Editor{
    Component component;
 
@@ -110,6 +116,11 @@ public class ConvMatrix3x3Editor{
 
    JSpinner[] spinners = new JSpinner[9];
 
+   /**
+    * <p>updated.</p>
+    *
+    * @param _convMatrix3x3 an array of {@link float} objects.
+    */
    protected void updated(float[] _convMatrix3x3) {
 
    };

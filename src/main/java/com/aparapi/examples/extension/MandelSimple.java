@@ -75,13 +75,25 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.*;
 
+/**
+ * <p>MandelSimple class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class MandelSimple{
 
    /** User selected zoom-in point on the Mandelbrot view. */
    public static volatile Point to = null;
 
+   /** Constant <code>mandelBrot</code> */
    public static Mandel mandelBrot = null;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    @SuppressWarnings("serial") public static void main(String[] _args) {
 
       final JFrame frame = new JFrame("MandelBrot");

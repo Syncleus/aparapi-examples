@@ -96,13 +96,12 @@ import com.jogamp.opengl.util.texture.TextureIO;
 
 /**
  * An NBody clone which uses local memory to cache NBody positions for execution.
- * 
- * http://www.browndeertechnology.com/docs/BDT_OpenCL_Tutorial_NBody-rev3.html
- * 
- * @see Main
- * 
- * @author gfrost
  *
+ * http://www.browndeertechnology.com/docs/BDT_OpenCL_Tutorial_NBody-rev3.html
+ *
+ * @see Main
+ * @author gfrost
+ * @version $Id: $Id
  */
 public class Local{
 
@@ -219,12 +218,20 @@ public class Local{
 
    }
 
+   /** Constant <code>width</code> */
    public static int width;
 
+   /** Constant <code>height</code> */
    public static int height;
 
+   /** Constant <code>running</code> */
    public static boolean running;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    public static void main(String _args[]) {
 
       final NBodyKernel kernel = new NBodyKernel(Range.create(Integer.getInteger("bodies", 8192), 256));

@@ -68,15 +68,19 @@ import com.aparapi.Range;
 
 /**
  * An example Aparapi application which computes and displays squares of a set of 512 input values.
- * While executing on GPU using Aparpi framework, each square value is computed in a separate kernel invocation and 
- * can thus maximize performance by optimally utilizing all GPU computing units 
- *  
- * @author gfrost
+ * While executing on GPU using Aparpi framework, each square value is computed in a separate kernel invocation and
+ * can thus maximize performance by optimally utilizing all GPU computing units
  *
+ * @author gfrost
+ * @version $Id: $Id
  */
-
 public class Main{
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] _args) {
 
       final int size = 512;

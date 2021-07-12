@@ -29,19 +29,25 @@ import com.aparapi.*;
 
 /**
  * Kernel which will always fail to run on an OpenCLDevice but has an alternative fallback algorithm.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class KernelWithAlternateFallbackAlgorithm extends Kernel {
+   /** {@inheritDoc} */
    @Override
    public void run() {
       // deliberately, will fail to generate OpenCL as println is unsupported
       System.out.println("Running in Java (regular algorithm)");
    }
 
+   /** {@inheritDoc} */
    @Override
    public boolean hasFallbackAlgorithm() {
       return true;
    }
 
+   /** {@inheritDoc} */
    @Override
    public void executeFallbackAlgorithm(Range _range, int _passes) {
       System.out.println("Running in Java (alternate non-parallel algorithm)");

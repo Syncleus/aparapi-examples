@@ -31,9 +31,17 @@ import com.aparapi.internal.kernel.*;
 /**
  * Tests device selection when circumventing the {@link com.aparapi.internal.kernel.KernelManager} by using the legacy mechanism
  * (setExecutionMode, etc.).
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class LegacyConfigurationDemo {
 
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    */
    @SuppressWarnings("deprecation")
    public static void main(String[] ignored) {
       System.setProperty("com.aparapi.executionMode", "GPU,CPU,SEQ");

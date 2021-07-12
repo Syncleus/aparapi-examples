@@ -44,7 +44,19 @@ import com.aparapi.examples.progress.ProgressAndCancelDemo;
 
 import java.util.Scanner;
 
+/**
+ * <p>All class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class All {
+    /**
+     * <p>main.</p>
+     *
+     * @param _args an array of {@link java.lang.String} objects.
+     * @throws java.lang.Exception if any.
+     */
     public static void main(String[] _args) throws Exception {
         System.out.println("Select which example to run:");
         System.out.println("  1) Game of Life");

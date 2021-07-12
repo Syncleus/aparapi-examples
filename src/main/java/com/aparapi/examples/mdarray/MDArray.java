@@ -27,12 +27,23 @@ package com.aparapi.examples.mdarray;
 
 import com.aparapi.Kernel;
 
+/**
+ * <p>MDArray class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class MDArray {
 
    static int N = 1 << 10;
 
    static int M = 1 << 5;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] args) {
       System.out.println("boolean 1D");
       Zrun1D();
@@ -575,6 +586,9 @@ public class MDArray {
       return true;
    }
 
+   /**
+    * <p>Zrun1D.</p>
+    */
    public static void Zrun1D() {
       final boolean[] A = new boolean[N * N];
       final boolean[] B = new boolean[N * N];
@@ -609,6 +623,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Brun1D.</p>
+    */
    public static void Brun1D() {
       final byte[] A = new byte[N * N];
       final byte[] B = new byte[N * N];
@@ -643,6 +660,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Srun1D.</p>
+    */
    public static void Srun1D() {
       final short[] A = new short[N * N];
       final short[] B = new short[N * N];
@@ -677,6 +697,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Irun1D.</p>
+    */
    public static void Irun1D() {
       final int[] A = new int[N * N];
       final int[] B = new int[N * N];
@@ -711,6 +734,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Lrun1D.</p>
+    */
    public static void Lrun1D() {
       final long[] A = new long[N * N];
       final long[] B = new long[N * N];
@@ -745,6 +771,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Frun1D.</p>
+    */
    public static void Frun1D() {
       final float[] A = new float[N * N];
       final float[] B = new float[N * N];
@@ -779,6 +808,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Drun1D.</p>
+    */
    public static void Drun1D() {
       final double[] A = new double[N * N];
       final double[] B = new double[N * N];
@@ -813,6 +845,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Zrun2D.</p>
+    */
    public static void Zrun2D() {
       final boolean[][] A = new boolean[N][N];
       final boolean[][] B = new boolean[N][N];
@@ -847,6 +882,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Brun2D.</p>
+    */
    public static void Brun2D() {
       final byte[][] A = new byte[N][N];
       final byte[][] B = new byte[N][N];
@@ -881,6 +919,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Srun2D.</p>
+    */
    public static void Srun2D() {
       final short[][] A = new short[N][N];
       final short[][] B = new short[N][N];
@@ -915,6 +956,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Irun2D.</p>
+    */
    public static void Irun2D() {
       final int[][] A = new int[N][N];
       final int[][] B = new int[N][N];
@@ -949,6 +993,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Lrun2D.</p>
+    */
    public static void Lrun2D() {
       final long[][] A = new long[N][N];
       final long[][] B = new long[N][N];
@@ -983,6 +1030,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Frun2D.</p>
+    */
    public static void Frun2D() {
       final float[][] A = new float[N][N];
       final float[][] B = new float[N][N];
@@ -1017,6 +1067,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Drun2D.</p>
+    */
    public static void Drun2D() {
       final double[][] A = new double[N][N];
       final double[][] B = new double[N][N];
@@ -1051,6 +1104,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Zrun3D.</p>
+    */
    public static void Zrun3D() {
       final boolean[][][] A = new boolean[M][M][M];
       final boolean[][][] B = new boolean[M][M][M];
@@ -1088,6 +1144,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Brun3D.</p>
+    */
    public static void Brun3D() {
       final byte[][][] A = new byte[M][M][M];
       final byte[][][] B = new byte[M][M][M];
@@ -1124,6 +1183,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Srun3D.</p>
+    */
    public static void Srun3D() {
       final short[][][] A = new short[M][M][M];
       final short[][][] B = new short[M][M][M];
@@ -1160,6 +1222,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Irun3D.</p>
+    */
    public static void Irun3D() {
       final int[][][] A = new int[M][M][M];
       final int[][][] B = new int[M][M][M];
@@ -1196,6 +1261,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Lrun3D.</p>
+    */
    public static void Lrun3D() {
       final long[][][] A = new long[M][M][M];
       final long[][][] B = new long[M][M][M];
@@ -1232,6 +1300,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Frun3D.</p>
+    */
    public static void Frun3D() {
       final float[][][] A = new float[M][M][M];
       final float[][][] B = new float[M][M][M];
@@ -1268,6 +1339,9 @@ public class MDArray {
       }
    }
 
+   /**
+    * <p>Drun3D.</p>
+    */
    public static void Drun3D() {
       final double[][][] A = new double[M][M][M];
       final double[][][] B = new double[M][M][M];

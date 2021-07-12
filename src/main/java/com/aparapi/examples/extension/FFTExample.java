@@ -33,6 +33,12 @@ import com.aparapi.opencl.OpenCL.*;
 
 import java.util.*;
 
+/**
+ * <p>FFTExample class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class FFTExample{
 
    @Resource("fft.cl")
@@ -117,6 +123,11 @@ public class FFTExample{
 
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] args) {
       final int LEN = 1024;
       final float initial[] = new float[LEN];

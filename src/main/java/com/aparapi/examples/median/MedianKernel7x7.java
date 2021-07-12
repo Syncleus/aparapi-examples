@@ -31,18 +31,30 @@ import com.aparapi.*;
  * Provides support for pixel windows of size no greater than 49 (e.g. 7x7).
  *
  * <p>Demonstrates use of __private array for (partial) sorting, also demonstrates @NoCl annotation for specialised use of ThreadLocal in JTP execution.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class MedianKernel7x7 extends Kernel {
+   /** Constant <code>CHANNEL_GRAY=-1</code> */
    public static final int CHANNEL_GRAY = -1;
+   /** Constant <code>CHANNEL_ALPHA=0</code> */
    public static final int CHANNEL_ALPHA = 0;
+   /** Constant <code>CHANNEL_RED=1</code> */
    public static final int CHANNEL_RED = 1;
+   /** Constant <code>CHANNEL_GREEN=2</code> */
    public static final int CHANNEL_GREEN = 2;
+   /** Constant <code>CHANNEL_BLUE=3</code> */
    public static final int CHANNEL_BLUE = 3;
 
+   /** Constant <code>MONOCHROME=0</code> */
    protected static final int MONOCHROME = 0;
+   /** Constant <code>RGB=1</code> */
    protected static final int RGB = 1;
+   /** Constant <code>ARGB=2</code> */
    protected static final int ARGB = 2;
 
+   /** Constant <code>MAX_WINDOW_SIZE=49</code> */
    public static final int MAX_WINDOW_SIZE = 49;
 
    protected int _imageTypeOrdinal;
@@ -64,17 +76,26 @@ public class MedianKernel7x7 extends Kernel {
    protected int _windowWidth;
    protected int _windowHeight;
 
+   /**
+    * <p>setUpWindow.</p>
+    */
    @NoCL
    public void setUpWindow() {
       _window = _threadLocalWindow.get();
    }
 
+   /**
+    * <p>processImages.</p>
+    *
+    * @param settings a {@link com.aparapi.examples.median.MedianSettings} object.
+    */
    public void processImages(MedianSettings settings) {
       _windowWidth = settings.windowWidth;
       _windowHeight = settings.windowHeight;
       execute(_sourceWidth * _sourceHeight);
    }
 
+   /** {@inheritDoc} */
    @Override
    public void run() {
       setUpWindow();
@@ -116,6 +137,15 @@ public class MedianKernel7x7 extends Kernel {
       _destPixels[index] = medianPixel;
    }
 
+   /**
+    * <p>populateWindow.</p>
+    *
+    * @param channel a int.
+    * @param windowX0 a int.
+    * @param windowX1 a int.
+    * @param windowY0 a int.
+    * @param windowY1 a int.
+    */
    protected void populateWindow(int channel, int windowX0, int windowX1, int windowY0, int windowY1) {
       int windowIndex = 0;
       for (int u = windowX0; u < windowX1; ++u) {
@@ -128,6 +158,13 @@ public class MedianKernel7x7 extends Kernel {
       }
    }
 
+   /**
+    * <p>valueForChannel.</p>
+    *
+    * @param channel a int.
+    * @param argb a int.
+    * @return a int.
+    */
    protected final int valueForChannel(int channel, int argb) {
       int sourcePixel = 0;
       if (channel == CHANNEL_GRAY) {
@@ -144,6 +181,12 @@ public class MedianKernel7x7 extends Kernel {
       return sourcePixel;
    }
 
+   /**
+    * <p>setPixelWindowValue.</p>
+    *
+    * @param windowIndex a int.
+    * @param value a short.
+    */
    protected void setPixelWindowValue(int windowIndex, short value) {
       _window[windowIndex] = value;
    }
@@ -157,6 +200,7 @@ public class MedianKernel7x7 extends Kernel {
     * </pre>
     *
     * @param actualPixelCount The actual pixel count.
+    * @return a int.
     */
    protected final int median(int actualPixelCount) {
       int i, j, L, m;

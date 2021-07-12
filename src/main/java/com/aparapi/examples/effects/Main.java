@@ -81,15 +81,14 @@ import com.aparapi.Kernel;
 import com.aparapi.Range;
 
 /**
- * An example Aparapi application which tracks the mouse and updates the color pallete of the window based on the distance from the mouse pointer. 
- * 
- * On GPU, additional computing units will offer a better viewing experience. On the other hand on CPU, this example 
- * application might suffer with sub-optimal frame refresh rate as compared to GPU. 
- *  
- * @author gfrost
+ * An example Aparapi application which tracks the mouse and updates the color pallete of the window based on the distance from the mouse pointer.
  *
+ * On GPU, additional computing units will offer a better viewing experience. On the other hand on CPU, this example
+ * application might suffer with sub-optimal frame refresh rate as compared to GPU.
+ *
+ * @author gfrost
+ * @version $Id: $Id
  */
-
 public class Main{
 
    /**
@@ -177,6 +176,11 @@ public class Main{
    /** We track the latest mouse position here. */
    public static volatile Point mousePosition = null;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    @SuppressWarnings("serial") public static void main(String[] _args) {
 
       JFrame frame = new JFrame("MouseTracker");

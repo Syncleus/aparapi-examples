@@ -36,7 +36,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Demonstrates progress tracking and cancellation for multi-pass kernels, via {@link MultiPassKernelSwingWorker}.
+ * Demonstrates progress tracking and cancellation for multi-pass kernels, via {@link com.aparapi.util.swing.MultiPassKernelSwingWorker}.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class MultiPassKernelSwingWorkerDemo {
 
@@ -50,6 +53,12 @@ public class MultiPassKernelSwingWorkerDemo {
 
    private static final boolean TEST_JTP = false;
 
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    * @throws java.lang.Exception if any.
+    */
    public static void main(String[] ignored) throws Exception {
       if (TEST_JTP) {
          KernelManager.setKernelManager(KernelManagers.JTP_ONLY);

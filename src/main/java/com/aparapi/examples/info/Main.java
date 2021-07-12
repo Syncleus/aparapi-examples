@@ -69,7 +69,18 @@ import com.aparapi.internal.opencl.*;
 
 import java.util.*;
 
+/**
+ * <p>Main class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class Main{
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] _args) {
       System.out.println("com.aparapi.examples.info.Main");
       List<OpenCLPlatform> platforms = (new OpenCLPlatform()).getOpenCLPlatforms();

@@ -32,6 +32,12 @@ import com.aparapi.internal.kernel.*;
 import com.aparapi.opencl.OpenCL;
 import com.aparapi.opencl.OpenCL.Resource;
 
+/**
+ * <p>Pow4Example class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class Pow4Example{
 
    @Resource("squarer.cl")
@@ -43,6 +49,11 @@ public class Pow4Example{
             @GlobalReadWrite("out") float[] out);
    }
 
+   /**
+    * <p>main.</p>
+    *
+    * @param args an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] args) {
 
       final int size = 32;

@@ -32,8 +32,16 @@ import java.util.*;
 
 /**
  * Tests device selection via {@link com.aparapi.internal.kernel.KernelManager}.
+ *
+ * @author freemo
+ * @version $Id: $Id
  */
 public class ConfigurationDemo {
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] ignored) {
       StringBuilder report;
 

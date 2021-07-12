@@ -58,15 +58,15 @@ import org.apache.log4j.Logger;
 
 /**
  * Aparapi Fractals
- *  
+ *
  * The GUI, a swing JFrame with components. There is no Aparapi code here, only
  * swing and events handling. The GUI has no access to aparapiUtils, It
  * interacts only with the AfMain.
- * 
+ *
  * @author marco.stefanetti at gmail.com
- * 
+ * @version $Id: $Id
+ * @since 2.0.1
  */
-
 public class AfGUI {
 
 	/** logger */
@@ -151,7 +151,11 @@ public class AfGUI {
 	/** last maxIterations used is saved in the GUI for the GUI refresh */
 	protected long lastMaxIterations;
 
-	/** setup all the swing components and event listeners */
+	/**
+	 * setup all the swing components and event listeners
+	 *
+	 * @param _main a {@link com.aparapi.examples.afmandelbrot.AfMain} object.
+	 */
 	public AfGUI(AfMain _main) {
 
 		main = _main;
@@ -983,21 +987,33 @@ public class AfGUI {
 
 	}
 
+	/**
+	 * <p>deviceLedOn.</p>
+	 */
 	public void deviceLedOn() {
 		lblDeviceLed.setText("ON");
 		lblDeviceLed.setForeground(Color.RED);
 	}
 
+	/**
+	 * <p>deviceLedOff.</p>
+	 */
 	public void deviceLedOff() {
 		lblDeviceLed.setText("");
 		lblDeviceLed.setForeground(Color.GRAY);
 	}
 
+	/**
+	 * <p>benchmarkLedOn.</p>
+	 */
 	public void benchmarkLedOn() {
 		lblBenchmarkLed.setText("ON");
 		lblBenchmarkLed.setForeground(Color.RED);
 	}
 
+	/**
+	 * <p>benchmarkLedOff.</p>
+	 */
 	public void benchmarkLedOff() {
 		lblBenchmarkLed.setText("");
 		lblBenchmarkLed.setForeground(Color.GRAY);

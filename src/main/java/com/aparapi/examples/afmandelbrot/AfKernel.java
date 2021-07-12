@@ -19,13 +19,14 @@ import com.aparapi.Kernel;
 
 /**
  * Aparapi Fractals
- * 
+ *
  * the kernel executes the math with complex numbers. Coordinates refer to
  * complex plane. result is a vector of number of iterations, It is transformed
  * in a color in the GUI, not here
- * 
+ *
  * @author marco.stefanetti at gmail.com
- * 
+ * @version $Id: $Id
+ * @since 2.0.1
  */
 public class AfKernel extends Kernel {
 
@@ -50,7 +51,9 @@ public class AfKernel extends Kernel {
 	/** one pixel height */
 	private double hy;
 
-	/** no values on the constructor, we will reuse the kernel after init */
+	/**
+	 * no values on the constructor, we will reuse the kernel after init
+	 */
 	public AfKernel() {
 		super();
 	}
@@ -58,6 +61,14 @@ public class AfKernel extends Kernel {
 	/**
 	 * sets the parameters, send only few double to the device and a pointer to an
 	 * array to retrieve iterations
+	 *
+	 * @param _cx1 a double.
+	 * @param _cy1 a double.
+	 * @param _cx2 a double.
+	 * @param _cy2 a double.
+	 * @param _W a int.
+	 * @param _H a int.
+	 * @param _max_iterations a int.
 	 */
 	public void init(double _cx1, double _cy1, double _cx2, double _cy2, int _W, int _H, int _max_iterations) {
 
@@ -74,6 +85,8 @@ public class AfKernel extends Kernel {
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * just executes the "simple" math on a pixel
 	 */
 	@Override
@@ -113,6 +126,11 @@ public class AfKernel extends Kernel {
 
 	}
 
+	/**
+	 * <p>Getter for the field <code>result</code>.</p>
+	 *
+	 * @return an array of {@link int} objects.
+	 */
 	public int[][] getResult() {
 		return result;
 	}

@@ -36,6 +36,14 @@ class LMatMul2D extends Kernel{
 
    int N;
 
+   /**
+    * <p>Constructor for LMatMul2D.</p>
+    *
+    * @param A an array of {@link long} objects.
+    * @param B an array of {@link long} objects.
+    * @param C an array of {@link long} objects.
+    * @param N a int.
+    */
    public LMatMul2D(long[][] A, long[][] B, long[][] C, int N) {
       this.A = A;
       this.B = B;
@@ -43,6 +51,7 @@ class LMatMul2D extends Kernel{
       this.N = N;
    }
 
+   /** {@inheritDoc} */
    @Override public void run() {
       int id = getGlobalId();
       int i = id / N;

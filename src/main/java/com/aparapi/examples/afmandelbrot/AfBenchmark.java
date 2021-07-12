@@ -24,11 +24,12 @@ import com.aparapi.device.Device;
 
 /**
  * Aparapi Fractals
- * 
+ *
  * only benchmark, results on the console, no graphics
- * 
+ *
  * @author marco.stefanetti at gmail.com
- * 
+ * @version $Id: $Id
+ * @since 2.0.1
  */
 public class AfBenchmark {
 
@@ -44,15 +45,17 @@ public class AfBenchmark {
 	/** set of different range2D, localSize x localSize   */
 	private static int[][] multipleLocalSizes = { {2,2}, {4,4}, {4,8}, {8,4}, {8,8}, {10,10}, {4,16}, {16,8}, {16,16} };
 
-	/** used by the GUI to ask to stop benchmark */
+	/**
+	 * used by the GUI to ask to stop benchmark
+	 */
 	public static void requestStop() {
 		running = false;
 	}
 
 	/**
 	 * executes a soft benchmark
-	 * 
-	 * @param afAparapiUtils
+	 *
+	 * @param afAparapiUtils a {@link com.aparapi.examples.afmandelbrot.AfAparapiUtils} object.
 	 */
 	public static void benchmarkSoft(AfAparapiUtils afAparapiUtils) {
 		LOG.debug("Starting benchmark Soft");
@@ -61,8 +64,8 @@ public class AfBenchmark {
 
 	/**
 	 * executes a hard benchmark
-	 * 
-	 * @param afAparapiUtils
+	 *
+	 * @param afAparapiUtils a {@link com.aparapi.examples.afmandelbrot.AfAparapiUtils} object.
 	 */
 	public static void benchmarkHard(AfAparapiUtils afAparapiUtils) {
 		LOG.debug("Starting benchmark Hard");
@@ -71,8 +74,8 @@ public class AfBenchmark {
 
 	/**
 	 * executes with different localSizes
-	 * 
-	 * @param afAparapiUtils
+	 *
+	 * @param afAparapiUtils a {@link com.aparapi.examples.afmandelbrot.AfAparapiUtils} object.
 	 */
 	public static void benchmarkLocalSizes(AfAparapiUtils afAparapiUtils) {
 		LOG.debug("Starting benchmark localSizes");
@@ -81,8 +84,8 @@ public class AfBenchmark {
 
 	/**
 	 * executes a repeated loop over all devices
-	 * 
-	 * @param afAparapiUtils
+	 *
+	 * @param afAparapiUtils a {@link com.aparapi.examples.afmandelbrot.AfAparapiUtils} object.
 	 */
 	public static void benchmarkStress(AfAparapiUtils afAparapiUtils) {
 		LOG.debug("Starting benchmark Stress");
@@ -91,6 +94,12 @@ public class AfBenchmark {
 		}
 	}
 
+	/**
+	 * <p>benchmark.</p>
+	 *
+	 * @param afAparapiUtils a {@link com.aparapi.examples.afmandelbrot.AfAparapiUtils} object.
+	 * @param mode a {@link java.lang.String} object.
+	 */
 	public static void benchmark(AfAparapiUtils afAparapiUtils, String mode) {
 		
 		if ("SOFT".equals(mode)) {
@@ -119,6 +128,19 @@ public class AfBenchmark {
 	/**
 	 * execute the kernel on different devices and tracks timings. The iterations
 	 * are discarded, used only here, no image refresh.
+	 *
+	 * @param afAparapiUtils a {@link com.aparapi.examples.afmandelbrot.AfAparapiUtils} object.
+	 * @param loopLocalSizes a boolean.
+	 * @param title a {@link java.lang.String} object.
+	 * @param cx1 a double.
+	 * @param cy1 a double.
+	 * @param cx2 a double.
+	 * @param cy2 a double.
+	 * @param W a int.
+	 * @param H a int.
+	 * @param max_iterations a int.
+	 * @param deviceTypeFilter a {@link java.lang.String} object.
+	 * @param sleep a long.
 	 */
 	@SuppressWarnings("deprecation")
 	public static void benchmark(AfAparapiUtils afAparapiUtils, boolean loopLocalSizes, String title, double cx1,
@@ -226,6 +248,11 @@ public class AfBenchmark {
 		LOG.debug("Benchmark over");
 	}
 
+	/**
+	 * <p>main.</p>
+	 *
+	 * @param args an array of {@link java.lang.String} objects.
+	 */
 	public static void main(String[] args) {
 
 		System.setProperty("com.aparapi.enableShowGeneratedOpenCL", "true");

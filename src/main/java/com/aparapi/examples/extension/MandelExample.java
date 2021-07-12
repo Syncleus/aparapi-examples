@@ -75,21 +75,36 @@ import java.awt.event.*;
 import java.awt.image.*;
 import java.util.concurrent.*;
 
+/**
+ * <p>MandelExample class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class MandelExample{
 
    /** User selected zoom-in point on the Mandelbrot view. */
    public static volatile Point to = null;
 
+   /** Constant <code>mandelBrot</code> */
    public static MandelBrot mandelBrot = null;
 
+   /** Constant <code>gpuMandelBrot</code> */
    public static MandelBrot gpuMandelBrot = null;
 
+   /** Constant <code>javaMandelBrot</code> */
    public static MandelBrot javaMandelBrot = null;
 
+   /** Constant <code>javaMandelBrotMultiThread</code> */
    public static MandelBrot javaMandelBrotMultiThread = null;
 
    // new JavaMandelBrot();
    //new JavaMandelBrotMultiThread();
+   /**
+    * <p>main.</p>
+    *
+    * @param _args an array of {@link java.lang.String} objects.
+    */
    @SuppressWarnings("serial") public static void main(String[] _args) {
 
       final JFrame frame = new JFrame("MandelBrot");

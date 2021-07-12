@@ -27,7 +27,18 @@ package com.aparapi.examples.configuration;
 
 import com.aparapi.examples.mandel.Main;
 
+/**
+ * <p>AutoCleanUpArraysDemo class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class AutoCleanUpArraysDemo {
+   /**
+    * <p>main.</p>
+    *
+    * @param ignored an array of {@link java.lang.String} objects.
+    */
    public static void main(String[] ignored) {
 
       System.setProperty("com.aparapi.dumpProfileOnExecution", "true");

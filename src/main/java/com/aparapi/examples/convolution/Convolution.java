@@ -68,8 +68,20 @@ import com.aparapi.*;
 import java.io.*;
 import java.net.URISyntaxException;
 
+/**
+ * <p>Convolution class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 public class Convolution {
 
+    /**
+     * <p>main.</p>
+     *
+     * @param _args an array of {@link java.lang.String} objects.
+     * @throws java.io.IOException if any.
+     */
     public static void main(final String[] _args) throws IOException {
         final File file;
         try{

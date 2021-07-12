@@ -28,16 +28,17 @@ import com.aparapi.internal.kernel.KernelManager;
 
 /**
  * Aparapi Fractals
- * 
+ *
  * Aparapi code is here and in the kernel.
- * 
+ *
  * The constructor prepares a map of Aparapi Devices using a String as a key.
  * The strings used as keys are created combining device shortDescription and
  * deviceId. That's for convenience, to show the keys on the gui combo box and
  * use them to retrieve the selected device and kernel from the maps.
- * 
+ *
  * @author marco.stefanetti at gmail.com
- * 
+ * @version $Id: $Id
+ * @since 2.0.1
  */
 public class AfAparapiUtils {
 
@@ -158,10 +159,10 @@ public class AfAparapiUtils {
 
 	/**
 	 * calls the init with a default localSize.
-	 * 
-	 * @param deviceKey
-	 * @param W
-	 * @param H
+	 *
+	 * @param deviceKey a {@link java.lang.String} object.
+	 * @param W a int.
+	 * @param H a int.
 	 */
 	public void init(String deviceKey, int W, int H) {
 
@@ -175,7 +176,12 @@ public class AfAparapiUtils {
 	 * Prepares the range and reads device description, based on the device and
 	 * image size the range can be reused many times, so we need to instantiate the
 	 * range only when device changes or image size changes
-	 * @param localSize2 
+	 *
+	 * @param deviceKey a {@link java.lang.String} object.
+	 * @param W a int.
+	 * @param H a int.
+	 * @param localSize0 a int.
+	 * @param localSize1 a int.
 	 */
 	public void init(String deviceKey, int W, int H, int localSize0, int localSize1) {
 
@@ -202,8 +208,15 @@ public class AfAparapiUtils {
 
 	/**
 	 * call the kernel execution and track elapsed time
-	 * 
+	 *
 	 * @return elapsed milliseconds
+	 * @param cx1 a double.
+	 * @param cy1 a double.
+	 * @param cx2 a double.
+	 * @param cy2 a double.
+	 * @param w a int.
+	 * @param h a int.
+	 * @param maxIterations a int.
 	 */
 	public long execute(double cx1, double cy1, double cx2, double cy2, int w, int h, int maxIterations) {
 
@@ -235,22 +248,39 @@ public class AfAparapiUtils {
 	}
 
 	/** @return the list of keys of the devices */
+	/**
+	 * <p>Getter for the field <code>deviceKeys</code>.</p>
+	 *
+	 * @return an array of {@link java.lang.String} objects.
+	 */
 	public String[] getDeviceKeys() {
 		return deviceKeys;
 	}
 
 	/** @return the name of the last device used */
+	/**
+	 * <p>Getter for the field <code>deviceName</code>.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getDeviceName() {
 		return deviceName;
 	}
 
 	/** @return the dimension XxY of the local widths of the range */
+	/**
+	 * <p>getLocalSizes.</p>
+	 *
+	 * @return a {@link java.lang.String} object.
+	 */
 	public String getLocalSizes() {
 		String localSizes = range.getLocalSize_0() + " x " + range.getLocalSize_1();
 		return localSizes;
 	}
 
 	/**
+	 * <p>Getter for the field <code>bestDeviceKey</code>.</p>
+	 *
 	 * @return the key of the best device by KernelManager
 	 */
 	public String getBestDeviceKey() {
@@ -258,6 +288,8 @@ public class AfAparapiUtils {
 	}
 
 	/**
+	 * <p>Getter for the field <code>device</code>.</p>
+	 *
 	 * @return last device selected
 	 */
 	public Device getDevice() {
@@ -265,6 +297,8 @@ public class AfAparapiUtils {
 	}
 
 	/**
+	 * <p>Getter for the field <code>kernel</code>.</p>
+	 *
 	 * @return the kernel of the selected device
 	 */
 	public AfKernel getKernel() {
@@ -272,12 +306,19 @@ public class AfAparapiUtils {
 	}
 
 	/**
+	 * <p>Getter for the field <code>range</code>.</p>
+	 *
 	 * @return the range
 	 */
 	public Range getRange() {
 		return range;
 	}
 
+	/**
+	 * <p>getResult.</p>
+	 *
+	 * @return an array of {@link int} objects.
+	 */
 	public int[][] getResult() {
 		return kernel.getResult();
 	}

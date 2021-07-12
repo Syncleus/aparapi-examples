@@ -77,6 +77,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.WindowConstants;
 
+/**
+ * <p>Abstract ConvolutionViewer class.</p>
+ *
+ * @author freemo
+ * @version $Id: $Id
+ */
 @SuppressWarnings("serial") public abstract class ConvolutionViewer extends JFrame{
 
    private int height;
@@ -95,6 +101,12 @@ import javax.swing.WindowConstants;
 
    private float[] convMatrix3x3;
 
+   /**
+    * <p>Constructor for ConvolutionViewer.</p>
+    *
+    * @param _file a {@link java.io.File} object.
+    * @param _convMatrix3x3 an array of {@link float} objects.
+    */
    public ConvolutionViewer(File _file, float[] _convMatrix3x3) {
 
       JFrame frame = new JFrame("Convolution Viewer");
@@ -151,6 +163,15 @@ import javax.swing.WindowConstants;
 
    }
 
+   /**
+    * <p>applyConvolution.</p>
+    *
+    * @param convMatrix3x3 an array of {@link float} objects.
+    * @param _inBytes an array of {@link byte} objects.
+    * @param _outBytes an array of {@link byte} objects.
+    * @param _width a int.
+    * @param _height a int.
+    */
    abstract protected void applyConvolution(float[] convMatrix3x3, byte[] _inBytes, byte[] _outBytes, int _width, int _height);
 
 }
