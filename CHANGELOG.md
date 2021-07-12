@@ -1,6 +1,6 @@
 # Aparapi Examples Changelog
 
-## 2.0.1
+## 3.0.0
 
 * Added an interactive Mandlebrot set explorer along with some related benchmarks.
 * Updated the following dependency versions:
