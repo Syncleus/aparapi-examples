@@ -4,7 +4,7 @@
 
 * Added an interactive Mandlebrot set explorer along with some related benchmarks.
 * Updated the following dependency versions:
-** com.aparapi: aparapi 2.0.0 -> 2.0.1
+** com.aparapi: aparapi 2.0.0 -> 3.0.0
 ** org.apache.commons:commons-lang3 3.9 -> 3.12.0
 ** org.apache.lucene:lucene-core 8.3.1 -> 8.9.0
 ** com.syncleus:syncleus 7 -> 8
