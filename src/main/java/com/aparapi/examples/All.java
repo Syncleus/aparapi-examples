@@ -102,32 +102,30 @@ public class All {
 
         Scanner in = new Scanner(System.in);
         boolean running = true;
-        while(running)
-        {
+        while (running) {
             System.out.print("Enter your selection, or q/Q to quit: ");
-            if( in.hasNextLine() )
-            {
+            if (in.hasNextLine()) {
                 String line = in.nextLine();
                 running = selected(line, _args);
                 System.out.println();
             }
-            else
+            else {
                 try {
                     Thread.sleep(100);
                 }
-                catch(InterruptedException ex) {
+                catch (InterruptedException ex) {
                     return;
                 }
+            }
         }
     }
 
-    private static boolean selected(String line, String[] args) throws Exception
-    {
-        if( line.toUpperCase().equals("Q") )
-           return false;
+    private static boolean selected(String line, String[] args) throws Exception {
+        if (line.toUpperCase().equals("Q")) {
+            return false;
+        }
 
-        switch(line)
-        {
+        switch (line) {
             case "1":
                 com.aparapi.examples.life.Main.main(args);
                 break;
