@@ -42,7 +42,10 @@ import com.aparapi.examples.nbody.Local;
 import com.aparapi.examples.nbody.Seq;
 import com.aparapi.examples.progress.MultiPassKernelSwingWorkerDemo;
 import com.aparapi.examples.progress.ProgressAndCancelDemo;
+import org.apache.commons.lang3.math.NumberUtils;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -52,62 +55,101 @@ import java.util.Scanner;
  * @version $Id: $Id
  */
 public class All {
+
+    private interface Executable {
+        void execute(String[] args) throws Exception;
+    }
+
+    private static class App {
+        private final String name;
+        private final Executable handler;
+
+        private App(String name, Executable handler) {
+            this.name = name;
+            this.handler = handler;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void execute(String[] args) throws Exception {
+            handler.execute(args);
+        }
+    }
+
+    private static final List<App> APPS = Arrays.asList(
+            new App("Game of Life", com.aparapi.examples.life.Main::main),
+            new App("Mandelbrot", com.aparapi.examples.mandel.Main::main),
+            new App("Mandlebrot 2D", Main2D::main),
+            new App("Convolution", Convolution::main),
+            new App("Convolution (OpenCL)", ConvolutionOpenCL::main),
+            new App("Convolution (pure Java)", PureJava::main),
+            new App("Blacksholes", com.aparapi.examples.blackscholes.Main::main),
+            new App("Squares", com.aparapi.examples.squares.Main::main),
+            new App("Multipass swing worker", MultiPassKernelSwingWorkerDemo::main),
+            new App("Progress and cancel demo", ProgressAndCancelDemo::main),
+            new App("Info", com.aparapi.examples.info.Main::main),
+            new App("Medians", MedianDemo::main),
+            new App("MDArray", MDArray::main),
+            new App("Add", com.aparapi.examples.add.Main::main),
+            new App("Extension - FFT", FFTExample::main),
+            new App("Extension - Histogram", Histogram::main),
+            new App("Extension - Histogram Ideal", HistogramIdeal::main),
+            new App("Extension - Mandel", MandelExample::main),
+            new App("Extension - Square", SquareExample::main),
+            new App("Configuration - Auto cleanup arrays", AutoCleanUpArraysDemo::main),
+            new App("Configuration - Cleanup arrays", CleanUpArraysDemo::main),
+            new App("Configuration - Configuration", ConfigurationDemo::main),
+            new App("Configuration - Custom Configuration", CustomConfigurationDemo::main),
+            new App("Configuration - Legacy Configuration", LegacyConfigurationDemo::main),
+            new App("Configuration - Profiling", ProfilingDemo::main),
+            new App("Configuration - Profiling (no binary)", ProfilingDemoNoBinaryCaching::main),
+            new App("Effects", com.aparapi.examples.effects.Main::main),
+            new App("Javaone - Game of Life", Life::main),
+            new App("Javaone - Mandlebrot", Mandel::main),
+            new App("Javaone - NBody", NBody::main),
+            new App("NBody", com.aparapi.examples.nbody.Main::main),
+            new App("NBody - Local", Local::main),
+            new App("NBody - Sequential", Seq::main),
+            new App("OOPN Body", com.aparapi.examples.oopnbody.Main::main),
+            new App("Map-reduce", com.aparapi.examples.mapreduce.Main::main),
+            new App("Correlation Matrix", com.aparapi.examples.matrix.Main::main),
+            new App("AparapiFractals - Mandelbrot explorer", AfMain::main),
+            new App("AparapiFractals - soft benchmark", args -> AfBenchmark.main(new String[]{"SOFT"})),
+            new App("AparapiFractals - hard benchmark", args -> AfBenchmark.main(new String[]{"HARD"}))
+    );
+
     /**
      * <p>main.</p>
      *
-     * @param _args an array of {@link java.lang.String} objects.
+     * @param args an array of {@link java.lang.String} objects.
      * @throws java.lang.Exception if any.
      */
-    public static void main(String[] _args) throws Exception {
+    public static void main(String[] args) throws Exception {
         System.out.println("Select which example to run:");
-        System.out.println("  1) Game of Life");
-        System.out.println("  2) Mandelbrot");
-        System.out.println("  3) Mandlebrot 2D");
-        System.out.println("  4) Convolution");
-        System.out.println("  5) Convolution (OpenCL)");
-        System.out.println("  6) Convolution (pure Java)");
-        System.out.println("  7) Blacksholes");
-        System.out.println("  8) Squares");
-        System.out.println("  9) Multipass swing worker");
-        System.out.println(" 10) Progress and cancel demo");
-        System.out.println(" 11) Info");
-        System.out.println(" 12) Medians");
-        System.out.println(" 13) MDArray");
-        System.out.println(" 14) Add");
-        System.out.println(" 15) Extension - FFT");
-        System.out.println(" 16) Extension - Histogram");
-        System.out.println(" 17) Extension - Histogram Ideal");
-        System.out.println(" 18) Extension - Mandel");
-        System.out.println(" 19) Extension - Square");
-        System.out.println(" 20) Configuration - Auto cleanup arrays");
-        System.out.println(" 21) Configuration - Cleanup arrays");
-        System.out.println(" 22) Configuration - Configuration");
-        System.out.println(" 23) Configuration - Custom Configuration");
-        System.out.println(" 24) Configuration - Legacy Configuration");
-        System.out.println(" 25) Configuration - Profiling");
-        System.out.println(" 26) Configuration - Profiling (no binary)");
-        System.out.println(" 27) Effects");
-        System.out.println(" 28) Javaone - Game of Life");
-        System.out.println(" 29) Javaone - Mandlebrot");
-        System.out.println(" 30) Javaone - NBody");
-        System.out.println(" 31) NBody");
-        System.out.println(" 32) NBody - Local");
-        System.out.println(" 33) NBody - Sequential");
-        System.out.println(" 34) OOPN Body");
-        System.out.println(" 35) Map-reduce");
-        System.out.println(" 36) Correlation Matrix");
-        System.out.println(" 37) AparapiFractals - Mandelbrot explorer ");
-        System.out.println(" 38) AparapiFractals - soft benchmark ");
-        System.out.println(" 39) AparapiFractals - hard benchmark ");
+        for (int i = 0; i < APPS.size(); i++) {
+            System.out.printf("%3d) %s%n", i + 1, APPS.get(i).getName());
+        }
         System.out.println();
 
         Scanner in = new Scanner(System.in);
-        boolean running = true;
-        while (running) {
+        while (true) {
             System.out.print("Enter your selection, or q/Q to quit: ");
             if (in.hasNextLine()) {
                 String line = in.nextLine();
-                running = selected(line, _args);
+                if (line.equalsIgnoreCase("Q")) {
+                    break;
+                }
+
+                final int index = NumberUtils.toInt(line, 0);
+                if (index >= 1 && index <= APPS.size()) {
+                    APPS.get(index - 1).execute(args);
+                }
+                else {
+                    System.out.println("Invalid selection.");
+                }
+
                 System.out.println();
             }
             else {
@@ -119,134 +161,5 @@ public class All {
                 }
             }
         }
-    }
-
-    private static boolean selected(String line, String[] args) throws Exception {
-        if (line.toUpperCase().equals("Q")) {
-            return false;
-        }
-
-        switch (line) {
-            case "1":
-                com.aparapi.examples.life.Main.main(args);
-                break;
-            case "2":
-                com.aparapi.examples.mandel.Main.main(args);
-                break;
-            case "3":
-                Main2D.main(args);
-                break;
-            case "4":
-                Convolution.main(args);
-                break;
-            case "5":
-                ConvolutionOpenCL.main(args);
-                break;
-            case "6":
-                PureJava.main(args);
-                break;
-            case "7":
-                com.aparapi.examples.blackscholes.Main.main(args);
-                break;
-            case "8":
-                com.aparapi.examples.squares.Main.main(args);
-                break;
-            case "9":
-                MultiPassKernelSwingWorkerDemo.main(args);
-                break;
-            case "10":
-                ProgressAndCancelDemo.main(args);
-                break;
-            case "11":
-                com.aparapi.examples.info.Main.main(args);
-                break;
-            case "12":
-                MedianDemo.main(args);
-                break;
-            case "13":
-                MDArray.main(args);
-                break;
-            case "14":
-                com.aparapi.examples.add.Main.main(args);
-                break;
-            case "15":
-                FFTExample.main(args);
-                break;
-            case "16":
-                Histogram.main(args);
-                break;
-            case "17":
-                HistogramIdeal.main(args);
-                break;
-            case "18":
-                MandelExample.main(args);
-                break;
-            case "19":
-                SquareExample.main(args);
-                break;
-            case "20":
-                AutoCleanUpArraysDemo.main(args);
-                break;
-            case "21":
-                CleanUpArraysDemo.main(args);
-                break;
-            case "22":
-                ConfigurationDemo.main(args);
-                break;
-            case "23":
-                CustomConfigurationDemo.main(args);
-                break;
-            case "24":
-                LegacyConfigurationDemo.main(args);
-                break;
-            case "25":
-                ProfilingDemo.main(args);
-                break;
-            case "26":
-                ProfilingDemoNoBinaryCaching.main(args);
-                break;
-            case "27":
-                com.aparapi.examples.effects.Main.main(args);
-                break;
-            case "28":
-                Life.main(args);
-                break;
-            case "29":
-                Mandel.main(args);
-                break;
-            case "30":
-                NBody.main(args);
-                break;
-            case "31":
-                com.aparapi.examples.nbody.Main.main(args);
-                break;
-            case "32":
-                Local.main(args);
-                break;
-            case "33":
-                Seq.main(args);
-                break;
-            case "34":
-                com.aparapi.examples.oopnbody.Main.main(args);
-                break;
-            case "35":
-                com.aparapi.examples.mapreduce.Main.main(args);
-                break;
-            case "36":
-                com.aparapi.examples.matrix.Main.main(args);
-                break;
-            case "37":
-                AfMain.main(args);
-                break;
-            case "38":
-                AfBenchmark.main(new String[]{"SOFT"});
-                break;
-            case "39":
-                AfBenchmark.main(new String[]{"HARD"});
-                break;
-            default:
-                System.out.println("Invalid selection.");
-        }
-        return true;
     }
 }
