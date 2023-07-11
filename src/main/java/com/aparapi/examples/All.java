@@ -25,7 +25,8 @@
  */
 package com.aparapi.examples;
 
-import com.aparapi.examples.blackscholes.Main;
+import com.aparapi.examples.afmandelbrot.AfBenchmark;
+import com.aparapi.examples.afmandelbrot.AfMain;
 import com.aparapi.examples.configuration.*;
 import com.aparapi.examples.convolution.Convolution;
 import com.aparapi.examples.convolution.ConvolutionOpenCL;
@@ -145,7 +146,7 @@ public class All {
                 PureJava.main(args);
                 break;
             case "7":
-                Main.main(args);
+                com.aparapi.examples.blackscholes.Main.main(args);
                 break;
             case "8":
                 com.aparapi.examples.squares.Main.main(args);
@@ -235,13 +236,13 @@ public class All {
                 com.aparapi.examples.matrix.Main.main(args);
                 break;
             case "37":
-                com.aparapi.examples.afmandelbrot.AfMain.main(args);
+                AfMain.main(args);
                 break;
             case "38":
-                com.aparapi.examples.afmandelbrot.AfBenchmark.main(new String[]{"SOFT"});
+                AfBenchmark.main(new String[]{"SOFT"});
                 break;
             case "39":
-                com.aparapi.examples.afmandelbrot.AfBenchmark.main(new String[]{"HARD"});
+                AfBenchmark.main(new String[]{"HARD"});
                 break;
             default:
                 System.out.println("Invalid selection.");
